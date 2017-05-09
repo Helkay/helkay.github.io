@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="null">
+<head>
+  <meta charset="UTF-8">
+  <title>quartz定时功能 [ Helkay ]</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/hexo-uno.css">
+    
+  
+  <link rel="stylesheet" href="/css/uno.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/github.min.css">
+</head>
+<header class="panel-cover" style="background-image: url(/img/backimg.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of Helkay">
+          <img src="/img/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title" style="border-bottom: none;">Helkay</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">不忘初心,方得始终。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to Helkay blog" class="blog-button">首页</a></li>
+              <li class="navigation__item"><a href="/archives" title="link to archives" class="blog-button">归档</a></li>
+              <li class="navigation__item"><a href="/categories" title="link to categories" class="blog-button">分类</a></li>
+              <li class="navigation__item"><a href="/tags" title="link to tags" class="blog-button">标签</a></li>
+            </ul>
+          </nav>
+
+
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/helkay" title="helkay on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:work@helkay.com" title="Email work@helkay.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+            
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+<body>
+<div class="content-wrapper">
+      <div class="content-wrapper__inner" >
+        
+<article id="post">
+  <h1>quartz定时功能</h1>
+  <h2 id="quartz定时器"><a href="#quartz定时器" class="headerlink" title="quartz定时器"></a>quartz定时器</h2><h3 id="配置文件定时"><a href="#配置文件定时" class="headerlink" title="配置文件定时"></a>配置文件定时</h3><p><strong>配置文件</strong></p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd&quot;&gt;
+
+    &lt;bean id=&quot;executor&quot; class=&quot;org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor&quot;&gt;
+        &lt;property name=&quot;corePoolSize&quot; value=&quot;10&quot; /&gt;
+        &lt;property name=&quot;maxPoolSize&quot; value=&quot;100&quot; /&gt;
+        &lt;property name=&quot;queueCapacity&quot; value=&quot;500&quot; /&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- spring自动任务调度器配置 --&gt;
+    &lt;!-- 要调用的工作类 --&gt;
+    &lt;bean id=&quot;job1&quot;
+          class=&quot;com.***.***.quartz.SpringQtz&quot;&gt;&lt;/bean&gt;
+
+    &lt;bean id=&quot;jobTask1&quot;
+          class=&quot;org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean&quot;&gt;
+        &lt;!-- 调用的类 --&gt;
+        &lt;property name=&quot;targetObject&quot;&gt;
+            &lt;ref bean=&quot;job1&quot;/&gt;
+        &lt;/property&gt;
+        &lt;!-- 调用类中的方法 --&gt;
+        &lt;property name=&quot;targetMethod&quot;&gt;
+            &lt;value&gt;qtzTest&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;!-- 是否允许任务并发执行。当值为false时，表示必须等到前一个线程处理完毕后才再启一个新的线程 --&gt;
+        &lt;property name=&quot;concurrent&quot; value=&quot;false&quot;/&gt;
+    &lt;/bean&gt;
+
+
+    &lt;!-- 触发器配置 时间指定 --&gt;
+    &lt;bean id=&quot;cronTrigger1&quot; class=&quot;org.springframework.scheduling.quartz.CronTriggerBean&quot;&gt;
+        &lt;property name=&quot;jobDetail&quot; ref=&quot;jobTask1&quot;&gt;&lt;/property&gt;
+        &lt;!-- cron表达式 --&gt;
+        &lt;property name=&quot;cronExpression&quot;&gt;
+            &lt;!-- 每隔10秒执行一次 --&gt;
+            &lt;value&gt;0/10 * * * * ?&lt;/value&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+
+
+    &lt;!-- 总管理类 如果将lazy-init=&#39;false&#39;那么容器启动就会执行调度程序 --&gt;
+    &lt;bean id=&quot;startQuertz&quot; lazy-init=&quot;false&quot; autowire=&quot;no&quot;
+          class=&quot;org.springframework.scheduling.quartz.SchedulerFactoryBean&quot;&gt;
+        &lt;property name=&quot;triggers&quot;&gt;
+            &lt;list&gt;
+                &lt;!-- 触发器列表 --&gt;
+                &lt;ref bean=&quot;cronTrigger1&quot;/&gt;
+            &lt;/list&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+
+&lt;/beans&gt;
+</code></pre>
+<p><strong>spring引入配置文件</strong></p>
+<pre><code class="xml">&lt;import resource=&quot;spring-timer.xml&quot; /&gt;
+</code></pre>
+
+</article>
+      </div>
+</div>
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/highlight.min.js"></script>
+
+<script>
+	$(function(){ 
+　　		hljs.initHighlightingOnLoad();
+　　});
+</script>
+
+
+
+  <!-- scripts list from theme config.yml -->
+  
+    <script src="/js/hexo-uno.js"></script>
+  
+
+
+</body>
+</html>
