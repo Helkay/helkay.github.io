@@ -1,0 +1,876 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Helkay</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blog.helkay.com/"/>
+  <updated>2017-05-08T07:38:06.000Z</updated>
+  <id>http://blog.helkay.com/</id>
+  
+  <author>
+    <name>Helkay</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>工厂方法模式</title>
+    <link href="http://blog.helkay.com/2017/05/04/2017-05-04-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://blog.helkay.com/2017/05/04/2017-05-04-工厂方法模式/</id>
+    <published>2017-05-03T16:00:00.000Z</published>
+    <updated>2017-05-08T07:38:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简单工厂方法模式"><a href="#简单工厂方法模式" class="headerlink" title="简单工厂方法模式"></a>简单工厂方法模式</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简单工厂方法模式&quot;&gt;&lt;a href=&quot;#简单工厂方法模式&quot; class=&quot;headerlink&quot; title=&quot;简单工厂方法模式&quot;&gt;&lt;/a&gt;简单工厂方法模式&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://blog.helkay.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java多线程</title>
+    <link href="http://blog.helkay.com/2017/05/02/2017-05-02-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://blog.helkay.com/2017/05/02/2017-05-02-多线程/</id>
+    <published>2017-05-01T16:00:00.000Z</published>
+    <updated>2017-05-08T08:26:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在写设计模式-单例模式的过程中,我需要本地模拟多线程高并发,所以就有了这个笔记。</p>
+<p>名词解释：</p>
+<ul>
+<li>多线程：指的是这个程序（一个进程）运行时产生了不止一个线程</li>
+<li>并行：多个cpu实例或者多台机器同时执行一段处理逻辑,是真正的同时。</li>
+<li>并发：通过cpu调度算法,让用户看上去同时执行,实际上从cpu操作层面不是真正的同时。</li>
+</ul>
+<p>线程和进程一样分为五个阶段：创建、就绪、运行、阻塞、终止。</p>
+<h2 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承Thread类</h2><pre><code class="java">public class Thread1 extends Thread {
+
+    public void run() {
+        System.out.println(&quot;run start!&quot;);
+    }
+
+    public static void main(String[] args) {
+        Thread1 t1 = new Thread1();
+        Thread1 t2 = new Thread1();
+        t1.start();
+        t2.start();
+    }
+}
+</code></pre>
+<h2 id="实现Runnable类"><a href="#实现Runnable类" class="headerlink" title="实现Runnable类"></a>实现Runnable类</h2><pre><code class="java">public class Thread2 implements Runnable{
+
+    @Override
+    public void run() {
+        System.out.println(&quot;run start!&quot;);
+    }
+
+    public static void main(String[] args) {
+        Thread2 t1 = new Thread2();
+        Thread2 t2 = new Thread2();
+
+        Thread thread1 = new Thread(t1);
+        Thread thread2 = new Thread(t2);
+
+        thread1.start();
+        thread2.start();
+
+//        简写
+//        new Thread(new Thread2()).start();
+//        new Thread(new Thread2()).start();
+    }
+}
+</code></pre>
+<h2 id="sleep-和wait-的区别"><a href="#sleep-和wait-的区别" class="headerlink" title="sleep()和wait()的区别"></a>sleep()和wait()的区别</h2><p>对于这两个方法,首先得明确一点,sleep()方法是属于Thread类的,而wait()方法则是属于Object类的。</p>
+<ul>
+<li><strong><font color="#e25440">主程序中sleep()</font></strong></li>
+</ul>
+<pre><code class="java">public class ThreadTest {
+
+    public static void main(String[] args) {
+
+        ThreadDemo1 td1 = new ThreadDemo1();
+        td1.start();
+
+        try {
+            Thread.sleep(3000); //主程序中休眠3s
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        ThreadDemo2 td2 = new ThreadDemo2();
+        td2.start();
+    }
+
+    public static String getDate(){
+        SimpleDateFormat sdf = new SimpleDateFormat(&quot;HH:mm:ss&quot;);
+        return sdf.format(new Date());
+    }
+
+}
+
+class ThreadDemo1 extends Thread{
+    public void run(){
+        System.out.println(ThreadTest.getDate() + &quot; -- ThreadDemo1 start run...&quot;);
+    }
+}
+
+class ThreadDemo2 extends Thread{
+    public void run(){
+        System.out.println(ThreadTest.getDate() + &quot; -- ThreadDemo2 start run...&quot;);
+    }
+}
+</code></pre>
+<p>结果：</p>
+<pre><code class="java">15:48:25 -- ThreadDemo1 start run...
+15:48:28 -- ThreadDemo2 start run...
+</code></pre>
+<ul>
+<li><strong><font color="#e25440">线程中sleep()</font></strong></li>
+</ul>
+<pre><code class="java">public class ThreadTest {
+
+    public static void main(String[] args) {
+
+        ThreadDemo1 td1 = new ThreadDemo1();
+        td1.start();
+
+        ThreadDemo2 td2 = new ThreadDemo2();
+        td2.start();
+    }
+
+    public static String getDate(){
+        SimpleDateFormat sdf = new SimpleDateFormat(&quot;HH:mm:ss&quot;);
+        return sdf.format(new Date());
+    }
+
+}
+
+class ThreadDemo1 extends Thread{
+    public void run(){
+        try {
+            System.out.println(ThreadTest.getDate() + &quot; -- ThreadDemo1 start sleep...&quot;);
+            Thread.sleep(3000);
+            System.out.println(ThreadTest.getDate() + &quot; -- ThreadDemo1 start run...&quot;);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+
+class ThreadDemo2 extends Thread{
+    public void run(){
+        synchronized (ThreadTest.class){
+            System.out.println(ThreadTest.getDate() + &quot; -- ThreadDemo2 start run...&quot;);
+        }
+    }
+}
+</code></pre>
+<p>结果：</p>
+<pre><code class="java">15:57:52 -- ThreadDemo1 start sleep...
+15:57:52 -- ThreadDemo2 start run...
+15:57:55 -- ThreadDemo1 start run...
+</code></pre>
+<p><strong><em>sleep()导致的是程序暂停指定的时间,线程不会释放对象锁。</em></strong></p>
+<ul>
+<li><strong><font color="#e25440">wait()的测试Demo</font></strong></li>
+</ul>
+<pre><code class="java">public class ThreadTest {
+
+    public static void main(String[] args) {
+
+        ThreadDemo1 td1 = new ThreadDemo1();
+        td1.start();
+
+        ThreadDemo2 td2 = new ThreadDemo2();
+        td2.start();
+    }
+
+    public static String getDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat(&quot;HH:mm:ss&quot;);
+        return sdf.format(new Date());
+    }
+
+}
+
+class ThreadDemo1 extends Thread {
+    public void run() {
+        synchronized (ThreadTest.class) {
+            try {
+                System.out.println(ThreadTest.getDate() + &quot; -- ThreadDemo1 start wait...&quot;);
+                ThreadTest.class.wait();
+                System.out.println(ThreadTest.getDate() + &quot; -- ThreadDemo1 start run...&quot;);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+}
+
+class ThreadDemo2 extends Thread {
+    public void run() {
+        synchronized (ThreadTest.class) {
+            System.out.println(ThreadTest.getDate() + &quot; -- ThreadDemo2 start run...&quot;);
+            ThreadTest.class.notify();
+        }
+
+    }
+}
+</code></pre>
+<p> 结果：</p>
+<pre><code class="java">17:05:43 -- ThreadDemo1 start wait...
+17:05:43 -- ThreadDemo2 start run...
+17:05:43 -- ThreadDemo1 start run...
+</code></pre>
+<p><strong><em>ThreadDemo1 wait后将资源让给了 ThreadDemo2, ThreadDemo2执行完后唤醒了ThreadDemo1</em></strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在写设计模式-单例模式的过程中,我需要本地模拟多线程高并发,所以就有了这个笔记。&lt;/p&gt;
+&lt;p&gt;名词解释：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;多线程：指的是这个程序（一个进程）运行时产生了不止一个线程&lt;/li&gt;
+&lt;li&gt;并行：多个cpu实例或者多台机器同时执行一段处理逻辑,是真正的
+    
+    </summary>
+    
+      <category term="多线程" scheme="http://blog.helkay.com/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>单例模式</title>
+    <link href="http://blog.helkay.com/2017/05/02/2017-05-02-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://blog.helkay.com/2017/05/02/2017-05-02-单例模式/</id>
+    <published>2017-05-01T16:00:00.000Z</published>
+    <updated>2017-05-09T09:11:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"><a href="#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。" class="headerlink" title="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"></a>单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。</h3><ul>
+<li><strong><font color="#e25440" size="4">懒汉式(线程不安全)</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoOne {
+
+    private static SingletonDemoOne instance;
+
+    private SingletonDemoOne() {
+    }
+
+    public static SingletonDemoOne getInstance() {
+        if (instance == null) {
+            instance = new SingletonDemoOne();
+            //todo
+        }
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>延迟加载很明显，但是在多线程不能正常工作</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">懒汉式(线程安全)</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoTwo {
+
+    private static SingletonDemoTwo instance;
+
+    private SingletonDemoTwo() {
+    }
+
+    public static synchronized SingletonDemoTwo getInstance() {
+        if (instance == null) {
+            instance = new SingletonDemoTwo();
+            //todo
+        }
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>延迟加载明显,但是效率很低</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">饿汉式</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoThree {
+    private static SingletonDemoThree instance = new SingletonDemoThree();
+
+    private SingletonDemoThree() {
+    }
+
+    public static SingletonDemoThree getInstance() {
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>在类加载的时候实例化,不能确定是否有其他方法导致类加载,且没有达到延迟加载效果</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">双重检查[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoFour {
+
+    private static volatile SingletonDemoFour singleton;
+
+    private SingletonDemoFour() {
+    }
+
+    public static SingletonDemoFour getInstance() {
+        if (singleton == null) {
+            synchronized (SingletonDemoFour.class) {
+                if (singleton == null) {
+                    singleton = new SingletonDemoFour();
+                }
+            }
+        }
+        return singleton;
+    }
+}
+</code></pre>
+<p><strong><em>线程安全,延迟加载,效率较高。</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">静态内部类[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoFive {
+
+    private SingletonDemoFive() {
+    }
+
+    private static class SingletonInstance {
+        private static final SingletonDemoFive INSTANCE = new SingletonDemoFive();
+    }
+
+    public static SingletonDemoFive getInstance() {
+        return SingletonInstance.INSTANCE;
+    }
+}
+</code></pre>
+<ul>
+<li><strong><font color="#e25440" size="4">枚举[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public enum Singleton {
+    INSTANCE;
+
+    public void whateverMethod() {
+
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot;&gt;&lt;a href=&quot;#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot; class=&quot;headerlink&quot; title=&quot;单例模式主要作用是保证在Ja
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://blog.helkay.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式目录</title>
+    <link href="http://blog.helkay.com/2017/05/01/2017-05-01-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9B%AE%E5%BD%95/"/>
+    <id>http://blog.helkay.com/2017/05/01/2017-05-01-设计模式目录/</id>
+    <published>2017-04-30T16:00:00.000Z</published>
+    <updated>2017-05-04T06:44:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h2><ul>
+<li><a href="http://blog.helkay.com/2017/工厂方法模式">工厂方法模式</a></li>
+<li>抽象工厂模式</li>
+<li><a href="http://blog.helkay.com/2017/单例模式">单例模式</a></li>
+<li>建造者模式</li>
+<li>原型模式</li>
+</ul>
+<h2 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h2><ul>
+<li>适配器模式</li>
+<li>装饰器模式</li>
+<li>代理模式</li>
+<li>外观模式</li>
+<li>桥接模式</li>
+<li>组合模式</li>
+<li>享元模式</li>
+</ul>
+<h2 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h2><ul>
+<li>策略模式</li>
+<li>模板方法模式</li>
+<li>观察者模式</li>
+<li>迭代子模式</li>
+<li>责任链模式</li>
+<li>命令模式</li>
+<li>备忘录模式</li>
+<li>状态模式</li>
+<li>访问者模式</li>
+<li>中介者模式</li>
+<li>解释器模式</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>并发型模式</li>
+<li>线程池模式</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;创建型模式&quot;&gt;&lt;a href=&quot;#创建型模式&quot; class=&quot;headerlink&quot; title=&quot;创建型模式&quot;&gt;&lt;/a&gt;创建型模式&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.helkay.com/2017/工厂方法模式&quot;&gt;工厂方法模式&lt;
+    
+    </summary>
+    
+      <category term="目录" scheme="http://blog.helkay.com/categories/%E7%9B%AE%E5%BD%95/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>删除远程分支</title>
+    <link href="http://blog.helkay.com/2017/04/25/2017-04-25-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
+    <id>http://blog.helkay.com/2017/04/25/2017-04-25-删除远程分支/</id>
+    <published>2017-04-24T16:00:00.000Z</published>
+    <updated>2017-04-25T10:29:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>git push origin --delete &lt;branch name&gt;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;git push origin --delete &amp;lt;branch name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Git" scheme="http://blog.helkay.com/categories/Git/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>修改提交注释信息</title>
+    <link href="http://blog.helkay.com/2017/04/25/2017-04-25-%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E6%B3%A8%E9%87%8A%E4%BF%A1%E6%81%AF/"/>
+    <id>http://blog.helkay.com/2017/04/25/2017-04-25-修改提交注释信息/</id>
+    <published>2017-04-24T16:00:00.000Z</published>
+    <updated>2017-05-08T07:47:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="如何修改现有的，未被提交的提交？"><a href="#如何修改现有的，未被提交的提交？" class="headerlink" title="如何修改现有的，未被提交的提交？"></a>如何修改现有的，未被提交的提交？</h2><pre><code>git commit --amend
+</code></pre><p>OR</p>
+<pre><code>git commit --amend -m &quot;New commit message&quot;
+</code></pre><h3 id="如果您已经推你的提交到你的远程分支-那么就需要强行提交"><a href="#如果您已经推你的提交到你的远程分支-那么就需要强行提交" class="headerlink" title="如果您已经推你的提交到你的远程分支,那么就需要强行提交"></a>如果您已经推你的提交到你的远程分支,那么就需要强行提交</h3><pre><code>git push &lt;remote&gt; &lt;branch&gt; --force
+</code></pre><p>OR</p>
+<pre><code>git push &lt;remote&gt; &lt;branch&gt; -f
+</code></pre><p>警告：强制推送会用本地状态覆盖远程分支。如果远程分支上有您在本地分支机构没有的提交，那么您将丢失这些提交。</p>
+<p>更多详情:    <a href="http://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits" target="_blank" rel="external">stackoverflow</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;a href=&quot;#如何修改现有的，未被提交的提交？&quot; class=&quot;headerlink&quot; title=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;/a&gt;如何修改现有的，未被提交的提交？&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;git co
+    
+    </summary>
+    
+      <category term="Git" scheme="http://blog.helkay.com/categories/Git/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nginx session保持</title>
+    <link href="http://blog.helkay.com/2017/04/18/2017-04-18-nginx%20%E9%85%8D%E7%BD%AE%20session%E4%BF%9D%E6%8C%81/"/>
+    <id>http://blog.helkay.com/2017/04/18/2017-04-18-nginx 配置 session保持/</id>
+    <published>2017-04-17T16:00:00.000Z</published>
+    <updated>2017-05-08T03:14:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在使用JCaptcha做验证码功能的时候,在本地是可以正常验证的,可是发布在服务器上的时候验证码功能就失效了,于是打上日志,看输出信息,发现验证码生成的时候从session里取的id跟校验的时候从session的id不同,发生了改变.</p>
+<p>由于我的服务器上用了nginx,去网上查,很多都是讲的是负载均衡导致的session不共享,需配置</p>
+<pre><code>upstream cms{
+    server 127.0.0.1:8080;
+    ip_hash;
+}
+</code></pre><p>但是由于我只用了一个服务,再查找了一下资料,发现主要是cookie路径的转换问题,如果只是host、端口转换，则cookie不会丢失,如果路径也变化了，则需要设置cookie的路径转换，nginx.conf的配置如下</p>
+<pre><code>location /proxy_path {
+        proxy_pass   http://127.0.0.1:8080/project;
+        proxy_cookie_path  /project /proxy_path;
+}
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在使用JCaptcha做验证码功能的时候,在本地是可以正常验证的,可是发布在服务器上的时候验证码功能就失效了,于是打上日志,看输出信息,发现验证码生成的时候从session里取的id跟校验的时候从session的id不同,发生了改变.&lt;/p&gt;
+&lt;p&gt;由于我的服务器上用了
+    
+    </summary>
+    
+      <category term="nginx" scheme="http://blog.helkay.com/categories/nginx/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>@ResponseBody 返回字符串乱码</title>
+    <link href="http://blog.helkay.com/2017/04/06/2017-04-06-@ResponseBody%20%E8%BF%94%E5%9B%9E%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%B1%E7%A0%81/"/>
+    <id>http://blog.helkay.com/2017/04/06/2017-04-06-@ResponseBody 返回字符串乱码/</id>
+    <published>2017-04-05T16:00:00.000Z</published>
+    <updated>2017-05-08T07:35:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种格式。一开始我以为是response没有转码导致的-但是java代码中加入转码后依然无效"><a href="#今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种格式。一开始我以为是response没有转码导致的-但是java代码中加入转码后依然无效" class="headerlink" title="今天在用ajax post方法调用java方法时,返回的结果中文始终是???这种格式。一开始我以为是response没有转码导致的,但是java代码中加入转码后依然无效"></a>今天在用ajax post方法调用java方法时,返回的结果中文始终是???这种格式。一开始我以为是response没有转码导致的,但是java代码中加入转码后依然无效</h3><pre><code class="java">response.setCharacterEncoding(&quot;UTF-8&quot;);
+</code></pre>
+<h3 id="最后查资料发现是spring-mvc的一个bug，spring-MVC有一系列HttpMessageConverter去处理用-ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1-而且是final的"><a href="#最后查资料发现是spring-mvc的一个bug，spring-MVC有一系列HttpMessageConverter去处理用-ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1-而且是final的" class="headerlink" title="最后查资料发现是spring mvc的一个bug，spring MVC有一系列HttpMessageConverter去处理用@ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1,而且是final的"></a>最后查资料发现是spring mvc的一个bug，spring MVC有一系列HttpMessageConverter去处理用@ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1,而且是final的</h3><h3 id="网上目前我找到的有两种解决办法"><a href="#网上目前我找到的有两种解决办法" class="headerlink" title="网上目前我找到的有两种解决办法"></a>网上目前我找到的有两种解决办法</h3><ul>
+<li><p>自己继承AbstractHttpMessageConverter,写一个类复制 StringHttpMessageConverter.java的代码,将<br>public static final Charset DEFAULT_CHARSET = Charset.forName(“ISO-8859-1”);<br>改为<br>public static final Charset DEFAULT_CHARSET = Charset.forName(“UTF-8”);<br>spring-servlet的配置文件如下</p>
+<pre><code class="xml">&lt;bean  
+  class=&quot;org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter&quot;&gt;  
+  &lt;property name=&quot;messageConverters&quot;&gt;  
+      &lt;list&gt;  
+          &lt;bean class=&quot;com.renren001.converter.UTF8StringHttpMessageConverter&quot; /&gt;  
+      &lt;/list&gt;  
+  &lt;/property&gt;  
+&lt;/bean&gt;
+</code></pre>
+</li>
+<li><p>StringHttpMessageConverter默认iso-8859-1编码，但是会根据请求头信息指定的编码格式来转换，所以只需要在ajax请求的时候指定头信息Accept属性<br>$.ajax({<br>…<br>headers: {<br>Accept : “text/plain; charset=utf-8”,<br>}<br>});</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种格式。一开始我以为是response没有转码导致的-但是java代码中加入转码后依然无效&quot;&gt;&lt;a href=&quot;#今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种
+    
+    </summary>
+    
+      <category term="Java" scheme="http://blog.helkay.com/categories/Java/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>quartz定时功能</title>
+    <link href="http://blog.helkay.com/2017/03/24/2017-03-24-quartz%E5%AE%9A%E6%97%B6%E5%8A%9F%E8%83%BD/"/>
+    <id>http://blog.helkay.com/2017/03/24/2017-03-24-quartz定时功能/</id>
+    <published>2017-03-23T16:00:00.000Z</published>
+    <updated>2017-05-08T07:31:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="quartz定时器"><a href="#quartz定时器" class="headerlink" title="quartz定时器"></a>quartz定时器</h2><h3 id="配置文件定时"><a href="#配置文件定时" class="headerlink" title="配置文件定时"></a>配置文件定时</h3><p><strong>配置文件</strong></p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+       xsi:schemaLocation=&quot;
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd&quot;&gt;
+
+    &lt;bean id=&quot;executor&quot; class=&quot;org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor&quot;&gt;
+        &lt;property name=&quot;corePoolSize&quot; value=&quot;10&quot; /&gt;
+        &lt;property name=&quot;maxPoolSize&quot; value=&quot;100&quot; /&gt;
+        &lt;property name=&quot;queueCapacity&quot; value=&quot;500&quot; /&gt;
+    &lt;/bean&gt;
+
+    &lt;!-- spring自动任务调度器配置 --&gt;
+    &lt;!-- 要调用的工作类 --&gt;
+    &lt;bean id=&quot;job1&quot;
+          class=&quot;com.***.***.quartz.SpringQtz&quot;&gt;&lt;/bean&gt;
+
+    &lt;bean id=&quot;jobTask1&quot;
+          class=&quot;org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean&quot;&gt;
+        &lt;!-- 调用的类 --&gt;
+        &lt;property name=&quot;targetObject&quot;&gt;
+            &lt;ref bean=&quot;job1&quot;/&gt;
+        &lt;/property&gt;
+        &lt;!-- 调用类中的方法 --&gt;
+        &lt;property name=&quot;targetMethod&quot;&gt;
+            &lt;value&gt;qtzTest&lt;/value&gt;
+        &lt;/property&gt;
+        &lt;!-- 是否允许任务并发执行。当值为false时，表示必须等到前一个线程处理完毕后才再启一个新的线程 --&gt;
+        &lt;property name=&quot;concurrent&quot; value=&quot;false&quot;/&gt;
+    &lt;/bean&gt;
+
+
+    &lt;!-- 触发器配置 时间指定 --&gt;
+    &lt;bean id=&quot;cronTrigger1&quot; class=&quot;org.springframework.scheduling.quartz.CronTriggerBean&quot;&gt;
+        &lt;property name=&quot;jobDetail&quot; ref=&quot;jobTask1&quot;&gt;&lt;/property&gt;
+        &lt;!-- cron表达式 --&gt;
+        &lt;property name=&quot;cronExpression&quot;&gt;
+            &lt;!-- 每隔10秒执行一次 --&gt;
+            &lt;value&gt;0/10 * * * * ?&lt;/value&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+
+
+    &lt;!-- 总管理类 如果将lazy-init=&#39;false&#39;那么容器启动就会执行调度程序 --&gt;
+    &lt;bean id=&quot;startQuertz&quot; lazy-init=&quot;false&quot; autowire=&quot;no&quot;
+          class=&quot;org.springframework.scheduling.quartz.SchedulerFactoryBean&quot;&gt;
+        &lt;property name=&quot;triggers&quot;&gt;
+            &lt;list&gt;
+                &lt;!-- 触发器列表 --&gt;
+                &lt;ref bean=&quot;cronTrigger1&quot;/&gt;
+            &lt;/list&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+
+&lt;/beans&gt;
+</code></pre>
+<p><strong>spring引入配置文件</strong></p>
+<pre><code class="xml">&lt;import resource=&quot;spring-timer.xml&quot; /&gt;
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;quartz定时器&quot;&gt;&lt;a href=&quot;#quartz定时器&quot; class=&quot;headerlink&quot; title=&quot;quartz定时器&quot;&gt;&lt;/a&gt;quartz定时器&lt;/h2&gt;&lt;h3 id=&quot;配置文件定时&quot;&gt;&lt;a href=&quot;#配置文件定时&quot; class=&quot;head
+    
+    </summary>
+    
+      <category term="定时器" scheme="http://blog.helkay.com/categories/%E5%AE%9A%E6%97%B6%E5%99%A8/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>签名与加密技术</title>
+    <link href="http://blog.helkay.com/2017/03/23/2017-03-23-%E7%AD%BE%E5%90%8D%E4%B8%8E%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/"/>
+    <id>http://blog.helkay.com/2017/03/23/2017-03-23-签名与加密技术/</id>
+    <published>2017-03-22T16:00:00.000Z</published>
+    <updated>2017-05-08T07:30:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><h3 id="普通数字签名最常用的算法为RSA"><a href="#普通数字签名最常用的算法为RSA" class="headerlink" title="普通数字签名最常用的算法为RSA"></a>普通数字签名最常用的算法为RSA</h3><p><strong>RSA原理：</strong>RSA算法基于一个十分简单的数论事实，将两个大素数相乘十分容易，但反过来想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。</p>
+<p><strong>RSA缺点：</strong>RSA的keysize位数越高，其产生密钥对及加密、解密的速度越慢，这是基于大素数非对称加密算法的缺陷。</p>
+<h3 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h3><p>一般，我们可以用RSA算法生成一对密钥，公钥发放给外部客户，私钥自己保管；有以下一些应用场景:</p>
+<ul>
+<li>公钥加密、私钥解密</li>
+<li>私钥加密、公钥验证</li>
+</ul>
+<pre><code class="java">/**
+ * 
+* @ClassName: SignatureData 
+* @Description: RSAWithMD5/RSAWithSHA1/RSAWithSHA256签名提供类 
+ */
+public class SignatureData {
+    /**
+     * 加密
+     * 
+     * @param byteContent 待加密内容
+     * @param prikeyvalue 私钥
+     * @param  algorithmType 加密算法
+     * @return
+     */
+    public static byte[] encrypt(byte[] byteContent, String securityType,String prikeyvalue,String algorithmType) {
+        try {
+            PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(SecurityUtils.hexStrToBytes(prikeyvalue));
+            KeyFactory keyf = KeyFactory.getInstance(algorithmType);
+            PrivateKey myprikey = keyf.generatePrivate(priPKCS8);
+            // 用私钥对信息生成数字签名
+            java.security.Signature signet = java.security.Signature.getInstance(securityType);
+
+            signet.initSign(myprikey);
+            signet.update(byteContent);
+            return signet.sign(); // 对信息的数字签名
+        } catch (java.lang.Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    /**
+     * 验签
+     * @param src 源内容
+     * @param content 加密内容
+     * @param securityType 加密类型
+     * @param pubkeyvalue 公钥
+     * @param algorithmType 加密算法
+     * @return
+     */
+    public static boolean signetCheck(String src, byte[] content, String securityType, String pubkeyvalue,String algorithmType) {
+        try {
+            X509EncodedKeySpec bobPubKeySpec = new X509EncodedKeySpec(SecurityUtils.hexStrToBytes(pubkeyvalue));
+            KeyFactory keyFactory = KeyFactory.getInstance(algorithmType);
+            PublicKey pubKey = keyFactory.generatePublic(bobPubKeySpec);
+            java.security.Signature signetcheck = java.security.Signature.getInstance(securityType);
+            signetcheck.initVerify(pubKey);
+            signetcheck.update(src.getBytes());
+
+            if (signetcheck.verify(content)) {
+                System.out.println(&quot;签名正常&quot;);
+                return true;
+            } else {
+                System.out.println(&quot;非签名正常&quot;);
+                return false;
+            }
+
+        } catch (java.lang.Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+}
+</code></pre>
+<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><h3 id="AES对称加密"><a href="#AES对称加密" class="headerlink" title="AES对称加密"></a>AES对称加密</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;签名&quot;&gt;&lt;a href=&quot;#签名&quot; class=&quot;headerlink&quot; title=&quot;签名&quot;&gt;&lt;/a&gt;签名&lt;/h2&gt;&lt;h3 id=&quot;普通数字签名最常用的算法为RSA&quot;&gt;&lt;a href=&quot;#普通数字签名最常用的算法为RSA&quot; class=&quot;headerlink&quot; 
+    
+    </summary>
+    
+      <category term="Java" scheme="http://blog.helkay.com/categories/Java/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Maven学习笔记</title>
+    <link href="http://blog.helkay.com/2017/03/16/2017-03-16-Maven%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://blog.helkay.com/2017/03/16/2017-03-16-Maven学习笔记/</id>
+    <published>2017-03-15T16:00:00.000Z</published>
+    <updated>2017-04-25T09:55:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="打印整个依赖树"><a href="#打印整个依赖树" class="headerlink" title="打印整个依赖树"></a>打印整个依赖树</h3><pre><code>mvn dependency:tree
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;打印整个依赖树&quot;&gt;&lt;a href=&quot;#打印整个依赖树&quot; class=&quot;headerlink&quot; title=&quot;打印整个依赖树&quot;&gt;&lt;/a&gt;打印整个依赖树&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;mvn dependency:tree
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="maven" scheme="http://blog.helkay.com/categories/maven/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql数据库无法插入中文</title>
+    <link href="http://blog.helkay.com/2017/03/10/2017-03-10-mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E6%B3%95%E6%8F%92%E5%85%A5%E4%B8%AD%E6%96%87/"/>
+    <id>http://blog.helkay.com/2017/03/10/2017-03-10-mysql数据库无法插入中文/</id>
+    <published>2017-03-09T16:00:00.000Z</published>
+    <updated>2017-04-25T09:55:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>MySQL中，数据库的编码是一个相当重要的问题，有时候我们需要查看一下当前数据库的编码，甚至需要修改一下数据库编码。</p>
+<p>修改my.cnf</p>
+<pre><code>[mysqld]
+character-set-server=utf8
+
+[client]
+default-character-set=utf8
+</code></pre><p>####查看数据库信息</p>
+<pre><code>mysql &gt; show variables;
+
+mysql &gt; set names &#39;gbk&#39;;
+</code></pre><pre><code>&#39;character_set_connection&#39;, &#39;gbk&#39;
+&#39;character_set_database&#39;, &#39;utf8&#39;
+&#39;character_set_filesystem&#39;, &#39;binary&#39;
+&#39;character_set_results&#39;, &#39;gbk&#39;
+&#39;character_set_server&#39;, &#39;utf8&#39;
+&#39;character_set_system&#39;, &#39;utf8&#39;
+</code></pre><p>修改完毕后重建表加上 character set utf8;</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;MySQL中，数据库的编码是一个相当重要的问题，有时候我们需要查看一下当前数据库的编码，甚至需要修改一下数据库编码。&lt;/p&gt;
+&lt;p&gt;修改my.cnf&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[mysqld]
+character-set-server=utf8
+
+[client]
+de
+    
+    </summary>
+    
+      <category term="mysql" scheme="http://blog.helkay.com/categories/mysql/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分支回退</title>
+    <link href="http://blog.helkay.com/2016/12/06/2016-12-06-%E5%88%86%E6%94%AF%E5%9B%9E%E9%80%80/"/>
+    <id>http://blog.helkay.com/2016/12/06/2016-12-06-分支回退/</id>
+    <published>2016-12-05T16:00:00.000Z</published>
+    <updated>2017-05-09T02:24:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="本地分支回退"><a href="#本地分支回退" class="headerlink" title="本地分支回退"></a>本地分支回退</h3><p>查看本地版本信息</p>
+<pre><code>git reflog
+</code></pre><p>回退版本</p>
+<pre><code>git reset --hard 版本号
+</code></pre><h3 id="远程分支回退"><a href="#远程分支回退" class="headerlink" title="远程分支回退"></a>远程分支回退</h3><p>远程分支回退同本地回退,只需在回退版本操作后推送到远程分支</p>
+<pre><code>git push -f
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;本地分支回退&quot;&gt;&lt;a href=&quot;#本地分支回退&quot; class=&quot;headerlink&quot; title=&quot;本地分支回退&quot;&gt;&lt;/a&gt;本地分支回退&lt;/h3&gt;&lt;p&gt;查看本地版本信息&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git reflog
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;回退版
+    
+    </summary>
+    
+      <category term="Git" scheme="http://blog.helkay.com/categories/Git/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux rm命令详解</title>
+    <link href="http://blog.helkay.com/2016/11/29/2016-11-29-linux-rm/"/>
+    <id>http://blog.helkay.com/2016/11/29/2016-11-29-linux-rm/</id>
+    <published>2016-11-28T16:00:00.000Z</published>
+    <updated>2017-05-08T07:48:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>rm命令可以删除一个目录中的一个或多个文件或目录，也可以将某个目录及其下属的所有文件及其子目录均删除掉。</p>
+<p><span style="color: red">注意：</span>使用rm命令要格外小心。因为一旦删除了一个文件，就无法再恢复它。所以，在删除文件之前，最好再看一下文件的内容，确定是否真要删除。rm命令可以用-i选项，这个选项在使用文件扩展名字符删除多个文件时特别有用。使用这个选项，系统会要求你逐一确定是否要删除。这时，必须输入y并按Enter键，才能删除文件。如果仅按Enter键或其他字符，文件不会被删除。</p>
+<h2 id="删除指定类型结尾的文件"><a href="#删除指定类型结尾的文件" class="headerlink" title="删除指定类型结尾的文件"></a><strong>删除指定类型结尾的文件</strong></h2><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a><strong>方法一:</strong></h4><pre><code>find ./ -name &quot;*.txt&quot; | xargs rm
+</code></pre><h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二:"></a><strong>方法二:</strong></h4><pre><code>find . -name &#39;*.exe&#39; -type f -print -exec rm -rf {} \
+</code></pre><ul>
+<li>“.”    表示从当前目录开始递归查找</li>
+<li>-name ‘*.exe’ “根据名称来查找，要查找所有以.exe结尾的文件夹或者文件</li>
+<li>“ -type f “查找的类型为文件</li>
+<li>“-print” 输出查找的文件目录名</li>
+<li>最主要的是是-exec了，-exec选项后边跟着一个所要执行的命令，表示将find出来的文件或目录执行该命令。<br>  exec选项后面跟随着所要执行的命令或脚本，然后是一对儿{}，一个空格和一个\，最后是一个分号</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;rm命令可以删除一个目录中的一个或多个文件或目录，也可以将某个目录及其下属的所有文件及其子目录均删除掉。&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color: red&quot;&gt;注意：&lt;/span&gt;使用rm命令要格外小心。因为一旦删除了一个文件，就无法再恢复它。所以，在删除文件之前
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.helkay.com/categories/linux/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+</feed>
