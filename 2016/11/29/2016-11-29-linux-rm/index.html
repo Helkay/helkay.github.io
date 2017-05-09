@@ -100,10 +100,12 @@
       <div class="content-wrapper__inner" >
         
 <article id="post">
-  <h1>Linux rm命令详解</h1>
-  <a style="float: right;" href="/feed.xml" title="Rss" target="_blank">
-      <span class="label">Rss</span>
-      </a>
+  <h1>Linux rm命令详解
+  <a style="float: right;display:block;background-color:#e25440;color:#f8f8f8;width:60px;height:27px;text-align: center;border-radius:3px;" href="/atom.xml" title="Rss" target="_blank">
+      Rss
+  </a>
+  </h1>
+
   <p>rm命令可以删除一个目录中的一个或多个文件或目录，也可以将某个目录及其下属的所有文件及其子目录均删除掉。</p>
 <p><span style="color: red">注意：</span>使用rm命令要格外小心。因为一旦删除了一个文件，就无法再恢复它。所以，在删除文件之前，最好再看一下文件的内容，确定是否真要删除。rm命令可以用-i选项，这个选项在使用文件扩展名字符删除多个文件时特别有用。使用这个选项，系统会要求你逐一确定是否要删除。这时，必须输入y并按Enter键，才能删除文件。如果仅按Enter键或其他字符，文件不会被删除。</p>
 <h2 id="删除指定类型结尾的文件"><a href="#删除指定类型结尾的文件" class="headerlink" title="删除指定类型结尾的文件"></a><strong>删除指定类型结尾的文件</strong></h2><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一:"></a><strong>方法一:</strong></h4><pre><code>find ./ -name &quot;*.txt&quot; | xargs rm

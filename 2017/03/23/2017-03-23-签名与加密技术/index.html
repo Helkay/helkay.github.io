@@ -100,10 +100,12 @@
       <div class="content-wrapper__inner" >
         
 <article id="post">
-  <h1>签名与加密技术</h1>
-  <a style="float: right;" href="/feed.xml" title="Rss" target="_blank">
-      <span class="label">Rss</span>
-      </a>
+  <h1>签名与加密技术
+  <a style="float: right;display:block;background-color:#e25440;color:#f8f8f8;width:60px;height:27px;text-align: center;border-radius:3px;" href="/atom.xml" title="Rss" target="_blank">
+      Rss
+  </a>
+  </h1>
+
   <h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><h3 id="普通数字签名最常用的算法为RSA"><a href="#普通数字签名最常用的算法为RSA" class="headerlink" title="普通数字签名最常用的算法为RSA"></a>普通数字签名最常用的算法为RSA</h3><p><strong>RSA原理：</strong>RSA算法基于一个十分简单的数论事实，将两个大素数相乘十分容易，但反过来想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。</p>
 <p><strong>RSA缺点：</strong>RSA的keysize位数越高，其产生密钥对及加密、解密的速度越慢，这是基于大素数非对称加密算法的缺陷。</p>
 <h3 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h3><p>一般，我们可以用RSA算法生成一对密钥，公钥发放给外部客户，私钥自己保管；有以下一些应用场景:</p>
