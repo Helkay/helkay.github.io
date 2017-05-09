@@ -26,4 +26,5 @@ $(document).ready(function () {
     $('.btn-mobile-menu__icon').toggleClass('icon-list icon-x-circle animated fadeIn')
   })
 
+  hljs.initHighlightingOnLoad();
 })
