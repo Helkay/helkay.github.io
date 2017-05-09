@@ -101,6 +101,9 @@
         
 <article id="post">
   <h1>nginx session保持</h1>
+  <a style="float: right;" href="/feed.xml" title="Rss" target="_blank">
+      <span class="label">Rss</span>
+      </a>
   <p>今天在使用JCaptcha做验证码功能的时候,在本地是可以正常验证的,可是发布在服务器上的时候验证码功能就失效了,于是打上日志,看输出信息,发现验证码生成的时候从session里取的id跟校验的时候从session的id不同,发生了改变.</p>
 <p>由于我的服务器上用了nginx,去网上查,很多都是讲的是负载均衡导致的session不共享,需配置</p>
 <pre><code>upstream cms{
