@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.helkay.com/"/>
-  <updated>2017-05-10T08:13:42.000Z</updated>
+  <updated>2017-05-10T10:03:30.000Z</updated>
   <id>http://blog.helkay.com/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ssh登录免密</title>
+    <link href="http://blog.helkay.com/2017/05/10/2017-05-10-ssh%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86/"/>
+    <id>http://blog.helkay.com/2017/05/10/2017-05-10-ssh登录免密/</id>
+    <published>2017-05-09T16:00:00.000Z</published>
+    <updated>2017-05-10T10:03:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="使用ssh-keygen命令创建密钥对"><a href="#使用ssh-keygen命令创建密钥对" class="headerlink" title="使用ssh-keygen命令创建密钥对"></a>使用ssh-keygen命令创建密钥对</h3><p>假设 我现在需要在A机(192.168.1.1)上免密ssh登录到B(192.168.1.2)机</p>
+<p>在A机用户路径中的.ssh文件夹内创建密钥对</p>
+<pre><code class="bash">ssh-keygen -t rsa -f id_rsa.xxx  -P &#39;&#39;
+</code></pre>
+<ul>
+<li>-f 命名生成的文件名称</li>
+<li>-P ‘’  无密码 （不加则需要输入三次回车）</li>
+</ul>
+<p>这时候.ssh文件夹下会生成两个文件(id_rsa.xxx  id_rsa.xxx.pub)</p>
+<p>将id_rsa.xxx.pub 用scp命令传输的B上</p>
+<pre><code class="bash">scp id_rsa.xxx.pub root@192.168.1.1:/(B机上.ssh的路径)
+</code></pre>
+<p>将id_rsa.xxx.pub里的内容写入到 .ssh中的authorized_keys文件中(没有则创建),并修改authorized_keys文件和.ssh文件夹的权限</p>
+<pre><code class="bash">cat id_rsa.xxx.pub&gt;&gt;authorized_keys
+
+chmod 600 authorized_keys
+
+chmod 700 -R .ssh
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;使用ssh-keygen命令创建密钥对&quot;&gt;&lt;a href=&quot;#使用ssh-keygen命令创建密钥对&quot; class=&quot;headerlink&quot; title=&quot;使用ssh-keygen命令创建密钥对&quot;&gt;&lt;/a&gt;使用ssh-keygen命令创建密钥对&lt;/h3&gt;&lt;p&gt;假设
+    
+    </summary>
+    
+      <category term="linux" scheme="http://blog.helkay.com/categories/linux/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>Intellij idea 远程调试</title>
@@ -47,7 +88,7 @@
     <link href="http://blog.helkay.com/2017/05/04/2017-05-04-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
     <id>http://blog.helkay.com/2017/05/04/2017-05-04-工厂方法模式/</id>
     <published>2017-05-03T16:00:00.000Z</published>
-    <updated>2017-05-08T07:38:06.000Z</updated>
+    <updated>2017-05-10T09:50:59.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简单工厂方法模式"><a href="#简单工厂方法模式" class="headerlink" title="简单工厂方法模式"></a>简单工厂方法模式</h2>]]></content>
     
@@ -464,30 +505,6 @@ class ThreadDemo2 extends Thread {
   </entry>
   
   <entry>
-    <title>删除远程分支</title>
-    <link href="http://blog.helkay.com/2017/04/25/2017-04-25-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
-    <id>http://blog.helkay.com/2017/04/25/2017-04-25-删除远程分支/</id>
-    <published>2017-04-24T16:00:00.000Z</published>
-    <updated>2017-04-25T10:29:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>git push origin --delete &lt;branch name&gt;
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;pre&gt;&lt;code&gt;git push origin --delete &amp;lt;branch name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="Git" scheme="http://blog.helkay.com/categories/Git/"/>
-    
-    
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
     <title>修改提交注释信息</title>
     <link href="http://blog.helkay.com/2017/04/25/2017-04-25-%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E6%B3%A8%E9%87%8A%E4%BF%A1%E6%81%AF/"/>
     <id>http://blog.helkay.com/2017/04/25/2017-04-25-修改提交注释信息/</id>
@@ -507,6 +524,30 @@ class ThreadDemo2 extends Thread {
     <summary type="html">
     
       &lt;h2 id=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;a href=&quot;#如何修改现有的，未被提交的提交？&quot; class=&quot;headerlink&quot; title=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;/a&gt;如何修改现有的，未被提交的提交？&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;git co
+    
+    </summary>
+    
+      <category term="Git" scheme="http://blog.helkay.com/categories/Git/"/>
+    
+    
+      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>删除远程分支</title>
+    <link href="http://blog.helkay.com/2017/04/25/2017-04-25-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
+    <id>http://blog.helkay.com/2017/04/25/2017-04-25-删除远程分支/</id>
+    <published>2017-04-24T16:00:00.000Z</published>
+    <updated>2017-04-25T10:29:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>git push origin --delete &lt;branch name&gt;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;git push origin --delete &amp;lt;branch name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     

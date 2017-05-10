@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="6F4OqKmDkxMqUtTjTSCN1qPy2-m1_HN_H_aGMQkeZrA" />
 
-  <title>Archives: 12/2016: 2016</title>
+  <title>ssh登录免密</title>
   
     <!-- stylesheets list from config.yml -->
     
@@ -100,53 +100,46 @@
 <div class="content-wrapper">
       <div class="content-wrapper__inner" >
         
+<article id="post">
+  <h1>ssh登录免密
+  <a style="float: right;display:block;background-color:#e25440;color:#f8f8f8;width:60px;height:27px;text-align: center;border-radius:3px;" href="/atom.xml" title="Rss" target="_blank">
+      Rss
+  </a>
+  </h1>
 
-<section id="posts" class="posts-collapse" style="position: relative;z-index: 1010;">
-    <span class="archive-move-on"></span>
+  <h3 id="使用ssh-keygen命令创建密钥对"><a href="#使用ssh-keygen命令创建密钥对" class="headerlink" title="使用ssh-keygen命令创建密钥对"></a>使用ssh-keygen命令创建密钥对</h3><p>假设 我现在需要在A机(192.168.1.1)上免密ssh登录到B(192.168.1.2)机</p>
+<p>在A机用户路径中的.ssh文件夹内创建密钥对</p>
+<pre><code class="bash">ssh-keygen -t rsa -f id_rsa.xxx  -P &#39;&#39;
+</code></pre>
+<ul>
+<li>-f 命名生成的文件名称</li>
+<li>-P ‘’  无密码 （不加则需要输入三次回车）</li>
+</ul>
+<p>这时候.ssh文件夹下会生成两个文件(id_rsa.xxx  id_rsa.xxx.pub)</p>
+<p>将id_rsa.xxx.pub 用scp命令传输的B上</p>
+<pre><code class="bash">scp id_rsa.xxx.pub root@192.168.1.1:/(B机上.ssh的路径)
+</code></pre>
+<p>将id_rsa.xxx.pub里的内容写入到 .ssh中的authorized_keys文件中(没有则创建),并修改authorized_keys文件和.ssh文件夹的权限</p>
+<pre><code class="bash">cat id_rsa.xxx.pub&gt;&gt;authorized_keys
 
-    <span class="archive-page-counter">    
-      目前共计 16 篇日志
-    </span>
-  
-    
-    <div class="collection-title">
-      <h2 class="archive-year motion-element" id="archive-year-2016" style="opacity: 1; display: block; transform: translateX(0px);border-bottom:none">2016</h2>
-    </div> 
-     
-    <article class="post post-type-normal" itemscope="" style="opacity: 1; display: block; transform: translateY(0px);">
-      <header class="post-header">
-        <h1 class="post-title">
-              <a class="post-title-link" href="/2016/12/06/2016-12-06-分支回退/">        
-                  <span>分支回退</span>       
-              </a>
-        </h1>
-        <div class="post-meta">
-          <time class="post-time" datetime="2016-12-06" content="2016-12-06">
-            12-06
-          </time>
-        </div>
-      </header>
-    </article>
-  
+chmod 600 authorized_keys
 
-</section>
+chmod 700 -R .ssh
+</code></pre>
 
+</article>
 
+<div id="disqus_thread"></div>
+<script>
 
-<nav id="pagination" class="pagination">
-  
-
-  
-    <span class="pagination__page-number">
-      Page 1 of 1
-    </span>
-
-  
-
-  
-</nav>
-
-
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://blog-helkay-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </div>
 </div>
 
