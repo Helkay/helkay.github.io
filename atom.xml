@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.helkay.com/"/>
-  <updated>2017-05-12T07:01:32.000Z</updated>
+  <updated>2017-05-12T10:39:23.000Z</updated>
   <id>http://blog.helkay.com/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git命令</title>
+    <link href="http://blog.helkay.com/2017/05/2017-05-12-Git%E5%91%BD%E4%BB%A4/"/>
+    <id>http://blog.helkay.com/2017/05/2017-05-12-Git命令/</id>
+    <published>2017-05-11T16:00:00.000Z</published>
+    <updated>2017-05-12T10:39:23.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Git-user-name-uesremail设置"><a href="#Git-user-name-uesremail设置" class="headerlink" title="Git user.name uesremail设置"></a>Git user.name uesremail设置</h2><pre><code class="bash">#全局
+git config --global user.name  &quot;your_name&quot;
+git config --global user.emial &quot;your_email&quot;
+
+#局部
+git config user.name  &quot;your_name&quot;
+git config user.emial &quot;your_email&quot;
+
+#取消
+git config --unset --global user.name
+git config --unset --global user.email
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Git-user-name-uesremail设置&quot;&gt;&lt;a href=&quot;#Git-user-name-uesremail设置&quot; class=&quot;headerlink&quot; title=&quot;Git user.name uesremail设置&quot;&gt;&lt;/a&gt;Git user.na
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
+    
+    
+      <category term="Git" scheme="http://blog.helkay.com/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux工具与命令</title>
