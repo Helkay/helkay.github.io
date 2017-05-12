@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.helkay.com/"/>
-  <updated>2017-05-11T07:01:43.000Z</updated>
+  <updated>2017-05-12T07:01:32.000Z</updated>
   <id>http://blog.helkay.com/</id>
   
   <author>
@@ -16,11 +16,27 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux工具与命令</title>
+    <link href="http://blog.helkay.com/menu/Linux%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%91%BD%E4%BB%A4/"/>
+    <id>http://blog.helkay.com/menu/Linux工具与命令/</id>
+    <published>2017-05-11T16:00:00.000Z</published>
+    <updated>2017-05-12T07:01:32.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="Menu" scheme="http://blog.helkay.com/categories/Menu/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Java 注解 Annotations</title>
-    <link href="http://blog.helkay.com/2017/05/11/2017-05-11-Java%20%E6%B3%A8%E8%A7%A3%20Annotations/"/>
-    <id>http://blog.helkay.com/2017/05/11/2017-05-11-Java 注解 Annotations/</id>
+    <link href="http://blog.helkay.com/2017/05/2017-05-11-Java%20%E6%B3%A8%E8%A7%A3%20Annotations/"/>
+    <id>http://blog.helkay.com/2017/05/2017-05-11-Java 注解 Annotations/</id>
     <published>2017-05-10T16:00:00.000Z</published>
-    <updated>2017-05-11T07:01:43.000Z</updated>
+    <updated>2017-05-12T07:01:21.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="什么是注解？"><a href="#什么是注解？" class="headerlink" title="什么是注解？"></a>什么是注解？</h3><p>  可理解为元数据，即一种描述数据的数据。</p>
 <pre><code class="java">@Override
@@ -220,46 +236,19 @@ public void test() {
     
     </summary>
     
-      <category term="Java" scheme="http://blog.helkay.com/categories/Java/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Intellij idea 远程调试</title>
-    <link href="http://blog.helkay.com/2017/05/10/2017-05-10-Intellij%20Idea%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/"/>
-    <id>http://blog.helkay.com/2017/05/10/2017-05-10-Intellij Idea远程调试/</id>
-    <published>2017-05-09T16:00:00.000Z</published>
-    <updated>2017-05-10T08:13:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="idea自带的remote"><a href="#idea自带的remote" class="headerlink" title="idea自带的remote"></a>idea自带的remote</h2><div align="center"><br><img src="http://blog.helkay.com/pic/idea1.png" style="width:700px;" alt="图片名称" align="center"><br></div>
-
-
-<h2 id="tomcat-remote-配置"><a href="#tomcat-remote-配置" class="headerlink" title="tomcat remote 配置"></a>tomcat remote 配置</h2><h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><div align="center"><br><img src="http://blog.helkay.com/pic/idea2.png" style="width:700px;" alt="图片名称" align="center"><br></div>
-
-<h3 id="Startup-Connection"><a href="#Startup-Connection" class="headerlink" title="Startup/Connection"></a>Startup/Connection</h3><div align="center"><br><img src="http://blog.helkay.com/pic/idea3.png" style="width:700px;" alt="图片名称" align="center"><br></div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;idea自带的remote&quot;&gt;&lt;a href=&quot;#idea自带的remote&quot; class=&quot;headerlink&quot; title=&quot;idea自带的remote&quot;&gt;&lt;/a&gt;idea自带的remote&lt;/h2&gt;&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img 
-    
-    </summary>
-    
-      <category term="工具" scheme="http://blog.helkay.com/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Java" scheme="http://blog.helkay.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>ssh登录免密</title>
-    <link href="http://blog.helkay.com/2017/05/10/2017-05-10-ssh%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86/"/>
-    <id>http://blog.helkay.com/2017/05/10/2017-05-10-ssh登录免密/</id>
+    <link href="http://blog.helkay.com/2017/05/2017-05-10-ssh%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86/"/>
+    <id>http://blog.helkay.com/2017/05/2017-05-10-ssh登录免密/</id>
     <published>2017-05-09T16:00:00.000Z</published>
-    <updated>2017-05-10T10:06:01.000Z</updated>
+    <updated>2017-05-12T07:01:12.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="使用ssh-keygen命令创建密钥对"><a href="#使用ssh-keygen命令创建密钥对" class="headerlink" title="使用ssh-keygen命令创建密钥对"></a>使用ssh-keygen命令创建密钥对</h3><p>假设 我现在需要在A机(192.168.1.1)上免密ssh登录到B(192.168.1.2)机</p>
 <p>在A机用户路径中的.ssh文件夹内创建密钥对</p>
@@ -288,19 +277,46 @@ chmod 700 -R .ssh
     
     </summary>
     
-      <category term="linux" scheme="http://blog.helkay.com/categories/linux/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Linux" scheme="http://blog.helkay.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Intellij idea 远程调试</title>
+    <link href="http://blog.helkay.com/2017/05/2017-05-10-Intellij%20Idea%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/"/>
+    <id>http://blog.helkay.com/2017/05/2017-05-10-Intellij Idea远程调试/</id>
+    <published>2017-05-09T16:00:00.000Z</published>
+    <updated>2017-05-12T07:00:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="idea自带的remote"><a href="#idea自带的remote" class="headerlink" title="idea自带的remote"></a>idea自带的remote</h2><div align="center"><br><img src="http://blog.helkay.com/pic/idea1.png" style="width:700px;" alt="图片名称" align="center"><br></div>
+
+
+<h2 id="tomcat-remote-配置"><a href="#tomcat-remote-配置" class="headerlink" title="tomcat remote 配置"></a>tomcat remote 配置</h2><h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><div align="center"><br><img src="http://blog.helkay.com/pic/idea2.png" style="width:700px;" alt="图片名称" align="center"><br></div>
+
+<h3 id="Startup-Connection"><a href="#Startup-Connection" class="headerlink" title="Startup/Connection"></a>Startup/Connection</h3><div align="center"><br><img src="http://blog.helkay.com/pic/idea3.png" style="width:700px;" alt="图片名称" align="center"><br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;idea自带的remote&quot;&gt;&lt;a href=&quot;#idea自带的remote&quot; class=&quot;headerlink&quot; title=&quot;idea自带的remote&quot;&gt;&lt;/a&gt;idea自带的remote&lt;/h2&gt;&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img 
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
+    
+    
+      <category term="工具" scheme="http://blog.helkay.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>工厂方法模式</title>
-    <link href="http://blog.helkay.com/2017/05/04/2017-05-04-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://blog.helkay.com/2017/05/04/2017-05-04-工厂方法模式/</id>
+    <link href="http://blog.helkay.com/2017/05/2017-05-04-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://blog.helkay.com/2017/05/2017-05-04-工厂方法模式/</id>
     <published>2017-05-03T16:00:00.000Z</published>
-    <updated>2017-05-10T09:50:59.000Z</updated>
+    <updated>2017-05-12T07:00:23.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简单工厂方法模式"><a href="#简单工厂方法模式" class="headerlink" title="简单工厂方法模式"></a>简单工厂方法模式</h2>]]></content>
     
@@ -310,19 +326,19 @@ chmod 700 -R .ssh
     
     </summary>
     
-      <category term="设计模式" scheme="http://blog.helkay.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="设计模式" scheme="http://blog.helkay.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>Java多线程</title>
-    <link href="http://blog.helkay.com/2017/05/02/2017-05-02-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    <id>http://blog.helkay.com/2017/05/02/2017-05-02-多线程/</id>
+    <link href="http://blog.helkay.com/2017/05/2017-05-02-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://blog.helkay.com/2017/05/2017-05-02-多线程/</id>
     <published>2017-05-01T16:00:00.000Z</published>
-    <updated>2017-05-08T08:26:57.000Z</updated>
+    <updated>2017-05-12T07:00:27.000Z</updated>
     
     <content type="html"><![CDATA[<p>在写设计模式-单例模式的过程中,我需要本地模拟多线程高并发,所以就有了这个笔记。</p>
 <p>名词解释：</p>
@@ -525,19 +541,19 @@ class ThreadDemo2 extends Thread {
     
     </summary>
     
-      <category term="多线程" scheme="http://blog.helkay.com/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="多线程" scheme="http://blog.helkay.com/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>单例模式</title>
-    <link href="http://blog.helkay.com/2017/05/02/2017-05-02-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://blog.helkay.com/2017/05/02/2017-05-02-单例模式/</id>
+    <link href="http://blog.helkay.com/2017/05/2017-05-02-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://blog.helkay.com/2017/05/2017-05-02-单例模式/</id>
     <published>2017-05-01T16:00:00.000Z</published>
-    <updated>2017-05-09T09:11:18.000Z</updated>
+    <updated>2017-05-12T07:00:29.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"><a href="#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。" class="headerlink" title="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"></a>单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。</h3><ul>
 <li><strong><font color="#e25440" size="4">懒汉式(线程不安全)</font></strong></li>
@@ -653,24 +669,24 @@ class ThreadDemo2 extends Thread {
     
     </summary>
     
-      <category term="设计模式" scheme="http://blog.helkay.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="设计模式" scheme="http://blog.helkay.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>设计模式目录</title>
-    <link href="http://blog.helkay.com/2017/05/01/2017-05-01-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9B%AE%E5%BD%95/"/>
-    <id>http://blog.helkay.com/2017/05/01/2017-05-01-设计模式目录/</id>
+    <link href="http://blog.helkay.com/menu/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9B%AE%E5%BD%95/"/>
+    <id>http://blog.helkay.com/menu/设计模式目录/</id>
     <published>2017-04-30T16:00:00.000Z</published>
-    <updated>2017-05-04T06:44:16.000Z</updated>
+    <updated>2017-05-12T08:44:46.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h2><ul>
-<li><a href="http://blog.helkay.com/2017/工厂方法模式">工厂方法模式</a></li>
+<li><a href="http://blog.helkay.com/2017/05/2017-05-04-工厂方法模式/">工厂方法模式</a></li>
 <li>抽象工厂模式</li>
-<li><a href="http://blog.helkay.com/2017/单例模式">单例模式</a></li>
+<li><a href="http://blog.helkay.com/2017/05/2017-05-02-单例模式/">单例模式</a></li>
 <li>建造者模式</li>
 <li>原型模式</li>
 </ul>
@@ -705,47 +721,21 @@ class ThreadDemo2 extends Thread {
     <summary type="html">
     
       &lt;h2 id=&quot;创建型模式&quot;&gt;&lt;a href=&quot;#创建型模式&quot; class=&quot;headerlink&quot; title=&quot;创建型模式&quot;&gt;&lt;/a&gt;创建型模式&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://blog.helkay.com/2017/工厂方法模式&quot;&gt;工厂方法模式&lt;
+&lt;li&gt;&lt;a href=&quot;http://blog.helkay.com/2017/05/2017-05-04-工
     
     </summary>
     
-      <category term="目录" scheme="http://blog.helkay.com/categories/%E7%9B%AE%E5%BD%95/"/>
+      <category term="Menu" scheme="http://blog.helkay.com/categories/Menu/"/>
     
-    
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>删除远程分支</title>
-    <link href="http://blog.helkay.com/2017/04/25/2017-04-25-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
-    <id>http://blog.helkay.com/2017/04/25/2017-04-25-删除远程分支/</id>
-    <published>2017-04-24T16:00:00.000Z</published>
-    <updated>2017-04-25T10:29:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>git push origin --delete &lt;branch name&gt;
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;pre&gt;&lt;code&gt;git push origin --delete &amp;lt;branch name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="Git" scheme="http://blog.helkay.com/categories/Git/"/>
-    
-    
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>修改提交注释信息</title>
-    <link href="http://blog.helkay.com/2017/04/25/2017-04-25-%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E6%B3%A8%E9%87%8A%E4%BF%A1%E6%81%AF/"/>
-    <id>http://blog.helkay.com/2017/04/25/2017-04-25-修改提交注释信息/</id>
+    <link href="http://blog.helkay.com/2017/04/2017-04-25-%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E6%B3%A8%E9%87%8A%E4%BF%A1%E6%81%AF/"/>
+    <id>http://blog.helkay.com/2017/04/2017-04-25-修改提交注释信息/</id>
     <published>2017-04-24T16:00:00.000Z</published>
-    <updated>2017-05-08T07:47:53.000Z</updated>
+    <updated>2017-05-12T07:00:36.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="如何修改现有的，未被提交的提交？"><a href="#如何修改现有的，未被提交的提交？" class="headerlink" title="如何修改现有的，未被提交的提交？"></a>如何修改现有的，未被提交的提交？</h2><pre><code>git commit --amend
 </code></pre><p>OR</p>
@@ -763,19 +753,43 @@ class ThreadDemo2 extends Thread {
     
     </summary>
     
-      <category term="Git" scheme="http://blog.helkay.com/categories/Git/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Git" scheme="http://blog.helkay.com/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>删除远程分支</title>
+    <link href="http://blog.helkay.com/2017/04/2017-04-25-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
+    <id>http://blog.helkay.com/2017/04/2017-04-25-删除远程分支/</id>
+    <published>2017-04-24T16:00:00.000Z</published>
+    <updated>2017-05-12T07:00:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>git push origin --delete &lt;branch name&gt;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;git push origin --delete &amp;lt;branch name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
+    
+    
+      <category term="Git" scheme="http://blog.helkay.com/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>nginx session保持</title>
-    <link href="http://blog.helkay.com/2017/04/18/2017-04-18-nginx%20%E9%85%8D%E7%BD%AE%20session%E4%BF%9D%E6%8C%81/"/>
-    <id>http://blog.helkay.com/2017/04/18/2017-04-18-nginx 配置 session保持/</id>
+    <link href="http://blog.helkay.com/2017/04/2017-04-18-nginx%20%E9%85%8D%E7%BD%AE%20session%E4%BF%9D%E6%8C%81/"/>
+    <id>http://blog.helkay.com/2017/04/2017-04-18-nginx 配置 session保持/</id>
     <published>2017-04-17T16:00:00.000Z</published>
-    <updated>2017-05-08T03:14:38.000Z</updated>
+    <updated>2017-05-12T07:00:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天在使用JCaptcha做验证码功能的时候,在本地是可以正常验证的,可是发布在服务器上的时候验证码功能就失效了,于是打上日志,看输出信息,发现验证码生成的时候从session里取的id跟校验的时候从session的id不同,发生了改变.</p>
 <p>由于我的服务器上用了nginx,去网上查,很多都是讲的是负载均衡导致的session不共享,需配置</p>
@@ -797,19 +811,19 @@ class ThreadDemo2 extends Thread {
     
     </summary>
     
-      <category term="nginx" scheme="http://blog.helkay.com/categories/nginx/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Nginx" scheme="http://blog.helkay.com/tags/Nginx/"/>
     
   </entry>
   
   <entry>
     <title>@ResponseBody 返回字符串乱码</title>
-    <link href="http://blog.helkay.com/2017/04/06/2017-04-06-@ResponseBody%20%E8%BF%94%E5%9B%9E%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%B1%E7%A0%81/"/>
-    <id>http://blog.helkay.com/2017/04/06/2017-04-06-@ResponseBody 返回字符串乱码/</id>
+    <link href="http://blog.helkay.com/2017/04/2017-04-06-@ResponseBody%20%E8%BF%94%E5%9B%9E%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%B1%E7%A0%81/"/>
+    <id>http://blog.helkay.com/2017/04/2017-04-06-@ResponseBody 返回字符串乱码/</id>
     <published>2017-04-05T16:00:00.000Z</published>
-    <updated>2017-05-08T07:35:18.000Z</updated>
+    <updated>2017-05-12T07:00:42.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种格式。一开始我以为是response没有转码导致的-但是java代码中加入转码后依然无效"><a href="#今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种格式。一开始我以为是response没有转码导致的-但是java代码中加入转码后依然无效" class="headerlink" title="今天在用ajax post方法调用java方法时,返回的结果中文始终是???这种格式。一开始我以为是response没有转码导致的,但是java代码中加入转码后依然无效"></a>今天在用ajax post方法调用java方法时,返回的结果中文始终是???这种格式。一开始我以为是response没有转码导致的,但是java代码中加入转码后依然无效</h3><pre><code class="java">response.setCharacterEncoding(&quot;UTF-8&quot;);
 </code></pre>
@@ -836,19 +850,19 @@ class ThreadDemo2 extends Thread {
     
     </summary>
     
-      <category term="Java" scheme="http://blog.helkay.com/categories/Java/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Java" scheme="http://blog.helkay.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>quartz定时功能</title>
-    <link href="http://blog.helkay.com/2017/03/24/2017-03-24-quartz%E5%AE%9A%E6%97%B6%E5%8A%9F%E8%83%BD/"/>
-    <id>http://blog.helkay.com/2017/03/24/2017-03-24-quartz定时功能/</id>
+    <link href="http://blog.helkay.com/2017/03/2017-03-24-quartz%E5%AE%9A%E6%97%B6%E5%8A%9F%E8%83%BD/"/>
+    <id>http://blog.helkay.com/2017/03/2017-03-24-quartz定时功能/</id>
     <published>2017-03-23T16:00:00.000Z</published>
-    <updated>2017-05-08T07:31:26.000Z</updated>
+    <updated>2017-05-12T07:00:46.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="quartz定时器"><a href="#quartz定时器" class="headerlink" title="quartz定时器"></a>quartz定时器</h2><h3 id="配置文件定时"><a href="#配置文件定时" class="headerlink" title="配置文件定时"></a>配置文件定时</h3><p><strong>配置文件</strong></p>
 <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -919,19 +933,19 @@ class ThreadDemo2 extends Thread {
     
     </summary>
     
-      <category term="定时器" scheme="http://blog.helkay.com/categories/%E5%AE%9A%E6%97%B6%E5%99%A8/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="定时器" scheme="http://blog.helkay.com/tags/%E5%AE%9A%E6%97%B6%E5%99%A8/"/>
     
   </entry>
   
   <entry>
     <title>签名与加密技术</title>
-    <link href="http://blog.helkay.com/2017/03/23/2017-03-23-%E7%AD%BE%E5%90%8D%E4%B8%8E%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/"/>
-    <id>http://blog.helkay.com/2017/03/23/2017-03-23-签名与加密技术/</id>
+    <link href="http://blog.helkay.com/2017/03/2017-03-23-%E7%AD%BE%E5%90%8D%E4%B8%8E%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/"/>
+    <id>http://blog.helkay.com/2017/03/2017-03-23-签名与加密技术/</id>
     <published>2017-03-22T16:00:00.000Z</published>
-    <updated>2017-05-08T07:30:28.000Z</updated>
+    <updated>2017-05-12T07:00:49.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><h3 id="普通数字签名最常用的算法为RSA"><a href="#普通数字签名最常用的算法为RSA" class="headerlink" title="普通数字签名最常用的算法为RSA"></a>普通数字签名最常用的算法为RSA</h3><p><strong>RSA原理：</strong>RSA算法基于一个十分简单的数论事实，将两个大素数相乘十分容易，但反过来想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。</p>
 <p><strong>RSA缺点：</strong>RSA的keysize位数越高，其产生密钥对及加密、解密的速度越慢，这是基于大素数非对称加密算法的缺陷。</p>
@@ -1012,19 +1026,19 @@ public class SignatureData {
     
     </summary>
     
-      <category term="Java" scheme="http://blog.helkay.com/categories/Java/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Java" scheme="http://blog.helkay.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Maven学习笔记</title>
-    <link href="http://blog.helkay.com/2017/03/16/2017-03-16-Maven%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://blog.helkay.com/2017/03/16/2017-03-16-Maven学习笔记/</id>
+    <link href="http://blog.helkay.com/2017/03/2017-03-16-Maven%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://blog.helkay.com/2017/03/2017-03-16-Maven学习笔记/</id>
     <published>2017-03-15T16:00:00.000Z</published>
-    <updated>2017-04-25T09:55:04.000Z</updated>
+    <updated>2017-05-12T07:00:51.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="打印整个依赖树"><a href="#打印整个依赖树" class="headerlink" title="打印整个依赖树"></a>打印整个依赖树</h3><pre><code>mvn dependency:tree
 </code></pre>]]></content>
@@ -1036,19 +1050,19 @@ public class SignatureData {
     
     </summary>
     
-      <category term="maven" scheme="http://blog.helkay.com/categories/maven/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Maven" scheme="http://blog.helkay.com/tags/Maven/"/>
     
   </entry>
   
   <entry>
     <title>mysql数据库无法插入中文</title>
-    <link href="http://blog.helkay.com/2017/03/10/2017-03-10-mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E6%B3%95%E6%8F%92%E5%85%A5%E4%B8%AD%E6%96%87/"/>
-    <id>http://blog.helkay.com/2017/03/10/2017-03-10-mysql数据库无法插入中文/</id>
+    <link href="http://blog.helkay.com/2017/03/2017-03-10-mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%97%A0%E6%B3%95%E6%8F%92%E5%85%A5%E4%B8%AD%E6%96%87/"/>
+    <id>http://blog.helkay.com/2017/03/2017-03-10-mysql数据库无法插入中文/</id>
     <published>2017-03-09T16:00:00.000Z</published>
-    <updated>2017-04-25T09:55:04.000Z</updated>
+    <updated>2017-05-12T07:00:55.000Z</updated>
     
     <content type="html"><![CDATA[<p>MySQL中，数据库的编码是一个相当重要的问题，有时候我们需要查看一下当前数据库的编码，甚至需要修改一下数据库编码。</p>
 <p>修改my.cnf</p>
@@ -1082,19 +1096,19 @@ de
     
     </summary>
     
-      <category term="mysql" scheme="http://blog.helkay.com/categories/mysql/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Mysql" scheme="http://blog.helkay.com/tags/Mysql/"/>
     
   </entry>
   
   <entry>
     <title>分支回退</title>
-    <link href="http://blog.helkay.com/2016/12/06/2016-12-06-%E5%88%86%E6%94%AF%E5%9B%9E%E9%80%80/"/>
-    <id>http://blog.helkay.com/2016/12/06/2016-12-06-分支回退/</id>
+    <link href="http://blog.helkay.com/2016/12/2016-12-06-%E5%88%86%E6%94%AF%E5%9B%9E%E9%80%80/"/>
+    <id>http://blog.helkay.com/2016/12/2016-12-06-分支回退/</id>
     <published>2016-12-05T16:00:00.000Z</published>
-    <updated>2017-05-09T02:24:16.000Z</updated>
+    <updated>2017-05-12T07:00:57.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="本地分支回退"><a href="#本地分支回退" class="headerlink" title="本地分支回退"></a>本地分支回退</h3><p>查看本地版本信息</p>
 <pre><code>git reflog
@@ -1112,19 +1126,19 @@ de
     
     </summary>
     
-      <category term="Git" scheme="http://blog.helkay.com/categories/Git/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Git" scheme="http://blog.helkay.com/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>Linux rm命令详解</title>
-    <link href="http://blog.helkay.com/2016/11/29/2016-11-29-linux-rm/"/>
-    <id>http://blog.helkay.com/2016/11/29/2016-11-29-linux-rm/</id>
+    <link href="http://blog.helkay.com/2016/11/2016-11-29-linux-rm/"/>
+    <id>http://blog.helkay.com/2016/11/2016-11-29-linux-rm/</id>
     <published>2016-11-28T16:00:00.000Z</published>
-    <updated>2017-05-08T07:48:03.000Z</updated>
+    <updated>2017-05-12T07:01:00.000Z</updated>
     
     <content type="html"><![CDATA[<p>rm命令可以删除一个目录中的一个或多个文件或目录，也可以将某个目录及其下属的所有文件及其子目录均删除掉。</p>
 <p><span style="color: red">注意：</span>使用rm命令要格外小心。因为一旦删除了一个文件，就无法再恢复它。所以，在删除文件之前，最好再看一下文件的内容，确定是否真要删除。rm命令可以用-i选项，这个选项在使用文件扩展名字符删除多个文件时特别有用。使用这个选项，系统会要求你逐一确定是否要删除。这时，必须输入y并按Enter键，才能删除文件。如果仅按Enter键或其他字符，文件不会被删除。</p>
@@ -1146,10 +1160,10 @@ de
     
     </summary>
     
-      <category term="linux" scheme="http://blog.helkay.com/categories/linux/"/>
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
     
     
-      <category term="学习笔记" scheme="http://blog.helkay.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+      <category term="Linux" scheme="http://blog.helkay.com/tags/Linux/"/>
     
   </entry>
   

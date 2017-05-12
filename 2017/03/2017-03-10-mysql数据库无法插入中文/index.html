@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="null">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="6F4OqKmDkxMqUtTjTSCN1qPy2-m1_HN_H_aGMQkeZrA" />
+
+  <title>mysql数据库无法插入中文</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/hexo-uno.css">
+    
+  
+  <link rel="stylesheet" href="/css/uno.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+
+</head>
+
+<span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+<header class="panel-cover 
+
+      
+      panel-cover--collapsed
+      
+
+  " style="background-image: url(/img/backimg.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of Helkay">
+          <img src="/img/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title" style="border-bottom: none;">Helkay</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">不忘初心,方得始终。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to Helkay blog" class="blog-button">首页</a></li>
+              <li class="navigation__item"><a href="/categories/Blog" title="link to archives" class="blog-button">归档</a></li>
+              <li class="navigation__item"><a href="/tags" title="link to tags" class="blog-button">标签</a></li>
+              <li class="navigation__item"><a href="/categories/Menu" title="link to tags" class="blog-button">目录</a></li>
+            </ul>
+          </nav>
+
+
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/helkay" title="helkay on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:work@helkay.com" title="Email work@helkay.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+            
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+<body>
+<div class="content-wrapper">
+      <div class="content-wrapper__inner" >
+        
+<article id="post">
+  <h1>mysql数据库无法插入中文
+  <a style="float: right;display:block;background-color:#e25440;color:#f8f8f8;width:60px;height:27px;text-align: center;border-radius:3px;" href="/atom.xml" title="Rss" target="_blank">
+      Rss
+  </a>
+  </h1>
+
+  <p>MySQL中，数据库的编码是一个相当重要的问题，有时候我们需要查看一下当前数据库的编码，甚至需要修改一下数据库编码。</p>
+<p>修改my.cnf</p>
+<pre><code>[mysqld]
+character-set-server=utf8
+
+[client]
+default-character-set=utf8
+</code></pre><p>####查看数据库信息</p>
+<pre><code>mysql &gt; show variables;
+
+mysql &gt; set names &#39;gbk&#39;;
+</code></pre><pre><code>&#39;character_set_connection&#39;, &#39;gbk&#39;
+&#39;character_set_database&#39;, &#39;utf8&#39;
+&#39;character_set_filesystem&#39;, &#39;binary&#39;
+&#39;character_set_results&#39;, &#39;gbk&#39;
+&#39;character_set_server&#39;, &#39;utf8&#39;
+&#39;character_set_system&#39;, &#39;utf8&#39;
+</code></pre><p>修改完毕后重建表加上 character set utf8;</p>
+
+</article>
+
+<div id="disqus_thread"></div>
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://blog-helkay-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+</div>
+
+
+
+
+  <!-- scripts list from theme config.yml -->
+  
+    <script src="/js/hexo-uno.js"></script>
+  
+
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+</html>

@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="null">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="6F4OqKmDkxMqUtTjTSCN1qPy2-m1_HN_H_aGMQkeZrA" />
+
+  <title>签名与加密技术</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/hexo-uno.css">
+    
+  
+  <link rel="stylesheet" href="/css/uno.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+
+</head>
+
+<span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+<header class="panel-cover 
+
+      
+      panel-cover--collapsed
+      
+
+  " style="background-image: url(/img/backimg.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of Helkay">
+          <img src="/img/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title" style="border-bottom: none;">Helkay</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">不忘初心,方得始终。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to Helkay blog" class="blog-button">首页</a></li>
+              <li class="navigation__item"><a href="/categories/Blog" title="link to archives" class="blog-button">归档</a></li>
+              <li class="navigation__item"><a href="/tags" title="link to tags" class="blog-button">标签</a></li>
+              <li class="navigation__item"><a href="/categories/Menu" title="link to tags" class="blog-button">目录</a></li>
+            </ul>
+          </nav>
+
+
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/helkay" title="helkay on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:work@helkay.com" title="Email work@helkay.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+            
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+<body>
+<div class="content-wrapper">
+      <div class="content-wrapper__inner" >
+        
+<article id="post">
+  <h1>签名与加密技术
+  <a style="float: right;display:block;background-color:#e25440;color:#f8f8f8;width:60px;height:27px;text-align: center;border-radius:3px;" href="/atom.xml" title="Rss" target="_blank">
+      Rss
+  </a>
+  </h1>
+
+  <h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><h3 id="普通数字签名最常用的算法为RSA"><a href="#普通数字签名最常用的算法为RSA" class="headerlink" title="普通数字签名最常用的算法为RSA"></a>普通数字签名最常用的算法为RSA</h3><p><strong>RSA原理：</strong>RSA算法基于一个十分简单的数论事实，将两个大素数相乘十分容易，但反过来想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。</p>
+<p><strong>RSA缺点：</strong>RSA的keysize位数越高，其产生密钥对及加密、解密的速度越慢，这是基于大素数非对称加密算法的缺陷。</p>
+<h3 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h3><p>一般，我们可以用RSA算法生成一对密钥，公钥发放给外部客户，私钥自己保管；有以下一些应用场景:</p>
+<ul>
+<li>公钥加密、私钥解密</li>
+<li>私钥加密、公钥验证</li>
+</ul>
+<pre><code class="java">/**
+ * 
+* @ClassName: SignatureData 
+* @Description: RSAWithMD5/RSAWithSHA1/RSAWithSHA256签名提供类 
+ */
+public class SignatureData {
+    /**
+     * 加密
+     * 
+     * @param byteContent 待加密内容
+     * @param prikeyvalue 私钥
+     * @param  algorithmType 加密算法
+     * @return
+     */
+    public static byte[] encrypt(byte[] byteContent, String securityType,String prikeyvalue,String algorithmType) {
+        try {
+            PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(SecurityUtils.hexStrToBytes(prikeyvalue));
+            KeyFactory keyf = KeyFactory.getInstance(algorithmType);
+            PrivateKey myprikey = keyf.generatePrivate(priPKCS8);
+            // 用私钥对信息生成数字签名
+            java.security.Signature signet = java.security.Signature.getInstance(securityType);
+
+            signet.initSign(myprikey);
+            signet.update(byteContent);
+            return signet.sign(); // 对信息的数字签名
+        } catch (java.lang.Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    /**
+     * 验签
+     * @param src 源内容
+     * @param content 加密内容
+     * @param securityType 加密类型
+     * @param pubkeyvalue 公钥
+     * @param algorithmType 加密算法
+     * @return
+     */
+    public static boolean signetCheck(String src, byte[] content, String securityType, String pubkeyvalue,String algorithmType) {
+        try {
+            X509EncodedKeySpec bobPubKeySpec = new X509EncodedKeySpec(SecurityUtils.hexStrToBytes(pubkeyvalue));
+            KeyFactory keyFactory = KeyFactory.getInstance(algorithmType);
+            PublicKey pubKey = keyFactory.generatePublic(bobPubKeySpec);
+            java.security.Signature signetcheck = java.security.Signature.getInstance(securityType);
+            signetcheck.initVerify(pubKey);
+            signetcheck.update(src.getBytes());
+
+            if (signetcheck.verify(content)) {
+                System.out.println(&quot;签名正常&quot;);
+                return true;
+            } else {
+                System.out.println(&quot;非签名正常&quot;);
+                return false;
+            }
+
+        } catch (java.lang.Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+}
+</code></pre>
+<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><h3 id="AES对称加密"><a href="#AES对称加密" class="headerlink" title="AES对称加密"></a>AES对称加密</h3>
+</article>
+
+<div id="disqus_thread"></div>
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://blog-helkay-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+</div>
+
+
+
+
+  <!-- scripts list from theme config.yml -->
+  
+    <script src="/js/hexo-uno.js"></script>
+  
+
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+</html>
