@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.helkay.com/"/>
-  <updated>2017-05-15T06:10:01.000Z</updated>
+  <updated>2017-05-15T07:02:45.000Z</updated>
   <id>http://blog.helkay.com/</id>
   
   <author>
@@ -16,533 +16,668 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>每日一Linux命令 -- cat</title>
+    <link href="http://blog.helkay.com/2017/05/2017-05-15-%E6%AF%8F%E6%97%A5%E4%B8%80Linux%E5%91%BD%E4%BB%A4%20--%20cat/"/>
+    <id>http://blog.helkay.com/2017/05/2017-05-15-每日一Linux命令 -- cat/</id>
+    <published>2017-05-14T16:00:00.000Z</published>
+    <updated>2017-05-15T07:02:45.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ul>
+<li>显示文件的内容</li>
+</ul>
+<pre><code class="bash">cat filename
+</code></pre>
+<ul>
+<li>创建文件</li>
+</ul>
+<pre><code class="bash">cat &gt; filename
+</code></pre>
+<p>值得一提的是执行这个命令之后会进入一个输入模式,只会保存回车后的内容</p>
+<ul>
+<li>合并内容</li>
+</ul>
+<pre><code class="bash">cat file1 file2 &gt; file
+</code></pre>
+<p>将 file1 和 file2 的内容合并到 file 中,按照从左至右的先后顺序,如果 file 已存在则会覆盖 file中的内容</p>
+<h3 id="使用权限："><a href="#使用权限：" class="headerlink" title="使用权限："></a>使用权限：</h3><p>所有使用者</p>
+<h3 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h3><p><strong>-n :</strong> 输出每行的行数编号</p>
+<pre><code class="bash">$cat -n test 
+1    This is the 1th line
+2    
+3    This is the 3th line
+4    
+5    This is the 5th line
+</code></pre>
+<p><strong>-b :</strong> 和 -n 差不多,只是不输出空白行</p>
+<pre><code class="bash">$cat -b test
+1    This is the 1th line
+
+2    This is the 3th line
+
+3    This is the 5th line
+</code></pre>
+<p><strong>-s :</strong> 将连续两行以上的空白行,用一行空白行来代替</p>
+<p>原文件内容(数字为行号)如下</p>
+<pre><code>  1 This is the 1th line
+  2 
+  3 
+  4 This is the 4th line
+  5 
+  6 
+  7 
+  8 
+  9 This is the 9th line
+</code></pre><p>使用-s输出结果如下</p>
+<pre><code class="bash">$cat -s test 
+This is the 1th line
+
+This is the 4th line
+
+This is the 9th line
+</code></pre>
+<p><strong>-v :</strong> 使用 ^ 和 M- 符号，除了 LFD 和 TAB 之外</p>
+<p><strong>-E :</strong> 或 –show-ends : 在每行结束处显示 $</p>
+<p><strong>-T :</strong> 或 –show-tabs: 将 TAB 字符显示为 ^I</p>
+<p><strong>-A :</strong> 等价于 -vET</p>
+<p><strong>-e :</strong> 等价于”-vE”选项</p>
+<p><strong>-t :</strong> 等价于”-vT”选项</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;功能：&quot;&gt;&lt;a href=&quot;#功能：&quot; class=&quot;headerlink&quot; title=&quot;功能：&quot;&gt;&lt;/a&gt;功能：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;显示文件的内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;cat filename
+&lt;/co
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
+    
+    
+      <category term="Linux" scheme="http://blog.helkay.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux工具与命令</title>
     <link href="http://blog.helkay.com/menu/Linux%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%91%BD%E4%BB%A4/"/>
     <id>http://blog.helkay.com/menu/Linux工具与命令/</id>
     <published>2017-05-11T16:00:00.000Z</published>
-    <updated>2017-05-15T06:10:01.000Z</updated>
+    <updated>2017-05-15T07:57:48.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
 <li><a href="http://blog.helkay.com/2017/05/2017-05-12-Git命令">Git命令</a></li>
 </ul>
 <h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><p><strong>文件管理</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> cat </td>
-        <td> chattr </td>
-        <td> chgrp </td>
-        <td> chmod </td>
-        <td> chown </td>
-        <td> cksum </td>
-    </tr>
-    <tr>
-        <td> cmp </td>
-        <td> diff </td>
-        <td> diffstat </td>
-        <td> file </td>
-        <td> find </td>
-        <td> git </td>
-    </tr>
-    <tr>
-        <td> gitview </td>
-        <td> indent </td>
-        <td> cut </td>
-        <td> ln </td>
-        <td> less </td>
-        <td> locate </td>
-    </tr>
-    <tr>
-        <td> lsattr </td>
-        <td> mattrib </td>
-        <td> mc </td>
-        <td> mdel </td>
-        <td> mdir </td>
-        <td> mktemp </td>
-
-    </tr>
-    <tr>
-        <td> more </td>
-        <td> mmove </td>
-        <td> mread </td>
-        <td> mren </td>
-        <td> mtools </td>
-        <td> mtoolstest </td><br>    </tr>
-    <tr>
-        <td> mv </td>
-        <td> od </td><br>        <td> paste </td>
-        <td> patch </td>
-        <td> rcp </td>
-        <td> rm </td>
-    </tr>
-    <tr>
-        <td> slocate </td>
-        <td> split </td>
-        <td> tee </td>
-        <td> tmpwatch </td><br>        <td> touch </td>
-        <td> umask </td>
-    </tr>
-    <tr>
-        <td> which </td>
-        <td> cp </td>
-        <td> whereis </td>
-        <td> mcopy </td>
-        <td> mshowfat </td>
-        <td> rhmask </td>
-    </tr>
-    <tr>
-        <td> scp </td>
-        <td> awk </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-    </tr>
+<table>
+<thead>
+<tr>
+<th><a href="_cat_">cat</a></th>
+<th>chattr</th>
+<th>chgrp</th>
+<th>chmod               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chown</td>
+<td>cksum</td>
+<td>cmp</td>
+<td>diff                </td>
+</tr>
+<tr>
+<td>diffstat</td>
+<td>file</td>
+<td>find</td>
+<td>git                 </td>
+</tr>
+<tr>
+<td>gitview</td>
+<td>indent</td>
+<td>cut</td>
+<td>ln                  </td>
+</tr>
+<tr>
+<td>less</td>
+<td>locate</td>
+<td>lsattr</td>
+<td>mattrib             </td>
+</tr>
+<tr>
+<td>mc</td>
+<td>mdel</td>
+<td>mdir</td>
+<td>mktemp              </td>
+</tr>
+<tr>
+<td>more</td>
+<td>mmove</td>
+<td>mread</td>
+<td>mren                </td>
+</tr>
+<tr>
+<td>mtools</td>
+<td>mtoolstest</td>
+<td>mv</td>
+<td>od                  </td>
+</tr>
+<tr>
+<td>paste</td>
+<td>patch</td>
+<td>rcp</td>
+<td>rm                  </td>
+</tr>
+<tr>
+<td>slocate</td>
+<td>split</td>
+<td>tee</td>
+<td>tmpwatch            </td>
+</tr>
+<tr>
+<td>touch</td>
+<td>umask</td>
+<td>which</td>
+<td>cp                  </td>
+</tr>
+<tr>
+<td>whereis</td>
+<td>mcopy</td>
+<td>mshowfat</td>
+<td>rhmask              </td>
+</tr>
+<tr>
+<td>scp</td>
+<td>awk</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
 <p><strong>文档编辑</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> col </td>
-        <td> colrm </td>
-        <td> comm </td>
-        <td> csplit </td>
-        <td> ed </td>
-        <td> egrep </td>
-    </tr>
-    <tr>
-        <td> ex </td>
-        <td> fgrep </td>
-        <td> fmt </td>
-        <td> fold </td>
-        <td> grep </td>
-        <td> ispell </td>
-    </tr>
-    <tr>
-        <td> jed </td>
-        <td> joe </td>
-        <td> join </td>
-        <td> look </td>
-        <td> mtype </td>
-        <td> pico </td>
-    </tr>
-    <tr>
-        <td> rgrep </td>
-        <td> sed </td>
-        <td> sort </td>
-        <td> spell </td>
-        <td> tr </td>
-        <td> expr </td>
-    </tr>
-    <tr>
-        <td> uniq </td>
-        <td> wc </td>
-        <td> let </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
+<table>
+<thead>
+<tr>
+<th>col</th>
+<th>colrm</th>
+<th>comm</th>
+<th>csplit              </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ed</td>
+<td>egrep</td>
+<td>ex</td>
+<td>fgrep               </td>
+</tr>
+<tr>
+<td>fmt</td>
+<td>fold</td>
+<td>grep</td>
+<td>ispell              </td>
+</tr>
+<tr>
+<td>jed</td>
+<td>joe</td>
+<td>join</td>
+<td>look                </td>
+</tr>
+<tr>
+<td>mtype</td>
+<td>pico</td>
+<td>rgrep</td>
+<td>sed                 </td>
+</tr>
+<tr>
+<td>sort</td>
+<td>spell</td>
+<td>tr</td>
+<td>expr                </td>
+</tr>
+<tr>
+<td>uniq</td>
+<td>wc</td>
+<td>let</td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
-
 <p><strong>文件传输</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> lprm </td>
-        <td> lpr </td>
-        <td> lpq </td>
-        <td> lpd </td>
-        <td> bye </td>
-        <td> ftp </td>
-    </tr>
-    <tr>
-        <td> uuto </td>
-        <td> uupick </td>
-        <td> uucp </td>
-        <td> uucico </td>
-        <td> tftp </td>
-        <td> ncftp </td>
-    </tr>
-    <tr>
-        <td> ftpshut </td>
-        <td> ftpwho </td>
-        <td> ftpcount </td>
-        <td> </td>
-    </tr>
-    <tr>
-</tr></table>
-
-
-
+<table>
+<thead>
+<tr>
+<th>lprm</th>
+<th>lpr</th>
+<th>lpq</th>
+<th>lpd                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bye</td>
+<td>ftp</td>
+<td>uuto</td>
+<td>uupick              </td>
+</tr>
+<tr>
+<td>uucp</td>
+<td>uucico</td>
+<td>tftp</td>
+<td>ncftp               </td>
+</tr>
+<tr>
+<td>ftpshut</td>
+<td>ftpwho</td>
+<td>ftpcount</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><strong>磁盘管理</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> cd </td>
-        <td> df </td>
-        <td> dirs </td>
-        <td> du </td>
-        <td> edquota </td>
-        <td> eject </td>
-    </tr>
-    <tr>
-        <td> mcd </td>
-        <td> mdeltree </td>
-        <td> mdu </td>
-        <td> mkdir </td>
-        <td> mlabel </td>
-        <td> mmd </td>
-    </tr>
-    <tr>
-        <td> mrd </td>
-        <td> mzip </td>
-        <td> pwd </td>
-        <td> quota </td>
-        <td> mount </td>
-        <td> mmount </td>
-    </tr>
-    <tr>
-        <td> rmdir </td>
-        <td> rmt </td>
-        <td> stat </td>
-        <td> tree </td>
-        <td> umount </td>
-        <td> ls </td>
-    </tr>
-    <tr>
-        <td> quotacheck </td>
-        <td> quotaoff </td>
-        <td> lndir </td>
-        <td> repquota </td>
-        <td> quotaon </td>
-        <td> </td>
-    </tr>
+<table>
+<thead>
+<tr>
+<th>cd</th>
+<th>df</th>
+<th>dirs</th>
+<th>du                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>edquota</td>
+<td>eject</td>
+<td>mcd</td>
+<td>mdeltree            </td>
+</tr>
+<tr>
+<td>mdu</td>
+<td>mkdir</td>
+<td>mlabel</td>
+<td>mmd                 </td>
+</tr>
+<tr>
+<td>mrd</td>
+<td>mzip</td>
+<td>pwd</td>
+<td>quota               </td>
+</tr>
+<tr>
+<td>mount</td>
+<td>mmount</td>
+<td>rmdir</td>
+<td>rmt                 </td>
+</tr>
+<tr>
+<td>stat</td>
+<td>tree</td>
+<td>umount</td>
+<td>ls                  </td>
+</tr>
+<tr>
+<td>quotacheck</td>
+<td>quotaoff</td>
+<td>lndir</td>
+<td>repquota            </td>
+</tr>
+<tr>
+<td>quotaon</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
-
 <p><strong>磁盘维护</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> badblocks </td>
-        <td> cfdisk </td>
-        <td> dd </td>
-        <td> e2fsck </td>
-        <td> ext2ed </td>
-        <td> fsck </td>
-    </tr>
-    <tr>
-        <td> fsck.minix </td>
-        <td> fsconf </td>
-        <td> fdformat </td>
-        <td> hdparm </td>
-        <td> mformat </td>
-        <td> mkbootdisk </td>
-    </tr>
-    <tr>
-        <td> mkdosfs </td>
-        <td> mke2fs </td>
-        <td> mkfs.ext2 </td>
-        <td> mkfs.msdos </td>
-        <td> mkinitrd </td>
-        <td> mkisofs </td>
-    </tr>
-    <tr>
-        <td> mkswap </td>
-        <td> mpartition </td>
-        <td> swapon </td>
-        <td> symlinks </td>
-        <td> sync </td>
-        <td> mbadblocks </td>
-    </tr>
-    <tr>
-        <td> mkfs.minix </td>
-        <td> fsck.ext2 </td>
-        <td> fdisk </td>
-        <td> losetup </td>
-        <td> mkfs </td>
-        <td> sfdisk </td>
-    </tr>
-    <tr>
-        <td> swapoff </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
-    <tr>
-</tr></table>
-
-
-<p><strong>网络通讯</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> apachectl </td>
-        <td> arpwatch </td>
-        <td> dip </td>
-        <td> getty </td>
-        <td> mingetty </td>
-        <td> uux </td>
-    </tr>
-    <tr>
-        <td> telnet </td>
-        <td> uulog </td>
-        <td> uustat </td>
-        <td> ppp-off </td>
-        <td> netconfig </td>
-        <td> nc </td>
-    </tr>
-    <tr>
-        <td> httpd </td>
-        <td> ifconfig </td>
-        <td> minicom </td>
-        <td> mesg </td>
-        <td> dnsconf </td>
-        <td> wall </td>
-    </tr>
-    <tr>
-        <td> netstat </td>
-        <td> ping </td>
-        <td> pppstats </td>
-        <td> samba </td>
-        <td> setserial </td>
-        <td> talk </td>
-    </tr>
-    <tr>
-        <td> traceroute </td>
-        <td> tty </td>
-        <td> newaliases </td>
-        <td> uuname </td>
-        <td> netconf </td>
-        <td> write </td>
-    </tr>
-    <tr>
-        <td> statserial </td>
-        <td> efax </td>
-        <td> pppsetup </td>
-        <td> tcpdump </td>
-        <td> ytalk </td>
-        <td> cu </td>
-    </tr>
-    <tr>
-        <td> smbd </td>
-        <td> testparm </td>
-        <td> smbclient </td>
-        <td> shapecfg </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
-    <tr>
-</tr></table>
-
-
-<p><strong>系统管理</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> adduser </td>
-        <td> chfn </td>
-        <td> useradd </td>
-        <td> date </td>
-        <td> exit </td>
-        <td> finger </td>
-    </tr>
-    <tr>
-        <td> fwhios </td>
-        <td> sleep </td>
-        <td> suspend </td>
-        <td> groupdel </td>
-        <td> groupmod </td>
-        <td> halt </td>
-    </tr>
-    <tr>
-        <td> kill </td>
-        <td> last </td>
-        <td> lastb </td>
-        <td> login </td>
-        <td> logname </td>
-        <td> logout </td>
-    </tr>
-    <tr>
-        <td> ps </td>
-        <td> nice </td>
-        <td> procinfo </td>
-        <td> top </td>
-        <td> pstree </td>
-        <td> reboot </td>
-    </tr>
-    <tr>
-        <td> rlogin </td>
-        <td> rsh </td>
-        <td> sliplogin </td>
-        <td> screen </td>
-        <td> shutdown </td>
-        <td> rwho </td>
-    </tr>
-    <tr>
-        <td> sudo </td>
-        <td> gitps </td>
-        <td> swatch </td>
-        <td> tload </td>
-        <td> logrotate </td>
-        <td> uname </td>
-    </tr>
-    <tr>
-        <td> chsh </td>
-        <td> userconf </td>
-        <td> userdel </td>
-        <td> usermod </td>
-        <td> vlock </td>
-        <td> who </td>
-    </tr>
-    <tr>
-        <td> whoami </td>
-        <td> whois </td>
-        <td> newgrp </td>
-        <td> renice </td>
-        <td> su </td>
-        <td> skill </td>
-    </tr>
-    <tr>
-        <td> w </td>
-        <td> id </td>
-        <td> free </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
-    <tr>
-</tr></table>
-
-
-<p><strong>系统设置</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> reset </td>
-        <td> clear </td>
-        <td> alias </td>
-        <td> dircolors </td>
-        <td> aumix </td>
-        <td> bind </td>
-    </tr>
-    <tr>
-        <td> chroot </td>
-        <td> clock </td>
-        <td> crontab </td>
-        <td> declare </td>
-        <td> depmod </td>
-        <td> dmesg </td>
-    </tr>
-    <tr>
-        <td> enable </td>
-        <td> eval </td>
-        <td> export </td>
-        <td> pwunconv </td>
-        <td> grpconv </td>
-        <td> rpm </td>
-    </tr>
-    <tr>
-        <td> insmod </td>
-        <td> kbdconfig </td>
-        <td> lilo </td>
-        <td> liloconfig </td>
-        <td> lsmod </td>
-        <td> minfo </td>
-    </tr>
-    <tr>
-        <td> set </td>
-        <td> modprobe </td>
-        <td> ntsysv </td>
-        <td> mouseconfig </td>
-        <td> passwd </td>
-        <td> pwconv </td>
-    </tr>
-    <tr>
-        <td> rdate </td>
-        <td> resize </td>
-        <td> rmmod </td>
-        <td> grpunconv </td>
-        <td> modinfo </td>
-        <td> time </td>
-    </tr>
-    <tr>
-        <td> setup </td>
-        <td> sndconfig </td>
-        <td> setenv </td>
-        <td> setconsole </td>
-        <td> timeconfig </td>
-        <td> ulimit </td>
-    </tr>
-    <tr>
-        <td> unset </td>
-        <td> chkconfig </td>
-        <td> apmd </td>
-        <td> hwclock </td>
-        <td> mkkickstart </td>
-        <td> fbset </td>
-    </tr>
-    <tr>
-        <td> unalias </td>
-        <td> SVGATextMode </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
-    <tr>
-</tr></table>
-
-<p><strong>备份压缩</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> ar </td>
-        <td> bunzip2 </td>
-        <td> bzip2 </td>
-        <td> bzip2recover </td>
-        <td> gunzip </td>
-        <td> unarj </td>
-    </tr>
-    <tr>
-        <td> compress </td>
-        <td> cpio </td>
-        <td> dump </td>
-        <td> uuencode </td>
-        <td> gzexe </td>
-        <td> gzip </td>
-    </tr>
-    <tr>
-        <td> lha </td>
-        <td> restore </td>
-        <td> tar </td>
-        <td> uudecode </td>
-        <td> unzip </td>
-        <td> zip </td>
-    </tr>
-    <tr>
-        <td> zipinfo </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
-    <tr>
-</tr></table>
-
-<p><strong>设备管理</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> setleds </td>
-        <td> loadkeys </td>
-        <td> rdev </td>
-        <td> dumpkeys </td>
-        <td> MAKEDEV </td>
-        <td>  </td>
-    </tr>
+<table>
+<thead>
+<tr>
+<th>badblocks</th>
+<th>cfdisk</th>
+<th>dd</th>
+<th>e2fsck              </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ext2ed</td>
+<td>fsck</td>
+<td>fsck.minix</td>
+<td>fsconf              </td>
+</tr>
+<tr>
+<td>fdformat</td>
+<td>hdparm</td>
+<td>mformat</td>
+<td>mkbootdisk          </td>
+</tr>
+<tr>
+<td>mkdosfs</td>
+<td>mke2fs</td>
+<td>mkfs.ext2</td>
+<td>mkfs.msdos          </td>
+</tr>
+<tr>
+<td>mkinitrd</td>
+<td>mkisofs</td>
+<td>mkswap</td>
+<td>mpartition          </td>
+</tr>
+<tr>
+<td>swapon</td>
+<td>symlinks</td>
+<td>sync</td>
+<td>mbadblocks          </td>
+</tr>
+<tr>
+<td>mkfs.minix</td>
+<td>fsck.ext2</td>
+<td>fdisk</td>
+<td>losetup             </td>
+</tr>
+<tr>
+<td>mkfs</td>
+<td>sfdisk</td>
+<td>swapoff</td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
-
-
-
-
-
+<p><strong>网络通讯</strong></p>
+<table>
+<thead>
+<tr>
+<th>apachectl</th>
+<th>arpwatch</th>
+<th>dip</th>
+<th>getty               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mingetty</td>
+<td>uux</td>
+<td>telnet</td>
+<td>uulog               </td>
+</tr>
+<tr>
+<td>uustat</td>
+<td>ppp-off</td>
+<td>netconfig</td>
+<td>nc                  </td>
+</tr>
+<tr>
+<td>httpd</td>
+<td>ifconfig</td>
+<td>minicom</td>
+<td>mesg                </td>
+</tr>
+<tr>
+<td>dnsconf</td>
+<td>wall</td>
+<td>netstat</td>
+<td>ping                </td>
+</tr>
+<tr>
+<td>pppstats</td>
+<td>samba</td>
+<td>setserial</td>
+<td>talk                </td>
+</tr>
+<tr>
+<td>traceroute</td>
+<td>tty</td>
+<td>newaliases</td>
+<td>uuname              </td>
+</tr>
+<tr>
+<td>netconf</td>
+<td>write</td>
+<td>statserial</td>
+<td>efax                </td>
+</tr>
+<tr>
+<td>pppsetup</td>
+<td>tcpdump</td>
+<td>ytalk</td>
+<td>cu                  </td>
+</tr>
+<tr>
+<td>smbd</td>
+<td>testparm</td>
+<td>smbclient</td>
+<td>shapecfg            </td>
+</tr>
+</tbody>
+</table>
+<p><strong>系统管理</strong></p>
+<table>
+<thead>
+<tr>
+<th>adduser</th>
+<th>chfn</th>
+<th>useradd</th>
+<th>date                </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exit</td>
+<td>finger</td>
+<td>fwhios</td>
+<td>sleep               </td>
+</tr>
+<tr>
+<td>suspend</td>
+<td>groupdel</td>
+<td>groupmod</td>
+<td>halt                </td>
+</tr>
+<tr>
+<td>kill</td>
+<td>last</td>
+<td>lastb</td>
+<td>login               </td>
+</tr>
+<tr>
+<td>logname</td>
+<td>logout</td>
+<td>ps</td>
+<td>nice                </td>
+</tr>
+<tr>
+<td>procinfo</td>
+<td>top</td>
+<td>pstree</td>
+<td>reboot              </td>
+</tr>
+<tr>
+<td>rlogin</td>
+<td>rsh</td>
+<td>sliplogin</td>
+<td>screen              </td>
+</tr>
+<tr>
+<td>shutdown</td>
+<td>rwho</td>
+<td>sudo</td>
+<td>gitps               </td>
+</tr>
+<tr>
+<td>swatch</td>
+<td>tload</td>
+<td>logrotate</td>
+<td>uname               </td>
+</tr>
+<tr>
+<td>chsh</td>
+<td>userconf</td>
+<td>userdel</td>
+<td>usermod             </td>
+</tr>
+<tr>
+<td>vlock</td>
+<td>who</td>
+<td>whoami</td>
+<td>whois               </td>
+</tr>
+<tr>
+<td>newgrp</td>
+<td>renice</td>
+<td>su</td>
+<td>skill               </td>
+</tr>
+<tr>
+<td>w</td>
+<td>id</td>
+<td>free</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>系统设置</strong></p>
+<table>
+<thead>
+<tr>
+<th>reset</th>
+<th>clear</th>
+<th>alias</th>
+<th>dircolors           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aumix</td>
+<td>bind</td>
+<td>chroot</td>
+<td>clock               </td>
+</tr>
+<tr>
+<td>crontab</td>
+<td>declare</td>
+<td>depmod</td>
+<td>dmesg               </td>
+</tr>
+<tr>
+<td>enable</td>
+<td>eval</td>
+<td>export</td>
+<td>pwunconv            </td>
+</tr>
+<tr>
+<td>grpconv</td>
+<td>rpm</td>
+<td>insmod</td>
+<td>kbdconfig           </td>
+</tr>
+<tr>
+<td>lilo</td>
+<td>liloconfig</td>
+<td>lsmod</td>
+<td>minfo               </td>
+</tr>
+<tr>
+<td>set</td>
+<td>modprobe</td>
+<td>ntsysv</td>
+<td>mouseconfig         </td>
+</tr>
+<tr>
+<td>passwd</td>
+<td>pwconv</td>
+<td>rdate</td>
+<td>resize              </td>
+</tr>
+<tr>
+<td>rmmod</td>
+<td>grpunconv</td>
+<td>modinfo</td>
+<td>time                </td>
+</tr>
+<tr>
+<td>setup</td>
+<td>sndconfig</td>
+<td>setenv</td>
+<td>setconsole          </td>
+</tr>
+<tr>
+<td>timeconfig</td>
+<td>ulimit</td>
+<td>unset</td>
+<td>chkconfig           </td>
+</tr>
+<tr>
+<td>apmd</td>
+<td>hwclock</td>
+<td>mkkickstart</td>
+<td>fbset               </td>
+</tr>
+<tr>
+<td>unalias</td>
+<td>SVGATextMode</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>备份压缩</strong></p>
+<table>
+<thead>
+<tr>
+<th>ar</th>
+<th>bunzip2</th>
+<th>bzip2</th>
+<th>bzip2recover        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gunzip</td>
+<td>unarj</td>
+<td>compress</td>
+<td>cpio                </td>
+</tr>
+<tr>
+<td>dump</td>
+<td>uuencode</td>
+<td>gzexe</td>
+<td>gzip                </td>
+</tr>
+<tr>
+<td>lha</td>
+<td>restore</td>
+<td>tar</td>
+<td>uudecode            </td>
+</tr>
+<tr>
+<td>unzip</td>
+<td>zip</td>
+<td>zipinfo</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>设备管理</strong></p>
+<table>
+<thead>
+<tr>
+<th>setleds</th>
+<th>loadkeys</th>
+<th>rdev</th>
+<th>dumpkeys            </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAKEDEV</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 ]]></content>
     
     <summary type="html">
@@ -804,6 +939,36 @@ public void test() {
   </entry>
   
   <entry>
+    <title>Intellij idea 远程调试</title>
+    <link href="http://blog.helkay.com/2017/05/2017-05-10-Intellij%20Idea%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/"/>
+    <id>http://blog.helkay.com/2017/05/2017-05-10-Intellij Idea远程调试/</id>
+    <published>2017-05-09T16:00:00.000Z</published>
+    <updated>2017-05-12T07:00:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="idea自带的remote"><a href="#idea自带的remote" class="headerlink" title="idea自带的remote"></a>idea自带的remote</h2><div align="center"><br><img src="http://blog.helkay.com/pic/idea1.png" style="width:700px;" alt="图片名称" align="center">
+</div>
+
+
+<h2 id="tomcat-remote-配置"><a href="#tomcat-remote-配置" class="headerlink" title="tomcat remote 配置"></a>tomcat remote 配置</h2><h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><div align="center"><br><img src="http://blog.helkay.com/pic/idea2.png" style="width:700px;" alt="图片名称" align="center">
+</div>
+
+<h3 id="Startup-Connection"><a href="#Startup-Connection" class="headerlink" title="Startup/Connection"></a>Startup/Connection</h3><div align="center"><br><img src="http://blog.helkay.com/pic/idea3.png" style="width:700px;" alt="图片名称" align="center">
+</div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;idea自带的remote&quot;&gt;&lt;a href=&quot;#idea自带的remote&quot; class=&quot;headerlink&quot; title=&quot;idea自带的remote&quot;&gt;&lt;/a&gt;idea自带的remote&lt;/h2&gt;&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img 
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
+    
+    
+      <category term="工具" scheme="http://blog.helkay.com/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ssh登录免密</title>
     <link href="http://blog.helkay.com/2017/05/2017-05-10-ssh%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86/"/>
     <id>http://blog.helkay.com/2017/05/2017-05-10-ssh登录免密/</id>
@@ -841,36 +1006,6 @@ chmod 700 -R .ssh
     
     
       <category term="Linux" scheme="http://blog.helkay.com/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Intellij idea 远程调试</title>
-    <link href="http://blog.helkay.com/2017/05/2017-05-10-Intellij%20Idea%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/"/>
-    <id>http://blog.helkay.com/2017/05/2017-05-10-Intellij Idea远程调试/</id>
-    <published>2017-05-09T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="idea自带的remote"><a href="#idea自带的remote" class="headerlink" title="idea自带的remote"></a>idea自带的remote</h2><div align="center"><br><img src="http://blog.helkay.com/pic/idea1.png" style="width:700px;" alt="图片名称" align="center">
-</div>
-
-
-<h2 id="tomcat-remote-配置"><a href="#tomcat-remote-配置" class="headerlink" title="tomcat remote 配置"></a>tomcat remote 配置</h2><h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><div align="center"><br><img src="http://blog.helkay.com/pic/idea2.png" style="width:700px;" alt="图片名称" align="center">
-</div>
-
-<h3 id="Startup-Connection"><a href="#Startup-Connection" class="headerlink" title="Startup/Connection"></a>Startup/Connection</h3><div align="center"><br><img src="http://blog.helkay.com/pic/idea3.png" style="width:700px;" alt="图片名称" align="center">
-</div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;idea自带的remote&quot;&gt;&lt;a href=&quot;#idea自带的remote&quot; class=&quot;headerlink&quot; title=&quot;idea自带的remote&quot;&gt;&lt;/a&gt;idea自带的remote&lt;/h2&gt;&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img 
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://blog.helkay.com/categories/Blog/"/>
-    
-    
-      <category term="工具" scheme="http://blog.helkay.com/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   

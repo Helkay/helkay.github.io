@@ -100,7 +100,13 @@
 <div class="content-wrapper" >
       <div class="content-wrapper__inner">
         
-<article id="post" style="padding-top:50px;padding-bottom:100px;border-bottom: 1px dashed #ccc;">
+<article id="post" 
+
+
+  class="htable"  
+
+
+  style="padding-top:50px;padding-bottom:100px;border-bottom: 1px dashed #ccc;">
   <h1>Linux工具与命令
   <a style="float: right;display:block;background-color:#e25440;color:#f8f8f8;width:60px;height:27px;text-align: center;border-radius:3px;" href="/atom.xml" title="Rss" target="_blank">
       Rss
@@ -111,523 +117,573 @@
 <li><a href="http://blog.helkay.com/2017/05/2017-05-12-Git命令">Git命令</a></li>
 </ul>
 <h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><p><strong>文件管理</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> cat </td>
-        <td> chattr </td>
-        <td> chgrp </td>
-        <td> chmod </td>
-        <td> chown </td>
-        <td> cksum </td>
-    </tr>
-    <tr>
-        <td> cmp </td>
-        <td> diff </td>
-        <td> diffstat </td>
-        <td> file </td>
-        <td> find </td>
-        <td> git </td>
-    </tr>
-    <tr>
-        <td> gitview </td>
-        <td> indent </td>
-        <td> cut </td>
-        <td> ln </td>
-        <td> less </td>
-        <td> locate </td>
-    </tr>
-    <tr>
-        <td> lsattr </td>
-        <td> mattrib </td>
-        <td> mc </td>
-        <td> mdel </td>
-        <td> mdir </td>
-        <td> mktemp </td>
-
-    </tr>
-    <tr>
-        <td> more </td>
-        <td> mmove </td>
-        <td> mread </td>
-        <td> mren </td>
-        <td> mtools </td>
-        <td> mtoolstest </td><br>    </tr>
-    <tr>
-        <td> mv </td>
-        <td> od </td><br>        <td> paste </td>
-        <td> patch </td>
-        <td> rcp </td>
-        <td> rm </td>
-    </tr>
-    <tr>
-        <td> slocate </td>
-        <td> split </td>
-        <td> tee </td>
-        <td> tmpwatch </td><br>        <td> touch </td>
-        <td> umask </td>
-    </tr>
-    <tr>
-        <td> which </td>
-        <td> cp </td>
-        <td> whereis </td>
-        <td> mcopy </td>
-        <td> mshowfat </td>
-        <td> rhmask </td>
-    </tr>
-    <tr>
-        <td> scp </td>
-        <td> awk </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-    </tr>
+<table>
+<thead>
+<tr>
+<th><a href="_cat_">cat</a></th>
+<th>chattr</th>
+<th>chgrp</th>
+<th>chmod               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chown</td>
+<td>cksum</td>
+<td>cmp</td>
+<td>diff                </td>
+</tr>
+<tr>
+<td>diffstat</td>
+<td>file</td>
+<td>find</td>
+<td>git                 </td>
+</tr>
+<tr>
+<td>gitview</td>
+<td>indent</td>
+<td>cut</td>
+<td>ln                  </td>
+</tr>
+<tr>
+<td>less</td>
+<td>locate</td>
+<td>lsattr</td>
+<td>mattrib             </td>
+</tr>
+<tr>
+<td>mc</td>
+<td>mdel</td>
+<td>mdir</td>
+<td>mktemp              </td>
+</tr>
+<tr>
+<td>more</td>
+<td>mmove</td>
+<td>mread</td>
+<td>mren                </td>
+</tr>
+<tr>
+<td>mtools</td>
+<td>mtoolstest</td>
+<td>mv</td>
+<td>od                  </td>
+</tr>
+<tr>
+<td>paste</td>
+<td>patch</td>
+<td>rcp</td>
+<td>rm                  </td>
+</tr>
+<tr>
+<td>slocate</td>
+<td>split</td>
+<td>tee</td>
+<td>tmpwatch            </td>
+</tr>
+<tr>
+<td>touch</td>
+<td>umask</td>
+<td>which</td>
+<td>cp                  </td>
+</tr>
+<tr>
+<td>whereis</td>
+<td>mcopy</td>
+<td>mshowfat</td>
+<td>rhmask              </td>
+</tr>
+<tr>
+<td>scp</td>
+<td>awk</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
 <p><strong>文档编辑</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> col </td>
-        <td> colrm </td>
-        <td> comm </td>
-        <td> csplit </td>
-        <td> ed </td>
-        <td> egrep </td>
-    </tr>
-    <tr>
-        <td> ex </td>
-        <td> fgrep </td>
-        <td> fmt </td>
-        <td> fold </td>
-        <td> grep </td>
-        <td> ispell </td>
-    </tr>
-    <tr>
-        <td> jed </td>
-        <td> joe </td>
-        <td> join </td>
-        <td> look </td>
-        <td> mtype </td>
-        <td> pico </td>
-    </tr>
-    <tr>
-        <td> rgrep </td>
-        <td> sed </td>
-        <td> sort </td>
-        <td> spell </td>
-        <td> tr </td>
-        <td> expr </td>
-    </tr>
-    <tr>
-        <td> uniq </td>
-        <td> wc </td>
-        <td> let </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
+<table>
+<thead>
+<tr>
+<th>col</th>
+<th>colrm</th>
+<th>comm</th>
+<th>csplit              </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ed</td>
+<td>egrep</td>
+<td>ex</td>
+<td>fgrep               </td>
+</tr>
+<tr>
+<td>fmt</td>
+<td>fold</td>
+<td>grep</td>
+<td>ispell              </td>
+</tr>
+<tr>
+<td>jed</td>
+<td>joe</td>
+<td>join</td>
+<td>look                </td>
+</tr>
+<tr>
+<td>mtype</td>
+<td>pico</td>
+<td>rgrep</td>
+<td>sed                 </td>
+</tr>
+<tr>
+<td>sort</td>
+<td>spell</td>
+<td>tr</td>
+<td>expr                </td>
+</tr>
+<tr>
+<td>uniq</td>
+<td>wc</td>
+<td>let</td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
-
 <p><strong>文件传输</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> lprm </td>
-        <td> lpr </td>
-        <td> lpq </td>
-        <td> lpd </td>
-        <td> bye </td>
-        <td> ftp </td>
-    </tr>
-    <tr>
-        <td> uuto </td>
-        <td> uupick </td>
-        <td> uucp </td>
-        <td> uucico </td>
-        <td> tftp </td>
-        <td> ncftp </td>
-    </tr>
-    <tr>
-        <td> ftpshut </td>
-        <td> ftpwho </td>
-        <td> ftpcount </td>
-        <td> </td>
-    </tr>
-    <tr>
-</tr></table>
-
-
-
+<table>
+<thead>
+<tr>
+<th>lprm</th>
+<th>lpr</th>
+<th>lpq</th>
+<th>lpd                 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bye</td>
+<td>ftp</td>
+<td>uuto</td>
+<td>uupick              </td>
+</tr>
+<tr>
+<td>uucp</td>
+<td>uucico</td>
+<td>tftp</td>
+<td>ncftp               </td>
+</tr>
+<tr>
+<td>ftpshut</td>
+<td>ftpwho</td>
+<td>ftpcount</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><strong>磁盘管理</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> cd </td>
-        <td> df </td>
-        <td> dirs </td>
-        <td> du </td>
-        <td> edquota </td>
-        <td> eject </td>
-    </tr>
-    <tr>
-        <td> mcd </td>
-        <td> mdeltree </td>
-        <td> mdu </td>
-        <td> mkdir </td>
-        <td> mlabel </td>
-        <td> mmd </td>
-    </tr>
-    <tr>
-        <td> mrd </td>
-        <td> mzip </td>
-        <td> pwd </td>
-        <td> quota </td>
-        <td> mount </td>
-        <td> mmount </td>
-    </tr>
-    <tr>
-        <td> rmdir </td>
-        <td> rmt </td>
-        <td> stat </td>
-        <td> tree </td>
-        <td> umount </td>
-        <td> ls </td>
-    </tr>
-    <tr>
-        <td> quotacheck </td>
-        <td> quotaoff </td>
-        <td> lndir </td>
-        <td> repquota </td>
-        <td> quotaon </td>
-        <td> </td>
-    </tr>
+<table>
+<thead>
+<tr>
+<th>cd</th>
+<th>df</th>
+<th>dirs</th>
+<th>du                  </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>edquota</td>
+<td>eject</td>
+<td>mcd</td>
+<td>mdeltree            </td>
+</tr>
+<tr>
+<td>mdu</td>
+<td>mkdir</td>
+<td>mlabel</td>
+<td>mmd                 </td>
+</tr>
+<tr>
+<td>mrd</td>
+<td>mzip</td>
+<td>pwd</td>
+<td>quota               </td>
+</tr>
+<tr>
+<td>mount</td>
+<td>mmount</td>
+<td>rmdir</td>
+<td>rmt                 </td>
+</tr>
+<tr>
+<td>stat</td>
+<td>tree</td>
+<td>umount</td>
+<td>ls                  </td>
+</tr>
+<tr>
+<td>quotacheck</td>
+<td>quotaoff</td>
+<td>lndir</td>
+<td>repquota            </td>
+</tr>
+<tr>
+<td>quotaon</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
-
 <p><strong>磁盘维护</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> badblocks </td>
-        <td> cfdisk </td>
-        <td> dd </td>
-        <td> e2fsck </td>
-        <td> ext2ed </td>
-        <td> fsck </td>
-    </tr>
-    <tr>
-        <td> fsck.minix </td>
-        <td> fsconf </td>
-        <td> fdformat </td>
-        <td> hdparm </td>
-        <td> mformat </td>
-        <td> mkbootdisk </td>
-    </tr>
-    <tr>
-        <td> mkdosfs </td>
-        <td> mke2fs </td>
-        <td> mkfs.ext2 </td>
-        <td> mkfs.msdos </td>
-        <td> mkinitrd </td>
-        <td> mkisofs </td>
-    </tr>
-    <tr>
-        <td> mkswap </td>
-        <td> mpartition </td>
-        <td> swapon </td>
-        <td> symlinks </td>
-        <td> sync </td>
-        <td> mbadblocks </td>
-    </tr>
-    <tr>
-        <td> mkfs.minix </td>
-        <td> fsck.ext2 </td>
-        <td> fdisk </td>
-        <td> losetup </td>
-        <td> mkfs </td>
-        <td> sfdisk </td>
-    </tr>
-    <tr>
-        <td> swapoff </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
-    <tr>
-</tr></table>
-
-
-<p><strong>网络通讯</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> apachectl </td>
-        <td> arpwatch </td>
-        <td> dip </td>
-        <td> getty </td>
-        <td> mingetty </td>
-        <td> uux </td>
-    </tr>
-    <tr>
-        <td> telnet </td>
-        <td> uulog </td>
-        <td> uustat </td>
-        <td> ppp-off </td>
-        <td> netconfig </td>
-        <td> nc </td>
-    </tr>
-    <tr>
-        <td> httpd </td>
-        <td> ifconfig </td>
-        <td> minicom </td>
-        <td> mesg </td>
-        <td> dnsconf </td>
-        <td> wall </td>
-    </tr>
-    <tr>
-        <td> netstat </td>
-        <td> ping </td>
-        <td> pppstats </td>
-        <td> samba </td>
-        <td> setserial </td>
-        <td> talk </td>
-    </tr>
-    <tr>
-        <td> traceroute </td>
-        <td> tty </td>
-        <td> newaliases </td>
-        <td> uuname </td>
-        <td> netconf </td>
-        <td> write </td>
-    </tr>
-    <tr>
-        <td> statserial </td>
-        <td> efax </td>
-        <td> pppsetup </td>
-        <td> tcpdump </td>
-        <td> ytalk </td>
-        <td> cu </td>
-    </tr>
-    <tr>
-        <td> smbd </td>
-        <td> testparm </td>
-        <td> smbclient </td>
-        <td> shapecfg </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
-    <tr>
-</tr></table>
-
-
-<p><strong>系统管理</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> adduser </td>
-        <td> chfn </td>
-        <td> useradd </td>
-        <td> date </td>
-        <td> exit </td>
-        <td> finger </td>
-    </tr>
-    <tr>
-        <td> fwhios </td>
-        <td> sleep </td>
-        <td> suspend </td>
-        <td> groupdel </td>
-        <td> groupmod </td>
-        <td> halt </td>
-    </tr>
-    <tr>
-        <td> kill </td>
-        <td> last </td>
-        <td> lastb </td>
-        <td> login </td>
-        <td> logname </td>
-        <td> logout </td>
-    </tr>
-    <tr>
-        <td> ps </td>
-        <td> nice </td>
-        <td> procinfo </td>
-        <td> top </td>
-        <td> pstree </td>
-        <td> reboot </td>
-    </tr>
-    <tr>
-        <td> rlogin </td>
-        <td> rsh </td>
-        <td> sliplogin </td>
-        <td> screen </td>
-        <td> shutdown </td>
-        <td> rwho </td>
-    </tr>
-    <tr>
-        <td> sudo </td>
-        <td> gitps </td>
-        <td> swatch </td>
-        <td> tload </td>
-        <td> logrotate </td>
-        <td> uname </td>
-    </tr>
-    <tr>
-        <td> chsh </td>
-        <td> userconf </td>
-        <td> userdel </td>
-        <td> usermod </td>
-        <td> vlock </td>
-        <td> who </td>
-    </tr>
-    <tr>
-        <td> whoami </td>
-        <td> whois </td>
-        <td> newgrp </td>
-        <td> renice </td>
-        <td> su </td>
-        <td> skill </td>
-    </tr>
-    <tr>
-        <td> w </td>
-        <td> id </td>
-        <td> free </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
-    <tr>
-</tr></table>
-
-
-<p><strong>系统设置</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> reset </td>
-        <td> clear </td>
-        <td> alias </td>
-        <td> dircolors </td>
-        <td> aumix </td>
-        <td> bind </td>
-    </tr>
-    <tr>
-        <td> chroot </td>
-        <td> clock </td>
-        <td> crontab </td>
-        <td> declare </td>
-        <td> depmod </td>
-        <td> dmesg </td>
-    </tr>
-    <tr>
-        <td> enable </td>
-        <td> eval </td>
-        <td> export </td>
-        <td> pwunconv </td>
-        <td> grpconv </td>
-        <td> rpm </td>
-    </tr>
-    <tr>
-        <td> insmod </td>
-        <td> kbdconfig </td>
-        <td> lilo </td>
-        <td> liloconfig </td>
-        <td> lsmod </td>
-        <td> minfo </td>
-    </tr>
-    <tr>
-        <td> set </td>
-        <td> modprobe </td>
-        <td> ntsysv </td>
-        <td> mouseconfig </td>
-        <td> passwd </td>
-        <td> pwconv </td>
-    </tr>
-    <tr>
-        <td> rdate </td>
-        <td> resize </td>
-        <td> rmmod </td>
-        <td> grpunconv </td>
-        <td> modinfo </td>
-        <td> time </td>
-    </tr>
-    <tr>
-        <td> setup </td>
-        <td> sndconfig </td>
-        <td> setenv </td>
-        <td> setconsole </td>
-        <td> timeconfig </td>
-        <td> ulimit </td>
-    </tr>
-    <tr>
-        <td> unset </td>
-        <td> chkconfig </td>
-        <td> apmd </td>
-        <td> hwclock </td>
-        <td> mkkickstart </td>
-        <td> fbset </td>
-    </tr>
-    <tr>
-        <td> unalias </td>
-        <td> SVGATextMode </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
-    <tr>
-</tr></table>
-
-<p><strong>备份压缩</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> ar </td>
-        <td> bunzip2 </td>
-        <td> bzip2 </td>
-        <td> bzip2recover </td>
-        <td> gunzip </td>
-        <td> unarj </td>
-    </tr>
-    <tr>
-        <td> compress </td>
-        <td> cpio </td>
-        <td> dump </td>
-        <td> uuencode </td>
-        <td> gzexe </td>
-        <td> gzip </td>
-    </tr>
-    <tr>
-        <td> lha </td>
-        <td> restore </td>
-        <td> tar </td>
-        <td> uudecode </td>
-        <td> unzip </td>
-        <td> zip </td>
-    </tr>
-    <tr>
-        <td> zipinfo </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-    </tr>
-    <tr>
-</tr></table>
-
-<p><strong>设备管理</strong></p>
-<table class="htable" border="1">
-    <tr>
-        <td> setleds </td>
-        <td> loadkeys </td>
-        <td> rdev </td>
-        <td> dumpkeys </td>
-        <td> MAKEDEV </td>
-        <td>  </td>
-    </tr>
+<table>
+<thead>
+<tr>
+<th>badblocks</th>
+<th>cfdisk</th>
+<th>dd</th>
+<th>e2fsck              </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ext2ed</td>
+<td>fsck</td>
+<td>fsck.minix</td>
+<td>fsconf              </td>
+</tr>
+<tr>
+<td>fdformat</td>
+<td>hdparm</td>
+<td>mformat</td>
+<td>mkbootdisk          </td>
+</tr>
+<tr>
+<td>mkdosfs</td>
+<td>mke2fs</td>
+<td>mkfs.ext2</td>
+<td>mkfs.msdos          </td>
+</tr>
+<tr>
+<td>mkinitrd</td>
+<td>mkisofs</td>
+<td>mkswap</td>
+<td>mpartition          </td>
+</tr>
+<tr>
+<td>swapon</td>
+<td>symlinks</td>
+<td>sync</td>
+<td>mbadblocks          </td>
+</tr>
+<tr>
+<td>mkfs.minix</td>
+<td>fsck.ext2</td>
+<td>fdisk</td>
+<td>losetup             </td>
+</tr>
+<tr>
+<td>mkfs</td>
+<td>sfdisk</td>
+<td>swapoff</td>
+<td></td>
+</tr>
+</tbody>
 </table>
-
-
-
-
-
-
+<p><strong>网络通讯</strong></p>
+<table>
+<thead>
+<tr>
+<th>apachectl</th>
+<th>arpwatch</th>
+<th>dip</th>
+<th>getty               </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mingetty</td>
+<td>uux</td>
+<td>telnet</td>
+<td>uulog               </td>
+</tr>
+<tr>
+<td>uustat</td>
+<td>ppp-off</td>
+<td>netconfig</td>
+<td>nc                  </td>
+</tr>
+<tr>
+<td>httpd</td>
+<td>ifconfig</td>
+<td>minicom</td>
+<td>mesg                </td>
+</tr>
+<tr>
+<td>dnsconf</td>
+<td>wall</td>
+<td>netstat</td>
+<td>ping                </td>
+</tr>
+<tr>
+<td>pppstats</td>
+<td>samba</td>
+<td>setserial</td>
+<td>talk                </td>
+</tr>
+<tr>
+<td>traceroute</td>
+<td>tty</td>
+<td>newaliases</td>
+<td>uuname              </td>
+</tr>
+<tr>
+<td>netconf</td>
+<td>write</td>
+<td>statserial</td>
+<td>efax                </td>
+</tr>
+<tr>
+<td>pppsetup</td>
+<td>tcpdump</td>
+<td>ytalk</td>
+<td>cu                  </td>
+</tr>
+<tr>
+<td>smbd</td>
+<td>testparm</td>
+<td>smbclient</td>
+<td>shapecfg            </td>
+</tr>
+</tbody>
+</table>
+<p><strong>系统管理</strong></p>
+<table>
+<thead>
+<tr>
+<th>adduser</th>
+<th>chfn</th>
+<th>useradd</th>
+<th>date                </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exit</td>
+<td>finger</td>
+<td>fwhios</td>
+<td>sleep               </td>
+</tr>
+<tr>
+<td>suspend</td>
+<td>groupdel</td>
+<td>groupmod</td>
+<td>halt                </td>
+</tr>
+<tr>
+<td>kill</td>
+<td>last</td>
+<td>lastb</td>
+<td>login               </td>
+</tr>
+<tr>
+<td>logname</td>
+<td>logout</td>
+<td>ps</td>
+<td>nice                </td>
+</tr>
+<tr>
+<td>procinfo</td>
+<td>top</td>
+<td>pstree</td>
+<td>reboot              </td>
+</tr>
+<tr>
+<td>rlogin</td>
+<td>rsh</td>
+<td>sliplogin</td>
+<td>screen              </td>
+</tr>
+<tr>
+<td>shutdown</td>
+<td>rwho</td>
+<td>sudo</td>
+<td>gitps               </td>
+</tr>
+<tr>
+<td>swatch</td>
+<td>tload</td>
+<td>logrotate</td>
+<td>uname               </td>
+</tr>
+<tr>
+<td>chsh</td>
+<td>userconf</td>
+<td>userdel</td>
+<td>usermod             </td>
+</tr>
+<tr>
+<td>vlock</td>
+<td>who</td>
+<td>whoami</td>
+<td>whois               </td>
+</tr>
+<tr>
+<td>newgrp</td>
+<td>renice</td>
+<td>su</td>
+<td>skill               </td>
+</tr>
+<tr>
+<td>w</td>
+<td>id</td>
+<td>free</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>系统设置</strong></p>
+<table>
+<thead>
+<tr>
+<th>reset</th>
+<th>clear</th>
+<th>alias</th>
+<th>dircolors           </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aumix</td>
+<td>bind</td>
+<td>chroot</td>
+<td>clock               </td>
+</tr>
+<tr>
+<td>crontab</td>
+<td>declare</td>
+<td>depmod</td>
+<td>dmesg               </td>
+</tr>
+<tr>
+<td>enable</td>
+<td>eval</td>
+<td>export</td>
+<td>pwunconv            </td>
+</tr>
+<tr>
+<td>grpconv</td>
+<td>rpm</td>
+<td>insmod</td>
+<td>kbdconfig           </td>
+</tr>
+<tr>
+<td>lilo</td>
+<td>liloconfig</td>
+<td>lsmod</td>
+<td>minfo               </td>
+</tr>
+<tr>
+<td>set</td>
+<td>modprobe</td>
+<td>ntsysv</td>
+<td>mouseconfig         </td>
+</tr>
+<tr>
+<td>passwd</td>
+<td>pwconv</td>
+<td>rdate</td>
+<td>resize              </td>
+</tr>
+<tr>
+<td>rmmod</td>
+<td>grpunconv</td>
+<td>modinfo</td>
+<td>time                </td>
+</tr>
+<tr>
+<td>setup</td>
+<td>sndconfig</td>
+<td>setenv</td>
+<td>setconsole          </td>
+</tr>
+<tr>
+<td>timeconfig</td>
+<td>ulimit</td>
+<td>unset</td>
+<td>chkconfig           </td>
+</tr>
+<tr>
+<td>apmd</td>
+<td>hwclock</td>
+<td>mkkickstart</td>
+<td>fbset               </td>
+</tr>
+<tr>
+<td>unalias</td>
+<td>SVGATextMode</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>备份压缩</strong></p>
+<table>
+<thead>
+<tr>
+<th>ar</th>
+<th>bunzip2</th>
+<th>bzip2</th>
+<th>bzip2recover        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gunzip</td>
+<td>unarj</td>
+<td>compress</td>
+<td>cpio                </td>
+</tr>
+<tr>
+<td>dump</td>
+<td>uuencode</td>
+<td>gzexe</td>
+<td>gzip                </td>
+</tr>
+<tr>
+<td>lha</td>
+<td>restore</td>
+<td>tar</td>
+<td>uudecode            </td>
+</tr>
+<tr>
+<td>unzip</td>
+<td>zip</td>
+<td>zipinfo</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>设备管理</strong></p>
+<table>
+<thead>
+<tr>
+<th>setleds</th>
+<th>loadkeys</th>
+<th>rdev</th>
+<th>dumpkeys            </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAKEDEV</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 </article>
 

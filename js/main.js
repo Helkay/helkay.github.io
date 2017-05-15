@@ -52,4 +52,23 @@ $(document).ready(function () {
       s.parentNode.insertBefore(bp, s);
   })();
 
+  $.getJSON("../../../../json/table.json",function(data){ 
+    $('#post').find('a').each(function(){
+        var p = $(this).attr('href');
+        if(p.substring(0,1) == '_' && p.substring(p.length - 1,p.length) == '_'){
+          var pname = p.substring(1,p.length - 1);
+          for(var i in data){
+              if(i == pname){
+                $(this).attr('href',data[i]);
+              }
+          }
+        }
+    });
+  });
+
+
+ 
+    
+  
+
 })
