@@ -97,8 +97,8 @@
 </header>
 
 <body>
-<div class="content-wrapper" style="height:100%">
-      <div class="content-wrapper__inner" style="height:100%;padding:0;">
+<div class="content-wrapper" >
+      <div class="content-wrapper__inner">
         
 <article id="post" style="padding-top:50px;padding-bottom:100px;border-bottom: 1px dashed #ccc;">
   <h1>@ResponseBody 返回字符串乱码
@@ -110,7 +110,11 @@
   <h3 id="今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种格式。一开始我以为是response没有转码导致的-但是java代码中加入转码后依然无效"><a href="#今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种格式。一开始我以为是response没有转码导致的-但是java代码中加入转码后依然无效" class="headerlink" title="今天在用ajax post方法调用java方法时,返回的结果中文始终是???这种格式。一开始我以为是response没有转码导致的,但是java代码中加入转码后依然无效"></a>今天在用ajax post方法调用java方法时,返回的结果中文始终是???这种格式。一开始我以为是response没有转码导致的,但是java代码中加入转码后依然无效</h3><pre><code class="java">response.setCharacterEncoding(&quot;UTF-8&quot;);
 </code></pre>
 <h3 id="最后查资料发现是spring-mvc的一个bug，spring-MVC有一系列HttpMessageConverter去处理用-ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1-而且是final的"><a href="#最后查资料发现是spring-mvc的一个bug，spring-MVC有一系列HttpMessageConverter去处理用-ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1-而且是final的" class="headerlink" title="最后查资料发现是spring mvc的一个bug，spring MVC有一系列HttpMessageConverter去处理用@ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1,而且是final的"></a>最后查资料发现是spring mvc的一个bug，spring MVC有一系列HttpMessageConverter去处理用@ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1,而且是final的</h3><h3 id="网上目前我找到的有两种解决办法"><a href="#网上目前我找到的有两种解决办法" class="headerlink" title="网上目前我找到的有两种解决办法"></a>网上目前我找到的有两种解决办法</h3><ul>
-<li><p>自己继承AbstractHttpMessageConverter,写一个类复制 StringHttpMessageConverter.java的代码,将<br>public static final Charset DEFAULT_CHARSET = Charset.forName(“ISO-8859-1”);<br>改为<br>public static final Charset DEFAULT_CHARSET = Charset.forName(“UTF-8”);<br>spring-servlet的配置文件如下</p>
+<li><p>自己继承AbstractHttpMessageConverter,写一个类复制 StringHttpMessageConverter.java的代码,将
+public static final Charset DEFAULT_CHARSET = Charset.forName(“ISO-8859-1”);
+改为
+public static final Charset DEFAULT_CHARSET = Charset.forName(“UTF-8”);
+spring-servlet的配置文件如下</p>
 <pre><code class="xml">&lt;bean  
   class=&quot;org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter&quot;&gt;  
   &lt;property name=&quot;messageConverters&quot;&gt;  
@@ -121,7 +125,13 @@
 &lt;/bean&gt;
 </code></pre>
 </li>
-<li><p>StringHttpMessageConverter默认iso-8859-1编码，但是会根据请求头信息指定的编码格式来转换，所以只需要在ajax请求的时候指定头信息Accept属性<br>$.ajax({<br>…<br>headers: {<br>Accept : “text/plain; charset=utf-8”,<br>}<br>});</p>
+<li><p>StringHttpMessageConverter默认iso-8859-1编码，但是会根据请求头信息指定的编码格式来转换，所以只需要在ajax请求的时候指定头信息Accept属性
+$.ajax({
+…
+headers: { 
+Accept : “text/plain; charset=utf-8”,
+}
+});</p>
 </li>
 </ul>
 

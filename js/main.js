@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+  $('#post').find('br').remove();
+
   $('a.blog-button').click(function (e) {
     if ($('.panel-cover').hasClass('panel-cover--collapsed')) return
     currentWidth = $('.panel-cover').width()

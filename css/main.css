@@ -3,6 +3,29 @@
 /* Modifications */
 
 
+.htable {
+  width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    border-left: none;
+    word-break: normal;
+    font-size:14px;
+}
+
+.htable td {
+    width: 16.6%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    line-height: 20px;
+    vertical-align: middle;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
 
 .btn, 
 .navigation__item a {
