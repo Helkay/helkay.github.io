@@ -4,8 +4,28 @@
 
     
   <url>
+    <loc>http://blog.helkay.com/2017/05/2017-05-15-Linux%E5%91%BD%E4%BB%A4%20-%20find/</loc>
+    <lastmod>2017-05-16T04:50:34.000Z</lastmod>
+    <data>
+        <display>
+        <title>Linux命令 - find</title>
+        <pubTime>2017-05-14T16:00:00.000Z</pubTime>
+        
+        <tag>Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Blog" url="http://blog.helkay.com/categories/Blog/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.helkay.com/menu/Linux%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2017-05-15T07:57:48.000Z</lastmod>
+    <lastmod>2017-05-15T11:54:53.000Z</lastmod>
     <data>
         <display>
         <title>Linux工具与命令</title>
@@ -22,11 +42,11 @@
 
     
   <url>
-    <loc>http://blog.helkay.com/2017/05/2017-05-15-%E6%AF%8F%E6%97%A5%E4%B8%80Linux%E5%91%BD%E4%BB%A4%20--%20cat/</loc>
-    <lastmod>2017-05-15T07:02:45.000Z</lastmod>
+    <loc>http://blog.helkay.com/2017/05/2017-05-15-Linux%E5%91%BD%E4%BB%A4%20-%20cat/</loc>
+    <lastmod>2017-05-15T11:47:44.000Z</lastmod>
     <data>
         <display>
-        <title>每日一Linux命令 -- cat</title>
+        <title>Linux命令 - cat</title>
         <pubTime>2017-05-14T16:00:00.000Z</pubTime>
         
         <tag>Linux</tag>
