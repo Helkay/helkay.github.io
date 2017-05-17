@@ -201,40 +201,6 @@ This is the 9th line
   </entry>
   
   <entry>
-    <title>Git命令</title>
-    <link href="http://helkay.me/2017/05/2017-05-12-Git%E5%91%BD%E4%BB%A4/"/>
-    <id>http://helkay.me/2017/05/2017-05-12-Git命令/</id>
-    <published>2017-05-11T16:00:00.000Z</published>
-    <updated>2017-05-12T10:40:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Git-user-name-uesremail设置"><a href="#Git-user-name-uesremail设置" class="headerlink" title="Git user.name uesremail设置"></a>Git user.name uesremail设置</h2><pre><code class="bash">#全局
-git config --global user.name  &quot;your_name&quot;
-git config --global user.emial &quot;your_email&quot;
-
-#局部
-git config user.name  &quot;your_name&quot;
-git config user.emial &quot;your_email&quot;
-
-#取消
-git config --unset --global user.name
-git config --unset --global user.email
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Git-user-name-uesremail设置&quot;&gt;&lt;a href=&quot;#Git-user-name-uesremail设置&quot; class=&quot;headerlink&quot; title=&quot;Git user.name uesremail设置&quot;&gt;&lt;/a&gt;Git user.na
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Linux工具与命令</title>
     <link href="http://helkay.me/menu/Linux%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%91%BD%E4%BB%A4/"/>
     <id>http://helkay.me/menu/Linux工具与命令/</id>
@@ -827,6 +793,40 @@ git config --unset --global user.email
   </entry>
   
   <entry>
+    <title>Git命令</title>
+    <link href="http://helkay.me/2017/05/2017-05-12-Git%E5%91%BD%E4%BB%A4/"/>
+    <id>http://helkay.me/2017/05/2017-05-12-Git命令/</id>
+    <published>2017-05-11T16:00:00.000Z</published>
+    <updated>2017-05-12T10:40:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Git-user-name-uesremail设置"><a href="#Git-user-name-uesremail设置" class="headerlink" title="Git user.name uesremail设置"></a>Git user.name uesremail设置</h2><pre><code class="bash">#全局
+git config --global user.name  &quot;your_name&quot;
+git config --global user.emial &quot;your_email&quot;
+
+#局部
+git config user.name  &quot;your_name&quot;
+git config user.emial &quot;your_email&quot;
+
+#取消
+git config --unset --global user.name
+git config --unset --global user.email
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Git-user-name-uesremail设置&quot;&gt;&lt;a href=&quot;#Git-user-name-uesremail设置&quot; class=&quot;headerlink&quot; title=&quot;Git user.name uesremail设置&quot;&gt;&lt;/a&gt;Git user.na
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java 注解 Annotations</title>
     <link href="http://helkay.me/2017/05/2017-05-11-Java%20%E6%B3%A8%E8%A7%A3%20Annotations/"/>
     <id>http://helkay.me/2017/05/2017-05-11-Java 注解 Annotations/</id>
@@ -1132,6 +1132,134 @@ chmod 700 -R .ssh
   </entry>
   
   <entry>
+    <title>单例模式</title>
+    <link href="http://helkay.me/2017/05/2017-05-02-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://helkay.me/2017/05/2017-05-02-单例模式/</id>
+    <published>2017-05-01T16:00:00.000Z</published>
+    <updated>2017-05-12T07:00:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"><a href="#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。" class="headerlink" title="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"></a>单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。</h3><ul>
+<li><strong><font color="#e25440" size="4">懒汉式(线程不安全)</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoOne {
+
+    private static SingletonDemoOne instance;
+
+    private SingletonDemoOne() {
+    }
+
+    public static SingletonDemoOne getInstance() {
+        if (instance == null) {
+            instance = new SingletonDemoOne();
+            //todo
+        }
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>延迟加载很明显，但是在多线程不能正常工作</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">懒汉式(线程安全)</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoTwo {
+
+    private static SingletonDemoTwo instance;
+
+    private SingletonDemoTwo() {
+    }
+
+    public static synchronized SingletonDemoTwo getInstance() {
+        if (instance == null) {
+            instance = new SingletonDemoTwo();
+            //todo
+        }
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>延迟加载明显,但是效率很低</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">饿汉式</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoThree {
+    private static SingletonDemoThree instance = new SingletonDemoThree();
+
+    private SingletonDemoThree() {
+    }
+
+    public static SingletonDemoThree getInstance() {
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>在类加载的时候实例化,不能确定是否有其他方法导致类加载,且没有达到延迟加载效果</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">双重检查[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoFour {
+
+    private static volatile SingletonDemoFour singleton;
+
+    private SingletonDemoFour() {
+    }
+
+    public static SingletonDemoFour getInstance() {
+        if (singleton == null) {
+            synchronized (SingletonDemoFour.class) {
+                if (singleton == null) {
+                    singleton = new SingletonDemoFour();
+                }
+            }
+        }
+        return singleton;
+    }
+}
+</code></pre>
+<p><strong><em>线程安全,延迟加载,效率较高。</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">静态内部类[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoFive {
+
+    private SingletonDemoFive() {
+    }
+
+    private static class SingletonInstance {
+        private static final SingletonDemoFive INSTANCE = new SingletonDemoFive();
+    }
+
+    public static SingletonDemoFive getInstance() {
+        return SingletonInstance.INSTANCE;
+    }
+}
+</code></pre>
+<ul>
+<li><strong><font color="#e25440" size="4">枚举[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public enum Singleton {
+    INSTANCE;
+
+    public void whateverMethod() {
+
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot;&gt;&lt;a href=&quot;#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot; class=&quot;headerlink&quot; title=&quot;单例模式主要作用是保证在Ja
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java多线程</title>
     <link href="http://helkay.me/2017/05/2017-05-02-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     <id>http://helkay.me/2017/05/2017-05-02-多线程/</id>
@@ -1347,134 +1475,6 @@ class ThreadDemo2 extends Thread {
   </entry>
   
   <entry>
-    <title>单例模式</title>
-    <link href="http://helkay.me/2017/05/2017-05-02-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://helkay.me/2017/05/2017-05-02-单例模式/</id>
-    <published>2017-05-01T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"><a href="#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。" class="headerlink" title="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"></a>单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。</h3><ul>
-<li><strong><font color="#e25440" size="4">懒汉式(线程不安全)</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoOne {
-
-    private static SingletonDemoOne instance;
-
-    private SingletonDemoOne() {
-    }
-
-    public static SingletonDemoOne getInstance() {
-        if (instance == null) {
-            instance = new SingletonDemoOne();
-            //todo
-        }
-        return instance;
-    }
-}
-</code></pre>
-<p><strong><em>延迟加载很明显，但是在多线程不能正常工作</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">懒汉式(线程安全)</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoTwo {
-
-    private static SingletonDemoTwo instance;
-
-    private SingletonDemoTwo() {
-    }
-
-    public static synchronized SingletonDemoTwo getInstance() {
-        if (instance == null) {
-            instance = new SingletonDemoTwo();
-            //todo
-        }
-        return instance;
-    }
-}
-</code></pre>
-<p><strong><em>延迟加载明显,但是效率很低</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">饿汉式</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoThree {
-    private static SingletonDemoThree instance = new SingletonDemoThree();
-
-    private SingletonDemoThree() {
-    }
-
-    public static SingletonDemoThree getInstance() {
-        return instance;
-    }
-}
-</code></pre>
-<p><strong><em>在类加载的时候实例化,不能确定是否有其他方法导致类加载,且没有达到延迟加载效果</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">双重检查[推荐使用]</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoFour {
-
-    private static volatile SingletonDemoFour singleton;
-
-    private SingletonDemoFour() {
-    }
-
-    public static SingletonDemoFour getInstance() {
-        if (singleton == null) {
-            synchronized (SingletonDemoFour.class) {
-                if (singleton == null) {
-                    singleton = new SingletonDemoFour();
-                }
-            }
-        }
-        return singleton;
-    }
-}
-</code></pre>
-<p><strong><em>线程安全,延迟加载,效率较高。</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">静态内部类[推荐使用]</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoFive {
-
-    private SingletonDemoFive() {
-    }
-
-    private static class SingletonInstance {
-        private static final SingletonDemoFive INSTANCE = new SingletonDemoFive();
-    }
-
-    public static SingletonDemoFive getInstance() {
-        return SingletonInstance.INSTANCE;
-    }
-}
-</code></pre>
-<ul>
-<li><strong><font color="#e25440" size="4">枚举[推荐使用]</font></strong></li>
-</ul>
-<pre><code class="java">public enum Singleton {
-    INSTANCE;
-
-    public void whateverMethod() {
-
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot;&gt;&lt;a href=&quot;#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot; class=&quot;headerlink&quot; title=&quot;单例模式主要作用是保证在Ja
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>设计模式目录</title>
     <link href="http://helkay.me/menu/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9B%AE%E5%BD%95/"/>
     <id>http://helkay.me/menu/设计模式目录/</id>
@@ -1529,30 +1529,6 @@ class ThreadDemo2 extends Thread {
   </entry>
   
   <entry>
-    <title>删除远程分支</title>
-    <link href="http://helkay.me/2017/04/2017-04-25-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
-    <id>http://helkay.me/2017/04/2017-04-25-删除远程分支/</id>
-    <published>2017-04-24T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>git push origin --delete &lt;branch name&gt;
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;pre&gt;&lt;code&gt;git push origin --delete &amp;lt;branch name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>修改提交注释信息</title>
     <link href="http://helkay.me/2017/04/2017-04-25-%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E6%B3%A8%E9%87%8A%E4%BF%A1%E6%81%AF/"/>
     <id>http://helkay.me/2017/04/2017-04-25-修改提交注释信息/</id>
@@ -1572,6 +1548,30 @@ class ThreadDemo2 extends Thread {
     <summary type="html">
     
       &lt;h2 id=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;a href=&quot;#如何修改现有的，未被提交的提交？&quot; class=&quot;headerlink&quot; title=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;/a&gt;如何修改现有的，未被提交的提交？&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;git co
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>删除远程分支</title>
+    <link href="http://helkay.me/2017/04/2017-04-25-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
+    <id>http://helkay.me/2017/04/2017-04-25-删除远程分支/</id>
+    <published>2017-04-24T16:00:00.000Z</published>
+    <updated>2017-05-12T07:00:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>git push origin --delete &lt;branch name&gt;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;git push origin --delete &amp;lt;branch name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
