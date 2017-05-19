@@ -111,7 +111,61 @@
   </a>
   </h1>
 
-  <h2 id="简单工厂方法模式"><a href="#简单工厂方法模式" class="headerlink" title="简单工厂方法模式"></a>简单工厂方法模式</h2><p><img src="/source/pic/img.png" alt="img"></p>
+  <h2 id="简单工厂方法模式"><a href="#简单工厂方法模式" class="headerlink" title="简单工厂方法模式"></a>简单工厂方法模式</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>简单工厂模式是属于创建型模式，又叫做静态工厂方法（Static Factory Method）模式，但不属于23种GOF设计模式之一。简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。</p>
+<div align="center"><br><img src="http://helkay.me/pic/simple_factory_method.png" style="width:700px;" alt="图片名称" align="center">
+</div>
+
+<h3 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h3><pre><code class="java">public interface ICar {
+
+    void getCar();
+
+}
+</code></pre>
+<pre><code class="java">public class JeepCar implements ICar {
+
+    @Override
+    public void getCar() {
+        System.out.println(&quot;Get JeepCar ...&quot;);
+    }
+
+}
+</code></pre>
+<pre><code class="java">public class SportCar implements ICar {
+
+    @Override
+    public void getCar() {
+        System.out.println(&quot;Get SportCar ...&quot;);
+    }
+
+}
+</code></pre>
+<pre><code class="java">public class Factory {
+
+    public ICar getInstance(String carType) throws IllegalAccessException, InstantiationException {
+
+        if(&quot;sportCat&quot;.equals(carType)){
+            return SportCar.class.newInstance();
+        }else if(&quot;jeepCat&quot;.equals(carType)){
+            return JeepCar.class.newInstance();
+        }else{
+            System.out.println(&quot;No object is instantiated&quot;);
+            return null;
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Factory factory = new Factory();
+        try {
+            factory.getInstance(&quot;sportCat&quot;).getCar();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
+    }
+}
+</code></pre>
 
 </article>
 
