@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helkay.me/"/>
-  <updated>2017-05-15T11:47:44.000Z</updated>
+  <updated>2017-05-19T07:01:22.000Z</updated>
   <id>http://helkay.me/</id>
   
   <author>
@@ -14,6 +14,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux命令 - chmod</title>
+    <link href="http://helkay.me/2017/05/2017-05-19-Linux%E5%91%BD%E4%BB%A4%20-%20chmod/"/>
+    <id>http://helkay.me/2017/05/2017-05-19-Linux命令 - chmod/</id>
+    <published>2017-05-18T16:00:00.000Z</published>
+    <updated>2017-05-19T07:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><p>文件调用权限分为三级 : 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h3><pre><code class="bash">chmod [-cfvR] [--help] [--version] mode file...
+</code></pre>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明:"></a>参数说明:</h3><p><strong>mode:</strong> 权限设定字串</p>
+<pre><code class="bash">[ugoa...][[+-=][rwxX]...][,...]
+</code></pre>
+<ul>
+<li>u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。</li>
+<li><ul>
+<li>表示增加权限、- 表示取消权限、= 表示唯一设定权限。</li>
+</ul>
+</li>
+<li>r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><pre><code class="bash">#将文件 file1.txt 设为所有人皆可读取
+chmod ugo+r file1.txt
+
+#将目前目录下的所有文件与子目录皆设为任何人可读取 :
+chmod -R a+r *
+</code></pre>
+<p><strong>此外chmod也可以用数字来表示权限如 :</strong></p>
+<pre><code class="bash">chmod 777 file
+</code></pre>
+<p>语法为：</p>
+<pre><code class="bash">chmod abc file
+</code></pre>
+<p>其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
+r=4，w=2，x=1</p>
+<p><strong><em>若用chmod 4755 filename可使此程序具有root的权限</em></strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;功能：&quot;&gt;&lt;a href=&quot;#功能：&quot; class=&quot;headerlink&quot; title=&quot;功能：&quot;&gt;&lt;/a&gt;功能：&lt;/h3&gt;&lt;p&gt;文件调用权限分为三级 : 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。&lt;/p&gt;
+&lt;h3 id=&quot;语法
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="Linux" scheme="http://helkay.me/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux命令 - cat</title>
@@ -2146,36 +2198,6 @@ de
     
     
       <category term="Mysql" scheme="http://helkay.me/tags/Mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>分支回退</title>
-    <link href="http://helkay.me/2016/12/2016-12-06-%E5%88%86%E6%94%AF%E5%9B%9E%E9%80%80/"/>
-    <id>http://helkay.me/2016/12/2016-12-06-分支回退/</id>
-    <published>2016-12-05T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="本地分支回退"><a href="#本地分支回退" class="headerlink" title="本地分支回退"></a>本地分支回退</h3><p>查看本地版本信息</p>
-<pre><code>git reflog
-</code></pre><p>回退版本</p>
-<pre><code>git reset --hard 版本号
-</code></pre><h3 id="远程分支回退"><a href="#远程分支回退" class="headerlink" title="远程分支回退"></a>远程分支回退</h3><p>远程分支回退同本地回退,只需在回退版本操作后推送到远程分支</p>
-<pre><code>git push -f
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;本地分支回退&quot;&gt;&lt;a href=&quot;#本地分支回退&quot; class=&quot;headerlink&quot; title=&quot;本地分支回退&quot;&gt;&lt;/a&gt;本地分支回退&lt;/h3&gt;&lt;p&gt;查看本地版本信息&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git reflog
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;回退版
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
     
   </entry>
   

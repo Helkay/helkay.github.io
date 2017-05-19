@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="6F4OqKmDkxMqUtTjTSCN1qPy2-m1_HN_H_aGMQkeZrA" />
 
-  <title>Archives: 5/2017: 2017</title>
+  <title>Linux命令 - chmod</title>
   
     <!-- stylesheets list from config.yml -->
     
@@ -99,65 +99,61 @@
 <body>
 <div class="content-wrapper" >
       <div class="content-wrapper__inner">
-        <div class="main-post-list">
-
-  <ol class="post-list">
-    
-      <li>
-        <h2 class="post-list__post-title post-title" style="border-bottom:none;">
-          <a href="/2017/05/2017-05-02-单例模式/" title="单例模式">单例模式</a>
-        </h2>
-        <div class="post-list__meta">
-          <time datetime="Tue May 02 2017 00:00:00 GMT+0800" class="post-list__meta--date date">2017-05-02</time> &#8226; 
-          <span class="post-meta__tags">on
-                
-              
-                 <a href="/tags/设计模式/">设计模式</a> 
-              
-             
-          </span>
-        </div>
-      </li>
-    
-      <li>
-        <h2 class="post-list__post-title post-title" style="border-bottom:none;">
-          <a href="/menu/设计模式目录/" title="设计模式目录">设计模式目录</a>
-        </h2>
-        <div class="post-list__meta">
-          <time datetime="Mon May 01 2017 00:00:00 GMT+0800" class="post-list__meta--date date">2017-05-01</time> &#8226; 
-          <span class="post-meta__tags">on
-                
-              
-             
-          </span>
-        </div>
-      </li>
-    
-  </ol>
-
-  <hr class="post-list__divider ">
-
-  
-<nav id="pagination" class="pagination">
-  
-    <a href="/archives/2017/05/" class="posts newer btn small"">← 上一页</a>
-  
-
-  
-    <span class="pagination__page-number">
-      Page 2 of 2
-    </span>
-
-  
-
-  
-</nav>
+        
+<article id="post" 
 
 
 
-</div>
+  style="padding-top:50px;padding-bottom:100px;border-bottom: 1px dashed #ccc;">
+  <h1>Linux命令 - chmod
+  <a style="float: right;display:block;background-color:#e25440;color:#f8f8f8;width:60px;height:27px;text-align: center;border-radius:3px;" href="/atom.xml" title="Rss" target="_blank">
+      Rss
+  </a>
+  </h1>
 
+  <h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><p>文件调用权限分为三级 : 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h3><pre><code class="bash">chmod [-cfvR] [--help] [--version] mode file...
+</code></pre>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明:"></a>参数说明:</h3><p><strong>mode:</strong> 权限设定字串</p>
+<pre><code class="bash">[ugoa...][[+-=][rwxX]...][,...]
+</code></pre>
+<ul>
+<li>u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。</li>
+<li><ul>
+<li>表示增加权限、- 表示取消权限、= 表示唯一设定权限。</li>
+</ul>
+</li>
+<li>r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><pre><code class="bash">#将文件 file1.txt 设为所有人皆可读取
+chmod ugo+r file1.txt
 
+#将目前目录下的所有文件与子目录皆设为任何人可读取 :
+chmod -R a+r *
+</code></pre>
+<p><strong>此外chmod也可以用数字来表示权限如 :</strong></p>
+<pre><code class="bash">chmod 777 file
+</code></pre>
+<p>语法为：</p>
+<pre><code class="bash">chmod abc file
+</code></pre>
+<p>其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
+r=4，w=2，x=1</p>
+<p><strong><em>若用chmod 4755 filename可使此程序具有root的权限</em></strong></p>
+
+</article>
+
+<div id="disqus_thread" ></div>
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://blog-helkay-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </div>
 </div>
 
