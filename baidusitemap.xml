@@ -4,6 +4,24 @@
 
     
   <url>
+    <loc>http://helkay.me/menu/Linux%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2017-05-19T06:59:19.000Z</lastmod>
+    <data>
+        <display>
+        <title>Linux工具与命令</title>
+        <pubTime>2017-05-11T16:00:00.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Menu" url="http://helkay.me/categories/Menu/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://helkay.me/2017/05/2017-05-04-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2017-05-19T06:41:41.000Z</lastmod>
     <data>
@@ -37,24 +55,6 @@
            
              
               <breadCrumb title="Blog" url="http://helkay.me/categories/Blog/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://helkay.me/menu/Linux%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2017-05-16T05:47:03.000Z</lastmod>
-    <data>
-        <display>
-        <title>Linux工具与命令</title>
-        <pubTime>2017-05-11T16:00:00.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Menu" url="http://helkay.me/categories/Menu/"/>
           
         </display>
     </data>
