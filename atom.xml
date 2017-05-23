@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helkay.me/"/>
-  <updated>2017-05-19T07:01:22.000Z</updated>
+  <updated>2017-05-23T08:43:42.000Z</updated>
   <id>http://helkay.me/</id>
   
   <author>
@@ -16,54 +16,116 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Linux命令 - chmod</title>
-    <link href="http://helkay.me/2017/05/2017-05-19-Linux%E5%91%BD%E4%BB%A4%20-%20chmod/"/>
-    <id>http://helkay.me/2017/05/2017-05-19-Linux命令 - chmod/</id>
-    <published>2017-05-18T16:00:00.000Z</published>
-    <updated>2017-05-19T07:01:22.000Z</updated>
+    <title>原型模式</title>
+    <link href="http://helkay.me/2017/05/2017-05-23-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://helkay.me/2017/05/2017-05-23-原型模式/</id>
+    <published>2017-05-22T16:00:00.000Z</published>
+    <updated>2017-05-23T08:43:42.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><p>文件调用权限分为三级 : 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。</p>
-<h3 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h3><pre><code class="bash">chmod [-cfvR] [--help] [--version] mode file...
-</code></pre>
-<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明:"></a>参数说明:</h3><p><strong>mode:</strong> 权限设定字串</p>
-<pre><code class="bash">[ugoa...][[+-=][rwxX]...][,...]
-</code></pre>
-<ul>
-<li>u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。</li>
-<li><ul>
-<li>表示增加权限、- 表示取消权限、= 表示唯一设定权限。</li>
-</ul>
-</li>
-<li>r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。</li>
-</ul>
-<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><pre><code class="bash">#将文件 file1.txt 设为所有人皆可读取
-chmod ugo+r file1.txt
+    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>原型模式属于创建型模式的一种,其精髓就在于<strong><em>复制</em></strong>一个存在的实例,而不是去新建。</p>
+<h2 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h2><p>我们设想一个这样的场景,小明在X宝上购物,选定购买商品后就要去下订单,我们会发现小明购买多次的订单除了购买商品不同,邮寄地址、收件人、联系方式都是一样的,这时候我们就可以使用原型模型来创建订单了。</p>
+<div align="center"><br><img src="http://helkay.me/pic/prototype.png" style="width:700px;" alt="图片名称" align="center">
+</div>
 
-#将目前目录下的所有文件与子目录皆设为任何人可读取 :
-chmod -R a+r *
+<p><strong>Prototype:</strong> 实现Cloneable接口(Cloneable就相当于Prototype接口) 重写Object的clone方法,如果不实现Cloneable接口则会抛出CloneNotSupportedException异常</p>
+<p><strong>OrderInfo:</strong></p>
+<pre><code class="java">public class OrderInfo implements Cloneable {
+
+    private String goodsName;
+
+    private String address;
+
+    private String username;
+
+    private String mobile;
+
+    public String getGoodsName() {
+        return goodsName;
+    }
+
+    public void setGoodsName(String goodsName) {
+        this.goodsName = goodsName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;OrderInfo{&quot; +
+                &quot;goodsName=&#39;&quot; + goodsName + &#39;\&#39;&#39; +
+                &quot;, address=&#39;&quot; + address + &#39;\&#39;&#39; +
+                &quot;, username=&#39;&quot; + username + &#39;\&#39;&#39; +
+                &quot;, mobile=&#39;&quot; + mobile + &#39;\&#39;&#39; +
+                &#39;}&#39;;
+    }
+
+    @Override
+    public OrderInfo clone() throws CloneNotSupportedException {
+        return (OrderInfo) super.clone();
+    }
+
+}
 </code></pre>
-<p><strong>此外chmod也可以用数字来表示权限如 :</strong></p>
-<pre><code class="bash">chmod 777 file
+<p><strong>Test</strong></p>
+<pre><code class="java">public class Test {
+
+    public static void main(String[] args) throws CloneNotSupportedException {
+
+        OrderInfo orderInfo = new OrderInfo();
+        orderInfo.setAddress(&quot;上海市XXXXX&quot;);
+        orderInfo.setMobile(&quot;138XXXXXXXX&quot;);
+        orderInfo.setUsername(&quot;小明&quot;);
+
+        orderInfo.setGoodsName(&quot;零食&quot;);
+
+        OrderInfo orderInfo1 = orderInfo.clone();
+        orderInfo1.setGoodsName(&quot;衣服&quot;);
+
+        System.out.println(orderInfo.toString());
+        System.out.println(orderInfo1.toString());
+
+    }
+}
 </code></pre>
-<p>语法为：</p>
-<pre><code class="bash">chmod abc file
+<p><strong>结果：</strong></p>
+<pre><code class="bash">OrderInfo{goodsName=&#39;零食&#39;, address=&#39;上海市XXXXX&#39;, username=&#39;小明&#39;, mobile=&#39;138XXXXXXXX&#39;}
+OrderInfo{goodsName=&#39;衣服&#39;, address=&#39;上海市XXXXX&#39;, username=&#39;小明&#39;, mobile=&#39;138XXXXXXXX&#39;}
 </code></pre>
-<p>其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
-r=4，w=2，x=1</p>
-<p><strong><em>若用chmod 4755 filename可使此程序具有root的权限</em></strong></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;功能：&quot;&gt;&lt;a href=&quot;#功能：&quot; class=&quot;headerlink&quot; title=&quot;功能：&quot;&gt;&lt;/a&gt;功能：&lt;/h3&gt;&lt;p&gt;文件调用权限分为三级 : 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。&lt;/p&gt;
-&lt;h3 id=&quot;语法
+      &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;&lt;p&gt;原型模式属于创建型模式的一种,其精髓就在于&lt;strong&gt;&lt;em&gt;复制&lt;/em&gt;&lt;/strong&gt;一个存在的实例,而不是去新建。&lt;/p&gt;
+&lt;
     
     </summary>
     
       <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
     
     
-      <category term="Linux" scheme="http://helkay.me/tags/Linux/"/>
+      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -187,6 +249,143 @@ r=4，w=2，x=1</p>
   </entry>
   
   <entry>
+    <title>Linux命令 - chmod</title>
+    <link href="http://helkay.me/2017/05/2017-05-19-Linux%E5%91%BD%E4%BB%A4%20-%20chmod/"/>
+    <id>http://helkay.me/2017/05/2017-05-19-Linux命令 - chmod/</id>
+    <published>2017-05-18T16:00:00.000Z</published>
+    <updated>2017-05-19T07:01:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><p>文件调用权限分为三级 : 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法:"></a>语法:</h3><pre><code class="bash">chmod [-cfvR] [--help] [--version] mode file...
+</code></pre>
+<h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明:"></a>参数说明:</h3><p><strong>mode:</strong> 权限设定字串</p>
+<pre><code class="bash">[ugoa...][[+-=][rwxX]...][,...]
+</code></pre>
+<ul>
+<li>u 表示该文件的拥有者，g 表示与该文件的拥有者属于同一个群体(group)者，o 表示其他以外的人，a 表示这三者皆是。</li>
+<li><ul>
+<li>表示增加权限、- 表示取消权限、= 表示唯一设定权限。</li>
+</ul>
+</li>
+<li>r 表示可读取，w 表示可写入，x 表示可执行，X 表示只有当该文件是个子目录或者该文件已经被设定过为可执行。</li>
+</ul>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><pre><code class="bash">#将文件 file1.txt 设为所有人皆可读取
+chmod ugo+r file1.txt
+
+#将目前目录下的所有文件与子目录皆设为任何人可读取 :
+chmod -R a+r *
+</code></pre>
+<p><strong>此外chmod也可以用数字来表示权限如 :</strong></p>
+<pre><code class="bash">chmod 777 file
+</code></pre>
+<p>语法为：</p>
+<pre><code class="bash">chmod abc file
+</code></pre>
+<p>其中a,b,c各为一个数字，分别表示User、Group、及Other的权限。
+r=4，w=2，x=1</p>
+<p><strong><em>若用chmod 4755 filename可使此程序具有root的权限</em></strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;功能：&quot;&gt;&lt;a href=&quot;#功能：&quot; class=&quot;headerlink&quot; title=&quot;功能：&quot;&gt;&lt;/a&gt;功能：&lt;/h3&gt;&lt;p&gt;文件调用权限分为三级 : 文件拥有者、群组、其他。利用 chmod 可以藉以控制文件如何被他人所调用。&lt;/p&gt;
+&lt;h3 id=&quot;语法
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="Linux" scheme="http://helkay.me/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux命令 - cat</title>
+    <link href="http://helkay.me/2017/05/2017-05-15-Linux%E5%91%BD%E4%BB%A4%20-%20cat/"/>
+    <id>http://helkay.me/2017/05/2017-05-15-Linux命令 - cat/</id>
+    <published>2017-05-14T16:00:00.000Z</published>
+    <updated>2017-05-15T11:47:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ul>
+<li>显示文件的内容</li>
+</ul>
+<pre><code class="bash">cat filename
+</code></pre>
+<ul>
+<li>创建文件</li>
+</ul>
+<pre><code class="bash">cat &gt; filename
+</code></pre>
+<p>值得一提的是执行这个命令之后会进入一个输入模式,只会保存回车后的内容</p>
+<ul>
+<li>合并内容</li>
+</ul>
+<pre><code class="bash">cat file1 file2 &gt; file
+</code></pre>
+<p>将 file1 和 file2 的内容合并到 file 中,按照从左至右的先后顺序,如果 file 已存在则会覆盖 file中的内容</p>
+<h3 id="使用权限："><a href="#使用权限：" class="headerlink" title="使用权限："></a>使用权限：</h3><p>所有使用者</p>
+<h3 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h3><p><strong>-n :</strong> 输出每行的行数编号</p>
+<pre><code class="bash">$cat -n test 
+1    This is the 1th line
+2    
+3    This is the 3th line
+4    
+5    This is the 5th line
+</code></pre>
+<p><strong>-b :</strong> 和 -n 差不多,只是不输出空白行</p>
+<pre><code class="bash">$cat -b test
+1    This is the 1th line
+
+2    This is the 3th line
+
+3    This is the 5th line
+</code></pre>
+<p><strong>-s :</strong> 将连续两行以上的空白行,用一行空白行来代替</p>
+<p>原文件内容(数字为行号)如下</p>
+<pre><code>  1 This is the 1th line
+  2 
+  3 
+  4 This is the 4th line
+  5 
+  6 
+  7 
+  8 
+  9 This is the 9th line
+</code></pre><p>使用-s输出结果如下</p>
+<pre><code class="bash">$cat -s test 
+This is the 1th line
+
+This is the 4th line
+
+This is the 9th line
+</code></pre>
+<p><strong>-v :</strong> 使用 ^ 和 M- 符号，除了 LFD 和 TAB 之外</p>
+<p><strong>-E :</strong> 或 –show-ends : 在每行结束处显示 $</p>
+<p><strong>-T :</strong> 或 –show-tabs: 将 TAB 字符显示为 ^I</p>
+<p><strong>-A :</strong> 等价于 -vET</p>
+<p><strong>-e :</strong> 等价于”-vE”选项</p>
+<p><strong>-t :</strong> 等价于”-vT”选项</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;功能：&quot;&gt;&lt;a href=&quot;#功能：&quot; class=&quot;headerlink&quot; title=&quot;功能：&quot;&gt;&lt;/a&gt;功能：&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;显示文件的内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;cat filename
+&lt;/co
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="Linux" scheme="http://helkay.me/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux命令 - find</title>
     <link href="http://helkay.me/2017/05/2017-05-15-Linux%E5%91%BD%E4%BB%A4%20-%20find/"/>
     <id>http://helkay.me/2017/05/2017-05-15-Linux命令 - find/</id>
@@ -287,87 +486,36 @@ find . -size +100k -size -200k
   </entry>
   
   <entry>
-    <title>Linux命令 - cat</title>
-    <link href="http://helkay.me/2017/05/2017-05-15-Linux%E5%91%BD%E4%BB%A4%20-%20cat/"/>
-    <id>http://helkay.me/2017/05/2017-05-15-Linux命令 - cat/</id>
-    <published>2017-05-14T16:00:00.000Z</published>
-    <updated>2017-05-15T11:47:44.000Z</updated>
+    <title>Git命令</title>
+    <link href="http://helkay.me/2017/05/2017-05-12-Git%E5%91%BD%E4%BB%A4/"/>
+    <id>http://helkay.me/2017/05/2017-05-12-Git命令/</id>
+    <published>2017-05-11T16:00:00.000Z</published>
+    <updated>2017-05-12T10:40:20.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="功能："><a href="#功能：" class="headerlink" title="功能："></a>功能：</h3><ul>
-<li>显示文件的内容</li>
-</ul>
-<pre><code class="bash">cat filename
-</code></pre>
-<ul>
-<li>创建文件</li>
-</ul>
-<pre><code class="bash">cat &gt; filename
-</code></pre>
-<p>值得一提的是执行这个命令之后会进入一个输入模式,只会保存回车后的内容</p>
-<ul>
-<li>合并内容</li>
-</ul>
-<pre><code class="bash">cat file1 file2 &gt; file
-</code></pre>
-<p>将 file1 和 file2 的内容合并到 file 中,按照从左至右的先后顺序,如果 file 已存在则会覆盖 file中的内容</p>
-<h3 id="使用权限："><a href="#使用权限：" class="headerlink" title="使用权限："></a>使用权限：</h3><p>所有使用者</p>
-<h3 id="参数说明："><a href="#参数说明：" class="headerlink" title="参数说明："></a>参数说明：</h3><p><strong>-n :</strong> 输出每行的行数编号</p>
-<pre><code class="bash">$cat -n test 
-1    This is the 1th line
-2    
-3    This is the 3th line
-4    
-5    This is the 5th line
-</code></pre>
-<p><strong>-b :</strong> 和 -n 差不多,只是不输出空白行</p>
-<pre><code class="bash">$cat -b test
-1    This is the 1th line
+    <content type="html"><![CDATA[<h2 id="Git-user-name-uesremail设置"><a href="#Git-user-name-uesremail设置" class="headerlink" title="Git user.name uesremail设置"></a>Git user.name uesremail设置</h2><pre><code class="bash">#全局
+git config --global user.name  &quot;your_name&quot;
+git config --global user.emial &quot;your_email&quot;
 
-2    This is the 3th line
+#局部
+git config user.name  &quot;your_name&quot;
+git config user.emial &quot;your_email&quot;
 
-3    This is the 5th line
+#取消
+git config --unset --global user.name
+git config --unset --global user.email
 </code></pre>
-<p><strong>-s :</strong> 将连续两行以上的空白行,用一行空白行来代替</p>
-<p>原文件内容(数字为行号)如下</p>
-<pre><code>  1 This is the 1th line
-  2 
-  3 
-  4 This is the 4th line
-  5 
-  6 
-  7 
-  8 
-  9 This is the 9th line
-</code></pre><p>使用-s输出结果如下</p>
-<pre><code class="bash">$cat -s test 
-This is the 1th line
-
-This is the 4th line
-
-This is the 9th line
-</code></pre>
-<p><strong>-v :</strong> 使用 ^ 和 M- 符号，除了 LFD 和 TAB 之外</p>
-<p><strong>-E :</strong> 或 –show-ends : 在每行结束处显示 $</p>
-<p><strong>-T :</strong> 或 –show-tabs: 将 TAB 字符显示为 ^I</p>
-<p><strong>-A :</strong> 等价于 -vET</p>
-<p><strong>-e :</strong> 等价于”-vE”选项</p>
-<p><strong>-t :</strong> 等价于”-vT”选项</p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;功能：&quot;&gt;&lt;a href=&quot;#功能：&quot; class=&quot;headerlink&quot; title=&quot;功能：&quot;&gt;&lt;/a&gt;功能：&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;显示文件的内容&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;cat filename
-&lt;/co
+      &lt;h2 id=&quot;Git-user-name-uesremail设置&quot;&gt;&lt;a href=&quot;#Git-user-name-uesremail设置&quot; class=&quot;headerlink&quot; title=&quot;Git user.name uesremail设置&quot;&gt;&lt;/a&gt;Git user.na
     
     </summary>
     
       <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
     
     
-      <category term="Linux" scheme="http://helkay.me/tags/Linux/"/>
+      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
     
   </entry>
   
@@ -964,40 +1112,6 @@ This is the 9th line
   </entry>
   
   <entry>
-    <title>Git命令</title>
-    <link href="http://helkay.me/2017/05/2017-05-12-Git%E5%91%BD%E4%BB%A4/"/>
-    <id>http://helkay.me/2017/05/2017-05-12-Git命令/</id>
-    <published>2017-05-11T16:00:00.000Z</published>
-    <updated>2017-05-12T10:40:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Git-user-name-uesremail设置"><a href="#Git-user-name-uesremail设置" class="headerlink" title="Git user.name uesremail设置"></a>Git user.name uesremail设置</h2><pre><code class="bash">#全局
-git config --global user.name  &quot;your_name&quot;
-git config --global user.emial &quot;your_email&quot;
-
-#局部
-git config user.name  &quot;your_name&quot;
-git config user.emial &quot;your_email&quot;
-
-#取消
-git config --unset --global user.name
-git config --unset --global user.email
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Git-user-name-uesremail设置&quot;&gt;&lt;a href=&quot;#Git-user-name-uesremail设置&quot; class=&quot;headerlink&quot; title=&quot;Git user.name uesremail设置&quot;&gt;&lt;/a&gt;Git user.na
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Java 注解 Annotations</title>
     <link href="http://helkay.me/2017/05/2017-05-11-Java%20%E6%B3%A8%E8%A7%A3%20Annotations/"/>
     <id>http://helkay.me/2017/05/2017-05-11-Java 注解 Annotations/</id>
@@ -1210,6 +1324,36 @@ public void test() {
   </entry>
   
   <entry>
+    <title>Intellij idea 远程调试</title>
+    <link href="http://helkay.me/2017/05/2017-05-10-Intellij%20Idea%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/"/>
+    <id>http://helkay.me/2017/05/2017-05-10-Intellij Idea远程调试/</id>
+    <published>2017-05-09T16:00:00.000Z</published>
+    <updated>2017-05-19T04:08:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="idea自带的remote"><a href="#idea自带的remote" class="headerlink" title="idea自带的remote"></a>idea自带的remote</h2><div align="center"><br><img src="http://helkay.me/pic/idea1.png" style="width:700px;" alt="图片名称" align="center">
+</div>
+
+
+<h2 id="tomcat-remote-配置"><a href="#tomcat-remote-配置" class="headerlink" title="tomcat remote 配置"></a>tomcat remote 配置</h2><h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><div align="center"><br><img src="http://helkay.me/pic/idea2.png" style="width:700px;" alt="图片名称" align="center">
+</div>
+
+<h3 id="Startup-Connection"><a href="#Startup-Connection" class="headerlink" title="Startup/Connection"></a>Startup/Connection</h3><div align="center"><br><img src="http://helkay.me/pic/idea3.png" style="width:700px;" alt="图片名称" align="center">
+</div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;idea自带的remote&quot;&gt;&lt;a href=&quot;#idea自带的remote&quot; class=&quot;headerlink&quot; title=&quot;idea自带的remote&quot;&gt;&lt;/a&gt;idea自带的remote&lt;/h2&gt;&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img 
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="工具" scheme="http://helkay.me/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ssh登录免密</title>
     <link href="http://helkay.me/2017/05/2017-05-10-ssh%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86/"/>
     <id>http://helkay.me/2017/05/2017-05-10-ssh登录免密/</id>
@@ -1247,36 +1391,6 @@ chmod 700 -R .ssh
     
     
       <category term="Linux" scheme="http://helkay.me/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Intellij idea 远程调试</title>
-    <link href="http://helkay.me/2017/05/2017-05-10-Intellij%20Idea%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/"/>
-    <id>http://helkay.me/2017/05/2017-05-10-Intellij Idea远程调试/</id>
-    <published>2017-05-09T16:00:00.000Z</published>
-    <updated>2017-05-19T04:08:41.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="idea自带的remote"><a href="#idea自带的remote" class="headerlink" title="idea自带的remote"></a>idea自带的remote</h2><div align="center"><br><img src="http://helkay.me/pic/idea1.png" style="width:700px;" alt="图片名称" align="center">
-</div>
-
-
-<h2 id="tomcat-remote-配置"><a href="#tomcat-remote-配置" class="headerlink" title="tomcat remote 配置"></a>tomcat remote 配置</h2><h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><div align="center"><br><img src="http://helkay.me/pic/idea2.png" style="width:700px;" alt="图片名称" align="center">
-</div>
-
-<h3 id="Startup-Connection"><a href="#Startup-Connection" class="headerlink" title="Startup/Connection"></a>Startup/Connection</h3><div align="center"><br><img src="http://helkay.me/pic/idea3.png" style="width:700px;" alt="图片名称" align="center">
-</div>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;idea自带的remote&quot;&gt;&lt;a href=&quot;#idea自带的remote&quot; class=&quot;headerlink&quot; title=&quot;idea自带的remote&quot;&gt;&lt;/a&gt;idea自带的remote&lt;/h2&gt;&lt;div align=&quot;center&quot;&gt;&lt;br&gt;&lt;img 
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="工具" scheme="http://helkay.me/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
@@ -1563,134 +1677,6 @@ chmod 700 -R .ssh
   </entry>
   
   <entry>
-    <title>单例模式</title>
-    <link href="http://helkay.me/2017/05/2017-05-02-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://helkay.me/2017/05/2017-05-02-单例模式/</id>
-    <published>2017-05-01T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"><a href="#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。" class="headerlink" title="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"></a>单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。</h3><ul>
-<li><strong><font color="#e25440" size="4">懒汉式(线程不安全)</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoOne {
-
-    private static SingletonDemoOne instance;
-
-    private SingletonDemoOne() {
-    }
-
-    public static SingletonDemoOne getInstance() {
-        if (instance == null) {
-            instance = new SingletonDemoOne();
-            //todo
-        }
-        return instance;
-    }
-}
-</code></pre>
-<p><strong><em>延迟加载很明显，但是在多线程不能正常工作</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">懒汉式(线程安全)</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoTwo {
-
-    private static SingletonDemoTwo instance;
-
-    private SingletonDemoTwo() {
-    }
-
-    public static synchronized SingletonDemoTwo getInstance() {
-        if (instance == null) {
-            instance = new SingletonDemoTwo();
-            //todo
-        }
-        return instance;
-    }
-}
-</code></pre>
-<p><strong><em>延迟加载明显,但是效率很低</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">饿汉式</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoThree {
-    private static SingletonDemoThree instance = new SingletonDemoThree();
-
-    private SingletonDemoThree() {
-    }
-
-    public static SingletonDemoThree getInstance() {
-        return instance;
-    }
-}
-</code></pre>
-<p><strong><em>在类加载的时候实例化,不能确定是否有其他方法导致类加载,且没有达到延迟加载效果</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">双重检查[推荐使用]</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoFour {
-
-    private static volatile SingletonDemoFour singleton;
-
-    private SingletonDemoFour() {
-    }
-
-    public static SingletonDemoFour getInstance() {
-        if (singleton == null) {
-            synchronized (SingletonDemoFour.class) {
-                if (singleton == null) {
-                    singleton = new SingletonDemoFour();
-                }
-            }
-        }
-        return singleton;
-    }
-}
-</code></pre>
-<p><strong><em>线程安全,延迟加载,效率较高。</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">静态内部类[推荐使用]</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoFive {
-
-    private SingletonDemoFive() {
-    }
-
-    private static class SingletonInstance {
-        private static final SingletonDemoFive INSTANCE = new SingletonDemoFive();
-    }
-
-    public static SingletonDemoFive getInstance() {
-        return SingletonInstance.INSTANCE;
-    }
-}
-</code></pre>
-<ul>
-<li><strong><font color="#e25440" size="4">枚举[推荐使用]</font></strong></li>
-</ul>
-<pre><code class="java">public enum Singleton {
-    INSTANCE;
-
-    public void whateverMethod() {
-
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot;&gt;&lt;a href=&quot;#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot; class=&quot;headerlink&quot; title=&quot;单例模式主要作用是保证在Ja
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Java多线程</title>
     <link href="http://helkay.me/2017/05/2017-05-02-%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     <id>http://helkay.me/2017/05/2017-05-02-多线程/</id>
@@ -1906,6 +1892,134 @@ class ThreadDemo2 extends Thread {
   </entry>
   
   <entry>
+    <title>单例模式</title>
+    <link href="http://helkay.me/2017/05/2017-05-02-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://helkay.me/2017/05/2017-05-02-单例模式/</id>
+    <published>2017-05-01T16:00:00.000Z</published>
+    <updated>2017-05-12T07:00:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"><a href="#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。" class="headerlink" title="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"></a>单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。</h3><ul>
+<li><strong><font color="#e25440" size="4">懒汉式(线程不安全)</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoOne {
+
+    private static SingletonDemoOne instance;
+
+    private SingletonDemoOne() {
+    }
+
+    public static SingletonDemoOne getInstance() {
+        if (instance == null) {
+            instance = new SingletonDemoOne();
+            //todo
+        }
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>延迟加载很明显，但是在多线程不能正常工作</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">懒汉式(线程安全)</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoTwo {
+
+    private static SingletonDemoTwo instance;
+
+    private SingletonDemoTwo() {
+    }
+
+    public static synchronized SingletonDemoTwo getInstance() {
+        if (instance == null) {
+            instance = new SingletonDemoTwo();
+            //todo
+        }
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>延迟加载明显,但是效率很低</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">饿汉式</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoThree {
+    private static SingletonDemoThree instance = new SingletonDemoThree();
+
+    private SingletonDemoThree() {
+    }
+
+    public static SingletonDemoThree getInstance() {
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>在类加载的时候实例化,不能确定是否有其他方法导致类加载,且没有达到延迟加载效果</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">双重检查[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoFour {
+
+    private static volatile SingletonDemoFour singleton;
+
+    private SingletonDemoFour() {
+    }
+
+    public static SingletonDemoFour getInstance() {
+        if (singleton == null) {
+            synchronized (SingletonDemoFour.class) {
+                if (singleton == null) {
+                    singleton = new SingletonDemoFour();
+                }
+            }
+        }
+        return singleton;
+    }
+}
+</code></pre>
+<p><strong><em>线程安全,延迟加载,效率较高。</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">静态内部类[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoFive {
+
+    private SingletonDemoFive() {
+    }
+
+    private static class SingletonInstance {
+        private static final SingletonDemoFive INSTANCE = new SingletonDemoFive();
+    }
+
+    public static SingletonDemoFive getInstance() {
+        return SingletonInstance.INSTANCE;
+    }
+}
+</code></pre>
+<ul>
+<li><strong><font color="#e25440" size="4">枚举[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public enum Singleton {
+    INSTANCE;
+
+    public void whateverMethod() {
+
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot;&gt;&lt;a href=&quot;#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot; class=&quot;headerlink&quot; title=&quot;单例模式主要作用是保证在Ja
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>设计模式目录</title>
     <link href="http://helkay.me/menu/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9B%AE%E5%BD%95/"/>
     <id>http://helkay.me/menu/设计模式目录/</id>
@@ -1960,6 +2074,30 @@ class ThreadDemo2 extends Thread {
   </entry>
   
   <entry>
+    <title>删除远程分支</title>
+    <link href="http://helkay.me/2017/04/2017-04-25-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
+    <id>http://helkay.me/2017/04/2017-04-25-删除远程分支/</id>
+    <published>2017-04-24T16:00:00.000Z</published>
+    <updated>2017-05-12T07:00:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>git push origin --delete &lt;branch name&gt;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;git push origin --delete &amp;lt;branch name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>修改提交注释信息</title>
     <link href="http://helkay.me/2017/04/2017-04-25-%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E6%B3%A8%E9%87%8A%E4%BF%A1%E6%81%AF/"/>
     <id>http://helkay.me/2017/04/2017-04-25-修改提交注释信息/</id>
@@ -1979,30 +2117,6 @@ class ThreadDemo2 extends Thread {
     <summary type="html">
     
       &lt;h2 id=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;a href=&quot;#如何修改现有的，未被提交的提交？&quot; class=&quot;headerlink&quot; title=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;/a&gt;如何修改现有的，未被提交的提交？&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;git co
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>删除远程分支</title>
-    <link href="http://helkay.me/2017/04/2017-04-25-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
-    <id>http://helkay.me/2017/04/2017-04-25-删除远程分支/</id>
-    <published>2017-04-24T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>git push origin --delete &lt;branch name&gt;
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;pre&gt;&lt;code&gt;git push origin --delete &amp;lt;branch name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
@@ -2176,99 +2290,6 @@ Accept : “text/plain; charset=utf-8”,
     
     
       <category term="定时器" scheme="http://helkay.me/tags/%E5%AE%9A%E6%97%B6%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>签名与加密技术</title>
-    <link href="http://helkay.me/2017/03/2017-03-23-%E7%AD%BE%E5%90%8D%E4%B8%8E%E5%8A%A0%E5%AF%86%E6%8A%80%E6%9C%AF/"/>
-    <id>http://helkay.me/2017/03/2017-03-23-签名与加密技术/</id>
-    <published>2017-03-22T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:49.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h2><h3 id="普通数字签名最常用的算法为RSA"><a href="#普通数字签名最常用的算法为RSA" class="headerlink" title="普通数字签名最常用的算法为RSA"></a>普通数字签名最常用的算法为RSA</h3><p><strong>RSA原理：</strong>RSA算法基于一个十分简单的数论事实，将两个大素数相乘十分容易，但反过来想要对其乘积进行因式分解却极其困难，因此可以将乘积公开作为加密密钥。</p>
-<p><strong>RSA缺点：</strong>RSA的keysize位数越高，其产生密钥对及加密、解密的速度越慢，这是基于大素数非对称加密算法的缺陷。</p>
-<h3 id="公钥与私钥"><a href="#公钥与私钥" class="headerlink" title="公钥与私钥"></a>公钥与私钥</h3><p>一般，我们可以用RSA算法生成一对密钥，公钥发放给外部客户，私钥自己保管；有以下一些应用场景:</p>
-<ul>
-<li>公钥加密、私钥解密</li>
-<li>私钥加密、公钥验证</li>
-</ul>
-<pre><code class="java">/**
- * 
-* @ClassName: SignatureData 
-* @Description: RSAWithMD5/RSAWithSHA1/RSAWithSHA256签名提供类 
- */
-public class SignatureData {
-    /**
-     * 加密
-     * 
-     * @param byteContent 待加密内容
-     * @param prikeyvalue 私钥
-     * @param  algorithmType 加密算法
-     * @return
-     */
-    public static byte[] encrypt(byte[] byteContent, String securityType,String prikeyvalue,String algorithmType) {
-        try {
-            PKCS8EncodedKeySpec priPKCS8 = new PKCS8EncodedKeySpec(SecurityUtils.hexStrToBytes(prikeyvalue));
-            KeyFactory keyf = KeyFactory.getInstance(algorithmType);
-            PrivateKey myprikey = keyf.generatePrivate(priPKCS8);
-            // 用私钥对信息生成数字签名
-            java.security.Signature signet = java.security.Signature.getInstance(securityType);
-
-            signet.initSign(myprikey);
-            signet.update(byteContent);
-            return signet.sign(); // 对信息的数字签名
-        } catch (java.lang.Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-    /**
-     * 验签
-     * @param src 源内容
-     * @param content 加密内容
-     * @param securityType 加密类型
-     * @param pubkeyvalue 公钥
-     * @param algorithmType 加密算法
-     * @return
-     */
-    public static boolean signetCheck(String src, byte[] content, String securityType, String pubkeyvalue,String algorithmType) {
-        try {
-            X509EncodedKeySpec bobPubKeySpec = new X509EncodedKeySpec(SecurityUtils.hexStrToBytes(pubkeyvalue));
-            KeyFactory keyFactory = KeyFactory.getInstance(algorithmType);
-            PublicKey pubKey = keyFactory.generatePublic(bobPubKeySpec);
-            java.security.Signature signetcheck = java.security.Signature.getInstance(securityType);
-            signetcheck.initVerify(pubKey);
-            signetcheck.update(src.getBytes());
-
-            if (signetcheck.verify(content)) {
-                System.out.println(&quot;签名正常&quot;);
-                return true;
-            } else {
-                System.out.println(&quot;非签名正常&quot;);
-                return false;
-            }
-
-        } catch (java.lang.Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-}
-</code></pre>
-<h2 id="加密"><a href="#加密" class="headerlink" title="加密"></a>加密</h2><h3 id="AES对称加密"><a href="#AES对称加密" class="headerlink" title="AES对称加密"></a>AES对称加密</h3>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;签名&quot;&gt;&lt;a href=&quot;#签名&quot; class=&quot;headerlink&quot; title=&quot;签名&quot;&gt;&lt;/a&gt;签名&lt;/h2&gt;&lt;h3 id=&quot;普通数字签名最常用的算法为RSA&quot;&gt;&lt;a href=&quot;#普通数字签名最常用的算法为RSA&quot; class=&quot;headerlink&quot; 
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Java" scheme="http://helkay.me/tags/Java/"/>
     
   </entry>
   

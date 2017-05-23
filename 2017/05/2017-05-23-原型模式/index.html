@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="null">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="google-site-verification" content="6F4OqKmDkxMqUtTjTSCN1qPy2-m1_HN_H_aGMQkeZrA" />
+
+  <title>原型模式</title>
+  
+    <!-- stylesheets list from config.yml -->
+    
+      <link rel="stylesheet" href="/css/hexo-uno.css">
+    
+  
+  <link rel="stylesheet" href="/css/uno.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+
+</head>
+
+<span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+<header class="panel-cover 
+
+      
+      panel-cover--collapsed
+      
+
+  " style="background-image: url(/img/backimg.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of Helkay">
+          <img src="/img/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title" style="border-bottom: none;">Helkay</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">不忘初心,方得始终。</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to Helkay blog" class="blog-button">首页</a></li>
+              <li class="navigation__item"><a href="/categories/Blog" title="link to archives" class="blog-button">归档</a></li>
+              <li class="navigation__item"><a href="/tags" title="link to tags" class="blog-button">标签</a></li>
+              <li class="navigation__item"><a href="/categories/Menu" title="link to tags" class="blog-button">目录</a></li>
+            </ul>
+          </nav>
+
+
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/helkay" title="helkay on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:work@helkay.com" title="Email work@helkay.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+            
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+<body>
+<div class="content-wrapper" >
+      <div class="content-wrapper__inner">
+        
+<article id="post" 
+
+
+
+  style="padding-top:50px;padding-bottom:100px;border-bottom: 1px dashed #ccc;">
+  <h1>原型模式
+  <a style="float: right;display:block;background-color:#e25440;color:#f8f8f8;width:60px;height:27px;text-align: center;border-radius:3px;" href="/atom.xml" title="Rss" target="_blank">
+      Rss
+  </a>
+  </h1>
+
+  <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>原型模式属于创建型模式的一种,其精髓就在于<strong><em>复制</em></strong>一个存在的实例,而不是去新建。</p>
+<h2 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h2><p>我们设想一个这样的场景,小明在X宝上购物,选定购买商品后就要去下订单,我们会发现小明购买多次的订单除了购买商品不同,邮寄地址、收件人、联系方式都是一样的,这时候我们就可以使用原型模型来创建订单了。</p>
+<div align="center"><br><img src="http://helkay.me/pic/prototype.png" style="width:700px;" alt="图片名称" align="center">
+</div>
+
+<p><strong>Prototype:</strong> 实现Cloneable接口(Cloneable就相当于Prototype接口) 重写Object的clone方法,如果不实现Cloneable接口则会抛出CloneNotSupportedException异常</p>
+<p><strong>OrderInfo:</strong></p>
+<pre><code class="java">public class OrderInfo implements Cloneable {
+
+    private String goodsName;
+
+    private String address;
+
+    private String username;
+
+    private String mobile;
+
+    public String getGoodsName() {
+        return goodsName;
+    }
+
+    public void setGoodsName(String goodsName) {
+        this.goodsName = goodsName;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    @Override
+    public String toString() {
+        return &quot;OrderInfo{&quot; +
+                &quot;goodsName=&#39;&quot; + goodsName + &#39;\&#39;&#39; +
+                &quot;, address=&#39;&quot; + address + &#39;\&#39;&#39; +
+                &quot;, username=&#39;&quot; + username + &#39;\&#39;&#39; +
+                &quot;, mobile=&#39;&quot; + mobile + &#39;\&#39;&#39; +
+                &#39;}&#39;;
+    }
+
+    @Override
+    public OrderInfo clone() throws CloneNotSupportedException {
+        return (OrderInfo) super.clone();
+    }
+
+}
+</code></pre>
+<p><strong>Test</strong></p>
+<pre><code class="java">public class Test {
+
+    public static void main(String[] args) throws CloneNotSupportedException {
+
+        OrderInfo orderInfo = new OrderInfo();
+        orderInfo.setAddress(&quot;上海市XXXXX&quot;);
+        orderInfo.setMobile(&quot;138XXXXXXXX&quot;);
+        orderInfo.setUsername(&quot;小明&quot;);
+
+        orderInfo.setGoodsName(&quot;零食&quot;);
+
+        OrderInfo orderInfo1 = orderInfo.clone();
+        orderInfo1.setGoodsName(&quot;衣服&quot;);
+
+        System.out.println(orderInfo.toString());
+        System.out.println(orderInfo1.toString());
+
+    }
+}
+</code></pre>
+<p><strong>结果：</strong></p>
+<pre><code class="bash">OrderInfo{goodsName=&#39;零食&#39;, address=&#39;上海市XXXXX&#39;, username=&#39;小明&#39;, mobile=&#39;138XXXXXXXX&#39;}
+OrderInfo{goodsName=&#39;衣服&#39;, address=&#39;上海市XXXXX&#39;, username=&#39;小明&#39;, mobile=&#39;138XXXXXXXX&#39;}
+</code></pre>
+
+</article>
+
+<div id="disqus_thread" ></div>
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://blog-helkay-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+</div>
+
+
+
+
+  <!-- scripts list from theme config.yml -->
+  
+    <script src="/js/hexo-uno.js"></script>
+  
+
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+</html>
