@@ -2024,14 +2024,14 @@ class ThreadDemo2 extends Thread {
     <link href="http://helkay.me/menu/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9B%AE%E5%BD%95/"/>
     <id>http://helkay.me/menu/设计模式目录/</id>
     <published>2017-04-30T16:00:00.000Z</published>
-    <updated>2017-05-19T07:35:41.000Z</updated>
+    <updated>2017-05-23T08:48:30.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h2><ul>
 <li><a href="http://helkay.me/2017/05/2017-05-04-工厂方法模式/">工厂方法模式</a></li>
 <li><a href="http://helkay.me/2017/05/2017-05-06-抽象工厂模式/">抽象工厂模式</a></li>
 <li><a href="http://helkay.me/2017/05/2017-05-02-单例模式/">单例模式</a></li>
 <li><a href="http://helkay.me/2017/05/2017-05-19-建造者模式/">建造者模式</a></li>
-<li>原型模式</li>
+<li><a href="http://helkay.me/2017/05/2017-05-23-原型模式/">原型模式</a></li>
 </ul>
 <h2 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h2><ul>
 <li>适配器模式</li>
@@ -2074,30 +2074,6 @@ class ThreadDemo2 extends Thread {
   </entry>
   
   <entry>
-    <title>删除远程分支</title>
-    <link href="http://helkay.me/2017/04/2017-04-25-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
-    <id>http://helkay.me/2017/04/2017-04-25-删除远程分支/</id>
-    <published>2017-04-24T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>git push origin --delete &lt;branch name&gt;
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;pre&gt;&lt;code&gt;git push origin --delete &amp;lt;branch name&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>修改提交注释信息</title>
     <link href="http://helkay.me/2017/04/2017-04-25-%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E6%B3%A8%E9%87%8A%E4%BF%A1%E6%81%AF/"/>
     <id>http://helkay.me/2017/04/2017-04-25-修改提交注释信息/</id>
@@ -2117,6 +2093,30 @@ class ThreadDemo2 extends Thread {
     <summary type="html">
     
       &lt;h2 id=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;a href=&quot;#如何修改现有的，未被提交的提交？&quot; class=&quot;headerlink&quot; title=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;/a&gt;如何修改现有的，未被提交的提交？&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;git co
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>删除远程分支</title>
+    <link href="http://helkay.me/2017/04/2017-04-25-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
+    <id>http://helkay.me/2017/04/2017-04-25-删除远程分支/</id>
+    <published>2017-04-24T16:00:00.000Z</published>
+    <updated>2017-05-12T07:00:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>git push origin --delete &lt;branch name&gt;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;git push origin --delete &amp;lt;branch name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
     
