@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://helkay.me/"/>
-  <updated>2017-05-23T09:09:00.000Z</updated>
+  <updated>2017-05-27T05:11:15.000Z</updated>
   <id>http://helkay.me/</id>
   
   <author>
@@ -16,11 +16,81 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Http协议</title>
+    <link href="http://helkay.me/2017/05/Http%E5%8D%8F%E8%AE%AE/"/>
+    <id>http://helkay.me/2017/05/Http协议/</id>
+    <published>2017-05-26T16:00:00.000Z</published>
+    <updated>2017-05-27T05:11:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="http" scheme="http://helkay.me/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql ip授权</title>
+    <link href="http://helkay.me/2017/05/mysql%20ip%E6%8E%88%E6%9D%83/"/>
+    <id>http://helkay.me/2017/05/mysql ip授权/</id>
+    <published>2017-05-26T16:00:00.000Z</published>
+    <updated>2017-05-27T03:37:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code class="bash">mysql&gt;GRANT ALL PRIVILEGES ON *.* TO &#39;username&#39;@&#39;127.0.0.1&#39; IDENTIFIED BY &#39;password&#39; WITH GRANT OPTION;
+
+mysql&gt;FLUSH PRIVILEGES;
+</code></pre>
+<p><strong>grant语法:</strong></p>
+<p>grant 权限名（所有的权限用all） on 库名（<em>全部）.表名（</em>全部） to ‘要授权的用户名’@’%’(%表示所有的IP，可以只些一个IP） identified by “密码”；</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;mysql&amp;gt;GRANT ALL PRIVILEGES ON *.* TO &amp;#39;username&amp;#39;@&amp;#39;127.0.0.1&amp;#39; IDENTIFIED BY &amp;#39;password&amp;#39; WITH
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="Mysql" scheme="http://helkay.me/tags/Mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>about</title>
+    <link href="http://helkay.me/2017/05/index/"/>
+    <id>http://helkay.me/2017/05/index/</id>
+    <published>2017-05-26T09:16:57.000Z</published>
+    <updated>2017-05-27T08:02:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;test&quot;&gt;&lt;a href=&quot;#test&quot; class=&quot;headerlink&quot; title=&quot;test&quot;&gt;&lt;/a&gt;test&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="Hello World" scheme="http://helkay.me/tags/Hello-World/"/>
+    
+  </entry>
+  
+  <entry>
     <title>浅拷贝和深拷贝</title>
     <link href="http://helkay.me/2017/05/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
     <id>http://helkay.me/2017/05/浅拷贝和深拷贝/</id>
     <published>2017-05-22T16:00:00.000Z</published>
-    <updated>2017-05-23T09:09:00.000Z</updated>
+    <updated>2017-05-23T09:31:51.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2>]]></content>
     
@@ -42,7 +112,7 @@
     <link href="http://helkay.me/2017/05/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
     <id>http://helkay.me/2017/05/原型模式/</id>
     <published>2017-05-22T16:00:00.000Z</published>
-    <updated>2017-05-23T09:07:59.000Z</updated>
+    <updated>2017-05-23T09:31:46.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>原型模式属于创建型模式的一种,其精髓就在于<strong><em>复制</em></strong>一个存在的实例,而不是去新建。</p>
 <h2 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h2><p>我们设想一个这样的场景,小明在X宝上购物,选定购买商品后就要去下订单,我们会发现小明购买多次的订单除了购买商品不同,邮寄地址、收件人、联系方式都是一样的,这时候我们就可以使用原型模型来创建订单了。</p>
@@ -135,7 +205,7 @@
 <pre><code class="bash">OrderInfo{goodsName=&#39;零食&#39;, address=&#39;上海市XXXXX&#39;, username=&#39;小明&#39;, mobile=&#39;138XXXXXXXX&#39;}
 OrderInfo{goodsName=&#39;衣服&#39;, address=&#39;上海市XXXXX&#39;, username=&#39;小明&#39;, mobile=&#39;138XXXXXXXX&#39;}
 </code></pre>
-<p><strong><em>值得一提的是Object类的clone方法只会拷贝对象中的基本的数据类型（8种基本数据类型byte,char,short,int,long,float,double，boolean）,即浅拷贝,关于如何实现深拷贝就是对clone方法进行改造了,有关浅拷贝和深拷贝的相关信息请看下面这篇:<a href="http://helkay.me/2017/05/浅拷贝和深拷贝/">浅拷贝和深拷贝</a></em></strong></p>
+<p><strong><em>值得一提的是Object类的clone方法为浅拷贝,关于如何实现深拷贝就是对clone方法进行改造了,有关浅拷贝和深拷贝的相关信息请看下面这篇:<a href="http://helkay.me/2017/05/浅拷贝和深拷贝/">浅拷贝和深拷贝</a></em></strong></p>
 ]]></content>
     
     <summary type="html">
@@ -1702,6 +1772,134 @@ chmod 700 -R .ssh
   </entry>
   
   <entry>
+    <title>单例模式</title>
+    <link href="http://helkay.me/2017/05/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://helkay.me/2017/05/单例模式/</id>
+    <published>2017-05-01T16:00:00.000Z</published>
+    <updated>2017-05-12T07:00:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"><a href="#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。" class="headerlink" title="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"></a>单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。</h3><ul>
+<li><strong><font color="#e25440" size="4">懒汉式(线程不安全)</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoOne {
+
+    private static SingletonDemoOne instance;
+
+    private SingletonDemoOne() {
+    }
+
+    public static SingletonDemoOne getInstance() {
+        if (instance == null) {
+            instance = new SingletonDemoOne();
+            //todo
+        }
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>延迟加载很明显，但是在多线程不能正常工作</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">懒汉式(线程安全)</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoTwo {
+
+    private static SingletonDemoTwo instance;
+
+    private SingletonDemoTwo() {
+    }
+
+    public static synchronized SingletonDemoTwo getInstance() {
+        if (instance == null) {
+            instance = new SingletonDemoTwo();
+            //todo
+        }
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>延迟加载明显,但是效率很低</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">饿汉式</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoThree {
+    private static SingletonDemoThree instance = new SingletonDemoThree();
+
+    private SingletonDemoThree() {
+    }
+
+    public static SingletonDemoThree getInstance() {
+        return instance;
+    }
+}
+</code></pre>
+<p><strong><em>在类加载的时候实例化,不能确定是否有其他方法导致类加载,且没有达到延迟加载效果</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">双重检查[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoFour {
+
+    private static volatile SingletonDemoFour singleton;
+
+    private SingletonDemoFour() {
+    }
+
+    public static SingletonDemoFour getInstance() {
+        if (singleton == null) {
+            synchronized (SingletonDemoFour.class) {
+                if (singleton == null) {
+                    singleton = new SingletonDemoFour();
+                }
+            }
+        }
+        return singleton;
+    }
+}
+</code></pre>
+<p><strong><em>线程安全,延迟加载,效率较高。</em></strong></p>
+<ul>
+<li><strong><font color="#e25440" size="4">静态内部类[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public class SingletonDemoFive {
+
+    private SingletonDemoFive() {
+    }
+
+    private static class SingletonInstance {
+        private static final SingletonDemoFive INSTANCE = new SingletonDemoFive();
+    }
+
+    public static SingletonDemoFive getInstance() {
+        return SingletonInstance.INSTANCE;
+    }
+}
+</code></pre>
+<ul>
+<li><strong><font color="#e25440" size="4">枚举[推荐使用]</font></strong></li>
+</ul>
+<pre><code class="java">public enum Singleton {
+    INSTANCE;
+
+    public void whateverMethod() {
+
+    }
+}
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot;&gt;&lt;a href=&quot;#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot; class=&quot;headerlink&quot; title=&quot;单例模式主要作用是保证在Ja
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+    
+    
+      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java多线程</title>
     <link href="http://helkay.me/2017/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     <id>http://helkay.me/2017/05/多线程/</id>
@@ -1917,134 +2115,6 @@ class ThreadDemo2 extends Thread {
   </entry>
   
   <entry>
-    <title>单例模式</title>
-    <link href="http://helkay.me/2017/05/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://helkay.me/2017/05/单例模式/</id>
-    <published>2017-05-01T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"><a href="#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。" class="headerlink" title="单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。"></a>单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。</h3><ul>
-<li><strong><font color="#e25440" size="4">懒汉式(线程不安全)</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoOne {
-
-    private static SingletonDemoOne instance;
-
-    private SingletonDemoOne() {
-    }
-
-    public static SingletonDemoOne getInstance() {
-        if (instance == null) {
-            instance = new SingletonDemoOne();
-            //todo
-        }
-        return instance;
-    }
-}
-</code></pre>
-<p><strong><em>延迟加载很明显，但是在多线程不能正常工作</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">懒汉式(线程安全)</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoTwo {
-
-    private static SingletonDemoTwo instance;
-
-    private SingletonDemoTwo() {
-    }
-
-    public static synchronized SingletonDemoTwo getInstance() {
-        if (instance == null) {
-            instance = new SingletonDemoTwo();
-            //todo
-        }
-        return instance;
-    }
-}
-</code></pre>
-<p><strong><em>延迟加载明显,但是效率很低</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">饿汉式</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoThree {
-    private static SingletonDemoThree instance = new SingletonDemoThree();
-
-    private SingletonDemoThree() {
-    }
-
-    public static SingletonDemoThree getInstance() {
-        return instance;
-    }
-}
-</code></pre>
-<p><strong><em>在类加载的时候实例化,不能确定是否有其他方法导致类加载,且没有达到延迟加载效果</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">双重检查[推荐使用]</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoFour {
-
-    private static volatile SingletonDemoFour singleton;
-
-    private SingletonDemoFour() {
-    }
-
-    public static SingletonDemoFour getInstance() {
-        if (singleton == null) {
-            synchronized (SingletonDemoFour.class) {
-                if (singleton == null) {
-                    singleton = new SingletonDemoFour();
-                }
-            }
-        }
-        return singleton;
-    }
-}
-</code></pre>
-<p><strong><em>线程安全,延迟加载,效率较高。</em></strong></p>
-<ul>
-<li><strong><font color="#e25440" size="4">静态内部类[推荐使用]</font></strong></li>
-</ul>
-<pre><code class="java">public class SingletonDemoFive {
-
-    private SingletonDemoFive() {
-    }
-
-    private static class SingletonInstance {
-        private static final SingletonDemoFive INSTANCE = new SingletonDemoFive();
-    }
-
-    public static SingletonDemoFive getInstance() {
-        return SingletonInstance.INSTANCE;
-    }
-}
-</code></pre>
-<ul>
-<li><strong><font color="#e25440" size="4">枚举[推荐使用]</font></strong></li>
-</ul>
-<pre><code class="java">public enum Singleton {
-    INSTANCE;
-
-    public void whateverMethod() {
-
-    }
-}
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot;&gt;&lt;a href=&quot;#单例模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。&quot; class=&quot;headerlink&quot; title=&quot;单例模式主要作用是保证在Ja
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>设计模式目录</title>
     <link href="http://helkay.me/menu/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%9B%AE%E5%BD%95/"/>
     <id>http://helkay.me/menu/设计模式目录/</id>
@@ -2099,36 +2169,6 @@ class ThreadDemo2 extends Thread {
   </entry>
   
   <entry>
-    <title>修改提交注释信息</title>
-    <link href="http://helkay.me/2017/04/%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E6%B3%A8%E9%87%8A%E4%BF%A1%E6%81%AF/"/>
-    <id>http://helkay.me/2017/04/修改提交注释信息/</id>
-    <published>2017-04-24T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:36.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="如何修改现有的，未被提交的提交？"><a href="#如何修改现有的，未被提交的提交？" class="headerlink" title="如何修改现有的，未被提交的提交？"></a>如何修改现有的，未被提交的提交？</h2><pre><code>git commit --amend
-</code></pre><p>OR</p>
-<pre><code>git commit --amend -m &quot;New commit message&quot;
-</code></pre><h3 id="如果您已经推你的提交到你的远程分支-那么就需要强行提交"><a href="#如果您已经推你的提交到你的远程分支-那么就需要强行提交" class="headerlink" title="如果您已经推你的提交到你的远程分支,那么就需要强行提交"></a>如果您已经推你的提交到你的远程分支,那么就需要强行提交</h3><pre><code>git push &lt;remote&gt; &lt;branch&gt; --force
-</code></pre><p>OR</p>
-<pre><code>git push &lt;remote&gt; &lt;branch&gt; -f
-</code></pre><p>警告：强制推送会用本地状态覆盖远程分支。如果远程分支上有您在本地分支机构没有的提交，那么您将丢失这些提交。</p>
-<p>更多详情:    <a href="http://stackoverflow.com/questions/179123/how-to-modify-existing-unpushed-commits" target="_blank" rel="external">stackoverflow</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;a href=&quot;#如何修改现有的，未被提交的提交？&quot; class=&quot;headerlink&quot; title=&quot;如何修改现有的，未被提交的提交？&quot;&gt;&lt;/a&gt;如何修改现有的，未被提交的提交？&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;git co
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>删除远程分支</title>
     <link href="http://helkay.me/2017/04/%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/"/>
     <id>http://helkay.me/2017/04/删除远程分支/</id>
@@ -2149,89 +2189,6 @@ class ThreadDemo2 extends Thread {
     
     
       <category term="Git" scheme="http://helkay.me/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx session保持</title>
-    <link href="http://helkay.me/2017/04/nginx%20%E9%85%8D%E7%BD%AE%20session%E4%BF%9D%E6%8C%81/"/>
-    <id>http://helkay.me/2017/04/nginx 配置 session保持/</id>
-    <published>2017-04-17T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天在使用JCaptcha做验证码功能的时候,在本地是可以正常验证的,可是发布在服务器上的时候验证码功能就失效了,于是打上日志,看输出信息,发现验证码生成的时候从session里取的id跟校验的时候从session的id不同,发生了改变.</p>
-<p>由于我的服务器上用了nginx,去网上查,很多都是讲的是负载均衡导致的session不共享,需配置</p>
-<pre><code>upstream cms{
-    server 127.0.0.1:8080;
-    ip_hash;
-}
-</code></pre><p>但是由于我只用了一个服务,再查找了一下资料,发现主要是cookie路径的转换问题,如果只是host、端口转换，则cookie不会丢失,如果路径也变化了，则需要设置cookie的路径转换，nginx.conf的配置如下</p>
-<pre><code>location /proxy_path {
-        proxy_pass   http://127.0.0.1:8080/project;
-        proxy_cookie_path  /project /proxy_path;
-}
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天在使用JCaptcha做验证码功能的时候,在本地是可以正常验证的,可是发布在服务器上的时候验证码功能就失效了,于是打上日志,看输出信息,发现验证码生成的时候从session里取的id跟校验的时候从session的id不同,发生了改变.&lt;/p&gt;
-&lt;p&gt;由于我的服务器上用了
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Nginx" scheme="http://helkay.me/tags/Nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>@ResponseBody 返回字符串乱码</title>
-    <link href="http://helkay.me/2017/04/@ResponseBody%20%E8%BF%94%E5%9B%9E%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B9%B1%E7%A0%81/"/>
-    <id>http://helkay.me/2017/04/@ResponseBody 返回字符串乱码/</id>
-    <published>2017-04-05T16:00:00.000Z</published>
-    <updated>2017-05-12T07:00:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种格式。一开始我以为是response没有转码导致的-但是java代码中加入转码后依然无效"><a href="#今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种格式。一开始我以为是response没有转码导致的-但是java代码中加入转码后依然无效" class="headerlink" title="今天在用ajax post方法调用java方法时,返回的结果中文始终是???这种格式。一开始我以为是response没有转码导致的,但是java代码中加入转码后依然无效"></a>今天在用ajax post方法调用java方法时,返回的结果中文始终是???这种格式。一开始我以为是response没有转码导致的,但是java代码中加入转码后依然无效</h3><pre><code class="java">response.setCharacterEncoding(&quot;UTF-8&quot;);
-</code></pre>
-<h3 id="最后查资料发现是spring-mvc的一个bug，spring-MVC有一系列HttpMessageConverter去处理用-ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1-而且是final的"><a href="#最后查资料发现是spring-mvc的一个bug，spring-MVC有一系列HttpMessageConverter去处理用-ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1-而且是final的" class="headerlink" title="最后查资料发现是spring mvc的一个bug，spring MVC有一系列HttpMessageConverter去处理用@ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1,而且是final的"></a>最后查资料发现是spring mvc的一个bug，spring MVC有一系列HttpMessageConverter去处理用@ResponseBody注解的返回值，如返回list则使用MappingJacksonHttpMessageConverter，返回string，则使用StringHttpMessageConverter，这个convert使用的是字符集是iso-8859-1,而且是final的</h3><h3 id="网上目前我找到的有两种解决办法"><a href="#网上目前我找到的有两种解决办法" class="headerlink" title="网上目前我找到的有两种解决办法"></a>网上目前我找到的有两种解决办法</h3><ul>
-<li><p>自己继承AbstractHttpMessageConverter,写一个类复制 StringHttpMessageConverter.java的代码,将
-public static final Charset DEFAULT_CHARSET = Charset.forName(“ISO-8859-1”);
-改为
-public static final Charset DEFAULT_CHARSET = Charset.forName(“UTF-8”);
-spring-servlet的配置文件如下</p>
-<pre><code class="xml">&lt;bean  
-  class=&quot;org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter&quot;&gt;  
-  &lt;property name=&quot;messageConverters&quot;&gt;  
-      &lt;list&gt;  
-          &lt;bean class=&quot;com.renren001.converter.UTF8StringHttpMessageConverter&quot; /&gt;  
-      &lt;/list&gt;  
-  &lt;/property&gt;  
-&lt;/bean&gt;
-</code></pre>
-</li>
-<li><p>StringHttpMessageConverter默认iso-8859-1编码，但是会根据请求头信息指定的编码格式来转换，所以只需要在ajax请求的时候指定头信息Accept属性
-$.ajax({
-…
-headers: { 
-Accept : “text/plain; charset=utf-8”,
-}
-});</p>
-</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种格式。一开始我以为是response没有转码导致的-但是java代码中加入转码后依然无效&quot;&gt;&lt;a href=&quot;#今天在用ajax-post方法调用java方法时-返回的结果中文始终是-这种
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Java" scheme="http://helkay.me/tags/Java/"/>
     
   </entry>
   
