@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="6F4OqKmDkxMqUtTjTSCN1qPy2-m1_HN_H_aGMQkeZrA" />
 
-  <title>tags</title>
+  <title>mysql快速复制数据库</title>
   
     <!-- stylesheets list from config.yml -->
     
@@ -100,43 +100,42 @@
 <div class="content-wrapper" >
       <div class="content-wrapper__inner">
         
-<article id="page">
-	
-	
+<article id="post" 
 
-		
-	<h2 style="text-align:center">共计12个标签</h2>
-	<div class="tags" style="border-bottom: 1px dashed #ccc;padding-bottom: 1em;"> 
-	
-		<a href="/tags/Maven/" id="alltag" class="tagsss">Maven</a>
-	
-		<a href="/tags/定时器/" id="alltag" class="tagsss">定时器</a>
-	
-		<a href="/tags/Java/" id="alltag" class="tagsss">Java</a>
-	
-		<a href="/tags/Mysql/" id="alltag" class="tagsss">Mysql</a>
-	
-		<a href="/tags/Git/" id="alltag" class="tagsss">Git</a>
-	
-		<a href="/tags/Nginx/" id="alltag" class="tagsss">Nginx</a>
-	
-		<a href="/tags/工具/" id="alltag" class="tagsss">工具</a>
-	
-		<a href="/tags/http/" id="alltag" class="tagsss">http</a>
-	
-		<a href="/tags/Linux/" id="alltag" class="tagsss">Linux</a>
-	
-		<a href="/tags/Hello World/" id="alltag" class="tagsss">Hello World</a>
-	
-		<a href="/tags/设计模式/" id="alltag" class="tagsss">设计模式</a>
-	
-		<a href="/tags/多线程/" id="alltag" class="tagsss">多线程</a>
-	
-	</div>
 
-	
+
+  style="padding-top:50px;padding-bottom:100px;border-bottom: 1px dashed #ccc;">
+  <h1>mysql快速复制数据库
+  <a style="float: right;display:block;background-color:#e25440;color:#f8f8f8;width:60px;height:27px;text-align: center;border-radius:3px;" href="/atom.xml" title="Rss" target="_blank">
+      Rss
+  </a>
+  </h1>
+
+  <p>某些时候，为了搭建一个测试环境,需要复制一个已存在的MySQL数据库。</p>
+<p><strong>创建表</strong></p>
+<pre><code class="bash">CREATE DATABASE dbtest DEFAULT CHARACTER SET utf8 COLLATE UTF8_GENERAL_CI;
+</code></pre>
+<p><strong>复制数据库</strong></p>
+<pre><code class="bash">mysqldump db -u root -ppassword --add-drop-table | mysql dbtest -u root -ppassword
+</code></pre>
+<p>-ppassword : password为密码 如果秘密中有特殊字符需要转译(字符前加上)不然会报(mysqldump: Got error: 1045: Access denied for user ‘root’@’localhost’ (using password: YES) when trying to connect) </p>
+<p><strong>复制到远程另一台MySQL服务器上</strong></p>
+<pre><code class="bash">mysqldump db -u root -ppassword --add-drop-table | mysql -h 192.168.1.2  dbtest -u root -ppassword
+</code></pre>
+
 </article>
 
+<div id="disqus_thread" ></div>
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://blog-helkay-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </div>
 </div>
 
