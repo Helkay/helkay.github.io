@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://helkay.me/"/>
+  <link href="http://blog.helkay.me/"/>
   <updated>2017-06-29T05:06:29.000Z</updated>
-  <id>http://helkay.me/</id>
+  <id>http://blog.helkay.me/</id>
   
   <author>
     <name>Helkay</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>spring aop事务</title>
-    <link href="http://helkay.me/2017/06/spring%20aop%E4%BA%8B%E5%8A%A1/"/>
-    <id>http://helkay.me/2017/06/spring aop事务/</id>
+    <link href="http://blog.helkay.me/2017/06/spring%20aop%E4%BA%8B%E5%8A%A1/"/>
+    <id>http://blog.helkay.me/2017/06/spring aop事务/</id>
     <published>2017-06-28T16:00:00.000Z</published>
     <updated>2017-06-29T05:06:29.000Z</updated>
     
@@ -87,17 +87,17 @@
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="Spring" scheme="http://helkay.me/tags/Spring/"/>
+      <category term="Spring" scheme="http://blog.helkay.me/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>mysql快速复制数据库</title>
-    <link href="http://helkay.me/2017/06/mysql%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    <id>http://helkay.me/2017/06/mysql快速复制数据库/</id>
+    <link href="http://blog.helkay.me/2017/06/mysql%E5%BF%AB%E9%80%9F%E5%A4%8D%E5%88%B6%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>http://blog.helkay.me/2017/06/mysql快速复制数据库/</id>
     <published>2017-06-19T16:00:00.000Z</published>
     <updated>2017-06-20T03:35:54.000Z</updated>
     
@@ -122,17 +122,17 @@
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="Mysql" scheme="http://helkay.me/tags/Mysql/"/>
+      <category term="Mysql" scheme="http://blog.helkay.me/tags/Mysql/"/>
     
   </entry>
   
   <entry>
     <title>mysql ip授权</title>
-    <link href="http://helkay.me/2017/05/mysql%20ip%E6%8E%88%E6%9D%83/"/>
-    <id>http://helkay.me/2017/05/mysql ip授权/</id>
+    <link href="http://blog.helkay.me/2017/05/mysql%20ip%E6%8E%88%E6%9D%83/"/>
+    <id>http://blog.helkay.me/2017/05/mysql ip授权/</id>
     <published>2017-05-26T16:00:00.000Z</published>
     <updated>2017-05-27T03:37:32.000Z</updated>
     
@@ -150,17 +150,17 @@ mysql&gt;FLUSH PRIVILEGES;
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="Mysql" scheme="http://helkay.me/tags/Mysql/"/>
+      <category term="Mysql" scheme="http://blog.helkay.me/tags/Mysql/"/>
     
   </entry>
   
   <entry>
     <title>Http协议</title>
-    <link href="http://helkay.me/2017/05/Http%E5%8D%8F%E8%AE%AE/"/>
-    <id>http://helkay.me/2017/05/Http协议/</id>
+    <link href="http://blog.helkay.me/2017/05/Http%E5%8D%8F%E8%AE%AE/"/>
+    <id>http://blog.helkay.me/2017/05/Http协议/</id>
     <published>2017-05-26T16:00:00.000Z</published>
     <updated>2017-05-27T05:11:15.000Z</updated>
     
@@ -172,17 +172,17 @@ mysql&gt;FLUSH PRIVILEGES;
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="http" scheme="http://helkay.me/tags/http/"/>
+      <category term="http" scheme="http://blog.helkay.me/tags/http/"/>
     
   </entry>
   
   <entry>
     <title>about</title>
-    <link href="http://helkay.me/2017/05/index/"/>
-    <id>http://helkay.me/2017/05/index/</id>
+    <link href="http://blog.helkay.me/2017/05/index/"/>
+    <id>http://blog.helkay.me/2017/05/index/</id>
     <published>2017-05-26T09:16:57.000Z</published>
     <updated>2017-05-27T08:02:24.000Z</updated>
     
@@ -195,20 +195,42 @@ mysql&gt;FLUSH PRIVILEGES;
     </summary>
     
     
-      <category term="Hello World" scheme="http://helkay.me/tags/Hello-World/"/>
+      <category term="Hello World" scheme="http://blog.helkay.me/tags/Hello-World/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅拷贝和深拷贝</title>
+    <link href="http://blog.helkay.me/2017/05/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
+    <id>http://blog.helkay.me/2017/05/浅拷贝和深拷贝/</id>
+    <published>2017-05-22T16:00:00.000Z</published>
+    <updated>2017-05-23T09:31:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
+    
+    
+      <category term="设计模式" scheme="http://blog.helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>原型模式</title>
-    <link href="http://helkay.me/2017/05/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://helkay.me/2017/05/原型模式/</id>
+    <link href="http://blog.helkay.me/2017/05/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://blog.helkay.me/2017/05/原型模式/</id>
     <published>2017-05-22T16:00:00.000Z</published>
-    <updated>2017-05-23T09:31:46.000Z</updated>
+    <updated>2017-07-04T03:38:31.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>原型模式属于创建型模式的一种,其精髓就在于<strong><em>复制</em></strong>一个存在的实例,而不是去新建。</p>
 <h2 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h2><p>我们设想一个这样的场景,小明在X宝上购物,选定购买商品后就要去下订单,我们会发现小明购买多次的订单除了购买商品不同,邮寄地址、收件人、联系方式都是一样的,这时候我们就可以使用原型模型来创建订单了。</p>
-<div align="center"><br><img src="http://helkay.me/pic/prototype.png" style="width:700px;" alt="图片名称" align="center">
+<div align="center"><br><img src="http://blog.helkay.me/pic/prototype.png" style="width:700px;" alt="图片名称" align="center">
 </div>
 
 <p><strong>Prototype:</strong> 实现Cloneable接口(Cloneable就相当于Prototype接口) 重写Object的clone方法,如果不实现Cloneable接口则会抛出CloneNotSupportedException异常</p>
@@ -297,7 +319,7 @@ mysql&gt;FLUSH PRIVILEGES;
 <pre><code class="bash">OrderInfo{goodsName=&#39;零食&#39;, address=&#39;上海市XXXXX&#39;, username=&#39;小明&#39;, mobile=&#39;138XXXXXXXX&#39;}
 OrderInfo{goodsName=&#39;衣服&#39;, address=&#39;上海市XXXXX&#39;, username=&#39;小明&#39;, mobile=&#39;138XXXXXXXX&#39;}
 </code></pre>
-<p><strong><em>值得一提的是Object类的clone方法为浅拷贝,关于如何实现深拷贝就是对clone方法进行改造了,有关浅拷贝和深拷贝的相关信息请看下面这篇:<a href="http://helkay.me/2017/05/浅拷贝和深拷贝/">浅拷贝和深拷贝</a></em></strong></p>
+<p><strong><em>值得一提的是Object类的clone方法为浅拷贝,关于如何实现深拷贝就是对clone方法进行改造了,有关浅拷贝和深拷贝的相关信息请看下面这篇:<a href="http://helkay.me/2017/05/浅拷贝和深拷贝/" target="_blank" rel="external">浅拷贝和深拷贝</a></em></strong></p>
 ]]></content>
     
     <summary type="html">
@@ -307,41 +329,19 @@ OrderInfo{goodsName=&#39;衣服&#39;, address=&#39;上海市XXXXX&#39;, username
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浅拷贝和深拷贝</title>
-    <link href="http://helkay.me/2017/05/%E6%B5%85%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
-    <id>http://helkay.me/2017/05/浅拷贝和深拷贝/</id>
-    <published>2017-05-22T16:00:00.000Z</published>
-    <updated>2017-05-23T09:31:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;介绍&quot;&gt;&lt;a href=&quot;#介绍&quot; class=&quot;headerlink&quot; title=&quot;介绍&quot;&gt;&lt;/a&gt;介绍&lt;/h2&gt;
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://blog.helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>建造者模式</title>
-    <link href="http://helkay.me/2017/05/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://helkay.me/2017/05/建造者模式/</id>
+    <link href="http://blog.helkay.me/2017/05/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://blog.helkay.me/2017/05/建造者模式/</id>
     <published>2017-05-18T16:00:00.000Z</published>
-    <updated>2017-05-23T03:14:16.000Z</updated>
+    <updated>2017-07-04T03:38:50.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>建造模式是对象的创建模式。建造模式可以将一个产品的内部表象与产品的生产过程分割开来，从而可以使一个建造过程生成具有不同的内部表象的产品对象。</p>
 <p>本模式涉及到四个角色，它们分别是：</p>
@@ -351,7 +351,7 @@ OrderInfo{goodsName=&#39;衣服&#39;, address=&#39;上海市XXXXX&#39;, username
 <li>具体建造者（ConcreteBuilder）角色</li>
 <li>导演者（Director）角色</li>
 </ul>
-<div align="center"><br><img src="http://helkay.me/pic/builder.png" style="width:700px;" alt="图片名称" align="center">
+<div align="center"><br><img src="http://blog.helkay.me/pic/builder.png" style="width:700px;" alt="图片名称" align="center">
 </div>
 
 
@@ -448,17 +448,17 @@ OrderInfo{goodsName=&#39;衣服&#39;, address=&#39;上海市XXXXX&#39;, username
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://blog.helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>Linux命令 - chmod</title>
-    <link href="http://helkay.me/2017/05/Linux%E5%91%BD%E4%BB%A4%20-%20chmod/"/>
-    <id>http://helkay.me/2017/05/Linux命令 - chmod/</id>
+    <link href="http://blog.helkay.me/2017/05/Linux%E5%91%BD%E4%BB%A4%20-%20chmod/"/>
+    <id>http://blog.helkay.me/2017/05/Linux命令 - chmod/</id>
     <published>2017-05-18T16:00:00.000Z</published>
     <updated>2017-05-19T07:01:22.000Z</updated>
     
@@ -500,17 +500,17 @@ r=4，w=2，x=1</p>
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="Linux" scheme="http://helkay.me/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.helkay.me/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Linux命令 - find</title>
-    <link href="http://helkay.me/2017/05/Linux%E5%91%BD%E4%BB%A4%20-%20find/"/>
-    <id>http://helkay.me/2017/05/Linux命令 - find/</id>
+    <link href="http://blog.helkay.me/2017/05/Linux%E5%91%BD%E4%BB%A4%20-%20find/"/>
+    <id>http://blog.helkay.me/2017/05/Linux命令 - find/</id>
     <published>2017-05-14T16:00:00.000Z</published>
     <updated>2017-05-16T04:50:34.000Z</updated>
     
@@ -600,17 +600,17 @@ find . -size +100k -size -200k
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="Linux" scheme="http://helkay.me/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.helkay.me/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Linux命令 - cat</title>
-    <link href="http://helkay.me/2017/05/Linux%E5%91%BD%E4%BB%A4%20-%20cat/"/>
-    <id>http://helkay.me/2017/05/Linux命令 - cat/</id>
+    <link href="http://blog.helkay.me/2017/05/Linux%E5%91%BD%E4%BB%A4%20-%20cat/"/>
+    <id>http://blog.helkay.me/2017/05/Linux命令 - cat/</id>
     <published>2017-05-14T16:00:00.000Z</published>
     <updated>2017-05-15T11:47:44.000Z</updated>
     
@@ -685,56 +685,22 @@ This is the 9th line
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="Linux" scheme="http://helkay.me/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git命令</title>
-    <link href="http://helkay.me/2017/05/Git%E5%91%BD%E4%BB%A4/"/>
-    <id>http://helkay.me/2017/05/Git命令/</id>
-    <published>2017-05-11T16:00:00.000Z</published>
-    <updated>2017-05-12T10:40:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Git-user-name-uesremail设置"><a href="#Git-user-name-uesremail设置" class="headerlink" title="Git user.name uesremail设置"></a>Git user.name uesremail设置</h2><pre><code class="bash">#全局
-git config --global user.name  &quot;your_name&quot;
-git config --global user.emial &quot;your_email&quot;
-
-#局部
-git config user.name  &quot;your_name&quot;
-git config user.emial &quot;your_email&quot;
-
-#取消
-git config --unset --global user.name
-git config --unset --global user.email
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Git-user-name-uesremail设置&quot;&gt;&lt;a href=&quot;#Git-user-name-uesremail设置&quot; class=&quot;headerlink&quot; title=&quot;Git user.name uesremail设置&quot;&gt;&lt;/a&gt;Git user.na
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Git" scheme="http://helkay.me/tags/Git/"/>
+      <category term="Linux" scheme="http://blog.helkay.me/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Linux工具与命令</title>
-    <link href="http://helkay.me/menu/Linux%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%91%BD%E4%BB%A4/"/>
-    <id>http://helkay.me/menu/Linux工具与命令/</id>
+    <link href="http://blog.helkay.me/menu/Linux%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%91%BD%E4%BB%A4/"/>
+    <id>http://blog.helkay.me/menu/Linux工具与命令/</id>
     <published>2017-05-11T16:00:00.000Z</published>
-    <updated>2017-05-23T09:07:35.000Z</updated>
+    <updated>2017-07-04T03:39:42.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
-<li><a href="http://helkay.me/2017/05/Git命令">Git命令</a></li>
+<li><a href="http://blog.helkay.me/2017/05/Git命令">Git命令</a></li>
 </ul>
 <h2 id="Linux命令"><a href="#Linux命令" class="headerlink" title="Linux命令"></a>Linux命令</h2><p><strong>文件管理</strong></p>
 <table>
@@ -1309,21 +1275,54 @@ git config --unset --global user.email
     <summary type="html">
     
       &lt;h2 id=&quot;工具&quot;&gt;&lt;a href=&quot;#工具&quot; class=&quot;headerlink&quot; title=&quot;工具&quot;&gt;&lt;/a&gt;工具&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://helkay.me/2017/05/Git命令&quot;&gt;Git命令&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h
+&lt;li&gt;&lt;a href=&quot;http://blog.helkay.me/2017/05/Git命令&quot;&gt;Git命令&lt;/a&gt;&lt;/li&gt;
+&lt;/u
     
     </summary>
     
-      <category term="Menu" scheme="http://helkay.me/categories/Menu/"/>
+      <category term="Menu" scheme="http://blog.helkay.me/categories/Menu/"/>
     
     
   </entry>
   
   <entry>
+    <title>Git命令</title>
+    <link href="http://blog.helkay.me/2017/05/Git%E5%91%BD%E4%BB%A4/"/>
+    <id>http://blog.helkay.me/2017/05/Git命令/</id>
+    <published>2017-05-11T16:00:00.000Z</published>
+    <updated>2017-05-12T10:40:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Git-user-name-uesremail设置"><a href="#Git-user-name-uesremail设置" class="headerlink" title="Git user.name uesremail设置"></a>Git user.name uesremail设置</h2><pre><code class="bash">#全局
+git config --global user.name  &quot;your_name&quot;
+git config --global user.emial &quot;your_email&quot;
+
+#局部
+git config user.name  &quot;your_name&quot;
+git config user.emial &quot;your_email&quot;
+
+#取消
+git config --unset --global user.name
+git config --unset --global user.email
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Git-user-name-uesremail设置&quot;&gt;&lt;a href=&quot;#Git-user-name-uesremail设置&quot; class=&quot;headerlink&quot; title=&quot;Git user.name uesremail设置&quot;&gt;&lt;/a&gt;Git user.na
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
+    
+    
+      <category term="Git" scheme="http://blog.helkay.me/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java 注解 Annotations</title>
-    <link href="http://helkay.me/2017/05/Java%20%E6%B3%A8%E8%A7%A3%20Annotations/"/>
-    <id>http://helkay.me/2017/05/Java 注解 Annotations/</id>
+    <link href="http://blog.helkay.me/2017/05/Java%20%E6%B3%A8%E8%A7%A3%20Annotations/"/>
+    <id>http://blog.helkay.me/2017/05/Java 注解 Annotations/</id>
     <published>2017-05-10T16:00:00.000Z</published>
     <updated>2017-05-12T07:01:21.000Z</updated>
     
@@ -1525,28 +1524,28 @@ public void test() {
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="Java" scheme="http://helkay.me/tags/Java/"/>
+      <category term="Java" scheme="http://blog.helkay.me/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Intellij idea 远程调试</title>
-    <link href="http://helkay.me/2017/05/Intellij%20Idea%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/"/>
-    <id>http://helkay.me/2017/05/Intellij Idea远程调试/</id>
+    <link href="http://blog.helkay.me/2017/05/Intellij%20Idea%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95/"/>
+    <id>http://blog.helkay.me/2017/05/Intellij Idea远程调试/</id>
     <published>2017-05-09T16:00:00.000Z</published>
-    <updated>2017-05-19T04:08:41.000Z</updated>
+    <updated>2017-07-04T03:39:09.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="idea自带的remote"><a href="#idea自带的remote" class="headerlink" title="idea自带的remote"></a>idea自带的remote</h2><div align="center"><br><img src="http://helkay.me/pic/idea1.png" style="width:700px;" alt="图片名称" align="center">
+    <content type="html"><![CDATA[<h2 id="idea自带的remote"><a href="#idea自带的remote" class="headerlink" title="idea自带的remote"></a>idea自带的remote</h2><div align="center"><br><img src="http://blog.helkay.me/pic/idea1.png" style="width:700px;" alt="图片名称" align="center">
 </div>
 
 
-<h2 id="tomcat-remote-配置"><a href="#tomcat-remote-配置" class="headerlink" title="tomcat remote 配置"></a>tomcat remote 配置</h2><h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><div align="center"><br><img src="http://helkay.me/pic/idea2.png" style="width:700px;" alt="图片名称" align="center">
+<h2 id="tomcat-remote-配置"><a href="#tomcat-remote-配置" class="headerlink" title="tomcat remote 配置"></a>tomcat remote 配置</h2><h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><div align="center"><br><img src="http://blog.helkay.me/pic/idea2.png" style="width:700px;" alt="图片名称" align="center">
 </div>
 
-<h3 id="Startup-Connection"><a href="#Startup-Connection" class="headerlink" title="Startup/Connection"></a>Startup/Connection</h3><div align="center"><br><img src="http://helkay.me/pic/idea3.png" style="width:700px;" alt="图片名称" align="center">
+<h3 id="Startup-Connection"><a href="#Startup-Connection" class="headerlink" title="Startup/Connection"></a>Startup/Connection</h3><div align="center"><br><img src="http://blog.helkay.me/pic/idea3.png" style="width:700px;" alt="图片名称" align="center">
 </div>]]></content>
     
     <summary type="html">
@@ -1555,17 +1554,17 @@ public void test() {
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="工具" scheme="http://helkay.me/tags/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="http://blog.helkay.me/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>ssh登录免密</title>
-    <link href="http://helkay.me/2017/05/ssh%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86/"/>
-    <id>http://helkay.me/2017/05/ssh登录免密/</id>
+    <link href="http://blog.helkay.me/2017/05/ssh%E7%99%BB%E5%BD%95%E5%85%8D%E5%AF%86/"/>
+    <id>http://blog.helkay.me/2017/05/ssh登录免密/</id>
     <published>2017-05-09T16:00:00.000Z</published>
     <updated>2017-05-12T07:01:12.000Z</updated>
     
@@ -1596,23 +1595,23 @@ chmod 700 -R .ssh
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="Linux" scheme="http://helkay.me/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.helkay.me/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>抽象工厂模式</title>
-    <link href="http://helkay.me/2017/05/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://helkay.me/2017/05/抽象工厂模式/</id>
+    <link href="http://blog.helkay.me/2017/05/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://blog.helkay.me/2017/05/抽象工厂模式/</id>
     <published>2017-05-05T16:00:00.000Z</published>
-    <updated>2017-05-19T07:34:36.000Z</updated>
+    <updated>2017-07-04T03:38:55.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><strong>产品族:</strong> 位于不同产品等级结构中，功能相关联的产品组成的家族</p>
 <p>图中GreenCar和RedCar是两个产品树,而GreenJeepCar和GreenSportCar就是一个产品族,他们都是属于Green色的车。同理RedJeepCar和RedSportCar也是一个产品族。</p>
-<div align="center"><br><img src="http://helkay.me/pic/abstract_factory_method.png" style="width:700px;" alt="图片名称" align="center">
+<div align="center"><br><img src="http://blog.helkay.me/pic/abstract_factory_method.png" style="width:700px;" alt="图片名称" align="center">
 </div>
 
 <h3 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h3><p><strong>GreenCar</strong></p>
@@ -1724,22 +1723,22 @@ chmod 700 -R .ssh
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://blog.helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>工厂方法模式</title>
-    <link href="http://helkay.me/2017/05/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://helkay.me/2017/05/工厂方法模式/</id>
+    <link href="http://blog.helkay.me/2017/05/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://blog.helkay.me/2017/05/工厂方法模式/</id>
     <published>2017-05-03T16:00:00.000Z</published>
-    <updated>2017-05-19T07:34:29.000Z</updated>
+    <updated>2017-07-04T03:38:45.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p>简单工厂模式是属于创建型模式，又叫做静态工厂方法（Static Factory Method）模式，但不属于23种GOF设计模式之一。简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例。简单工厂模式是工厂模式家族中最简单实用的模式，可以理解为是不同工厂模式的一个特殊实现。</p>
-<div align="center"><br><img src="http://helkay.me/pic/simple_factory_method.png" style="width:700px;" alt="图片名称" align="center">
+<div align="center"><br><img src="http://blog.helkay.me/pic/simple_factory_method.png" style="width:700px;" alt="图片名称" align="center">
 </div>
 
 <h3 id="代码实例"><a href="#代码实例" class="headerlink" title="代码实例"></a>代码实例</h3><p><strong>ICar</strong></p>
@@ -1798,7 +1797,7 @@ chmod 700 -R .ssh
 }
 </code></pre>
 <h2 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h2><h3 id="介绍-1"><a href="#介绍-1" class="headerlink" title="介绍"></a>介绍</h3><p>在上面的简单工厂模式中我们将实例化具体对象的工作全部交给了专门负责创建对象的工厂类中,而工厂模式中则让子类决定实例化哪一个类。遵循了开放—封闭原则</p>
-<div align="center"><br><img src="http://helkay.me/pic/factory_method.png" style="width:700px;" alt="图片名称" align="center">
+<div align="center"><br><img src="http://blog.helkay.me/pic/factory_method.png" style="width:700px;" alt="图片名称" align="center">
 </div>
 
 <h3 id="代码实例-1"><a href="#代码实例-1" class="headerlink" title="代码实例"></a>代码实例</h3><p><strong>IFactory</strong></p>
@@ -1878,17 +1877,17 @@ chmod 700 -R .ssh
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://blog.helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>Java多线程</title>
-    <link href="http://helkay.me/2017/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    <id>http://helkay.me/2017/05/多线程/</id>
+    <link href="http://blog.helkay.me/2017/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    <id>http://blog.helkay.me/2017/05/多线程/</id>
     <published>2017-05-01T16:00:00.000Z</published>
     <updated>2017-05-12T07:00:27.000Z</updated>
     
@@ -2093,17 +2092,17 @@ class ThreadDemo2 extends Thread {
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="多线程" scheme="http://helkay.me/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+      <category term="多线程" scheme="http://blog.helkay.me/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
   <entry>
     <title>单例模式</title>
-    <link href="http://helkay.me/2017/05/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    <id>http://helkay.me/2017/05/单例模式/</id>
+    <link href="http://blog.helkay.me/2017/05/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    <id>http://blog.helkay.me/2017/05/单例模式/</id>
     <published>2017-05-01T16:00:00.000Z</published>
     <updated>2017-05-12T07:00:29.000Z</updated>
     
@@ -2221,10 +2220,10 @@ class ThreadDemo2 extends Thread {
     
     </summary>
     
-      <category term="Blog" scheme="http://helkay.me/categories/Blog/"/>
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
     
     
-      <category term="设计模式" scheme="http://helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="设计模式" scheme="http://blog.helkay.me/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   

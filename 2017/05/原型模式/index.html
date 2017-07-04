@@ -113,7 +113,7 @@
 
   <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>原型模式属于创建型模式的一种,其精髓就在于<strong><em>复制</em></strong>一个存在的实例,而不是去新建。</p>
 <h2 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h2><p>我们设想一个这样的场景,小明在X宝上购物,选定购买商品后就要去下订单,我们会发现小明购买多次的订单除了购买商品不同,邮寄地址、收件人、联系方式都是一样的,这时候我们就可以使用原型模型来创建订单了。</p>
-<div align="center"><br><img src="http://helkay.me/pic/prototype.png" style="width:700px;" alt="图片名称" align="center">
+<div align="center"><br><img src="http://blog.helkay.me/pic/prototype.png" style="width:700px;" alt="图片名称" align="center">
 </div>
 
 <p><strong>Prototype:</strong> 实现Cloneable接口(Cloneable就相当于Prototype接口) 重写Object的clone方法,如果不实现Cloneable接口则会抛出CloneNotSupportedException异常</p>
@@ -202,7 +202,7 @@
 <pre><code class="bash">OrderInfo{goodsName=&#39;零食&#39;, address=&#39;上海市XXXXX&#39;, username=&#39;小明&#39;, mobile=&#39;138XXXXXXXX&#39;}
 OrderInfo{goodsName=&#39;衣服&#39;, address=&#39;上海市XXXXX&#39;, username=&#39;小明&#39;, mobile=&#39;138XXXXXXXX&#39;}
 </code></pre>
-<p><strong><em>值得一提的是Object类的clone方法为浅拷贝,关于如何实现深拷贝就是对clone方法进行改造了,有关浅拷贝和深拷贝的相关信息请看下面这篇:<a href="http://helkay.me/2017/05/浅拷贝和深拷贝/">浅拷贝和深拷贝</a></em></strong></p>
+<p><strong><em>值得一提的是Object类的clone方法为浅拷贝,关于如何实现深拷贝就是对clone方法进行改造了,有关浅拷贝和深拷贝的相关信息请看下面这篇:<a href="http://helkay.me/2017/05/浅拷贝和深拷贝/" target="_blank" rel="external">浅拷贝和深拷贝</a></em></strong></p>
 
 </article>
 
