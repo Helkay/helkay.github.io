@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="google-site-verification" content="6F4OqKmDkxMqUtTjTSCN1qPy2-m1_HN_H_aGMQkeZrA" />
 
-  <title>Tag: http</title>
+  <title>计算机基础之位运算</title>
   
     <!-- stylesheets list from config.yml -->
     
@@ -100,20 +100,68 @@
 <div class="content-wrapper" >
       <div class="content-wrapper__inner">
         
-<div id="tag" class="cate" >  
-    <h1> http </h1> 
-    <ul> 
-      
-        
-         <li style="border-bottom: 1px dashed #ccc;margin-bottom:10px;padding-bottom:10px;">
-          <a href="/2017/05/Http协议/">
-            Http协议
-          </a>
-         </li>
-        
-     
-    </ul>
-</div>
+<article id="post" 
+
+
+
+  style="padding-top:50px;padding-bottom:100px;border-bottom: 1px dashed #ccc;">
+  <h1>计算机基础之位运算
+  <a style="float: right;display:block;background-color:#e25440;color:#f8f8f8;width:60px;height:27px;text-align: center;border-radius:3px;" href="/atom.xml" title="Rss" target="_blank">
+      Rss
+  </a>
+  </h1>
+
+  <h3 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h3><p><strong>机器数</strong></p>
+<p>一个数在计算机中的二进制表示形式,叫做这个数的机器数。</p>
+<p>机器数是带符号的,在计算机用一个数的 <strong><em>最高位</em></strong> 存放符号, <strong><em>正数为0, 负数为1</em></strong>.</p>
+<p>比如,十进制中的数 +3,计算机字长为8位,转换成二进制就是00000011.如果是 -3,就是 10000011 .</p>
+<p>那么，这里的 00000011 和 10000011 就是机器数。</p>
+<p><strong>原码</strong></p>
+<p>原码就是 <strong><em>符号位</em></strong> 加上真值的绝对值</p>
+<pre><code>[+1]原 = 0000 0001
+
+[-1]原 = 1000 0001
+</code></pre><p><strong>反码</strong></p>
+<p>正数的反码是其本身</p>
+<p>负数的反码是在其原码的基础上,符号位不变,其余各个位取反.</p>
+<pre><code>[+1] = [00000001]原 = [00000001]反
+
+[-1] = [10000001]原 = [11111110]反
+</code></pre><p><strong>补码</strong></p>
+<p>正数的补码就是其本身.</p>
+<p>负数的补码是在其原码的基础上,符号位不变,其余各位取反,最后+1. (即在反码的基础上+1)</p>
+<pre><code>[+1] = [00000001]原 = [00000001]反 = [00000001]补
+
+[-1] = [10000001]原 = [11111110]反 = [11111111]补
+</code></pre><p><strong>与（&amp;）运算符</strong></p>
+<p>两个操作数中位都为1，结果才为1，否则结果为0</p>
+<pre><code>4 : 100
+7 : 111
+a &amp; b = 4 : 100
+</code></pre><p><strong>或（|）运算符</strong></p>
+<p>两个操作数中位只要有一个为1，那么结果就是1，否则就为0</p>
+<pre><code>4 : 100
+7 : 111
+a | b = 7 : 111
+</code></pre><p><strong>非运算符</strong></p>
+<p>非运算符用符号“~”表示，其运算规律如下:</p>
+<p>如果位为0，结果是1，如果位为1，结果是0</p>
+<pre><code>4       : 00000000 00000000 00000000 00000100
+~a = -5 : 11111111 11111111 11111111 11111011
+</code></pre>
+</article>
+
+<div id="disqus_thread" ></div>
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://blog-helkay-com.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
       </div>
 </div>
 
