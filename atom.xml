@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.helkay.me/"/>
-  <updated>2017-11-10T03:52:57.000Z</updated>
+  <updated>2017-11-10T04:14:35.000Z</updated>
   <id>http://blog.helkay.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://blog.helkay.me/2017/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80%E4%B9%8B%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
     <id>http://blog.helkay.me/2017/10/计算机基础之位运算/</id>
     <published>2017-10-24T16:00:00.000Z</published>
-    <updated>2017-11-10T03:52:57.000Z</updated>
+    <updated>2017-11-10T04:14:35.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h3><p><strong>机器数</strong></p>
 <p>一个数在计算机中的二进制表示形式,叫做这个数的机器数。</p>
@@ -59,6 +59,21 @@ a | b = 7 : 111
 <p>如果位为0，结果是1，如果位为1，结果是0</p>
 <pre><code>4       : 00000000 00000000 00000000 00000100
 ~a = -5 : 11111111 11111111 11111111 11111011
+</code></pre><p><strong>异或运算符</strong></p>
+<p>异或运算符用符号“^”表示，其运算规律如下:</p>
+<p>异或的概念是相同为0不同为1</p>
+<pre><code>3       : 011
+4       : 100
+3^4 = 7 : 111
+</code></pre><p><strong>“&lt;&lt;”和”&gt;&gt;”运算符</strong></p>
+<p>将二进制位 进行左位移和右位移操作</p>
+<pre><code>11     : 1011
+11&lt;&lt;3  : 1011000
+11&gt;&gt;3  : 0001
+</code></pre><p><strong>“&gt;&gt;&gt;”运算符</strong></p>
+<p>“&gt;&gt;&gt;”运算符将用0填充高位</p>
+<pre><code>-11     : 11111111111111111111111111110101
+11&gt;&gt;&gt;3  : 00011111111111111111111111111110
 </code></pre>]]></content>
     
     <summary type="html">
@@ -712,40 +727,6 @@ This is the 9th line
   </entry>
   
   <entry>
-    <title>Git命令</title>
-    <link href="http://blog.helkay.me/2017/05/Git%E5%91%BD%E4%BB%A4/"/>
-    <id>http://blog.helkay.me/2017/05/Git命令/</id>
-    <published>2017-05-11T16:00:00.000Z</published>
-    <updated>2017-05-12T10:40:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Git-user-name-uesremail设置"><a href="#Git-user-name-uesremail设置" class="headerlink" title="Git user.name uesremail设置"></a>Git user.name uesremail设置</h2><pre><code class="bash">#全局
-git config --global user.name  &quot;your_name&quot;
-git config --global user.emial &quot;your_email&quot;
-
-#局部
-git config user.name  &quot;your_name&quot;
-git config user.emial &quot;your_email&quot;
-
-#取消
-git config --unset --global user.name
-git config --unset --global user.email
-</code></pre>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Git-user-name-uesremail设置&quot;&gt;&lt;a href=&quot;#Git-user-name-uesremail设置&quot; class=&quot;headerlink&quot; title=&quot;Git user.name uesremail设置&quot;&gt;&lt;/a&gt;Git user.na
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
-    
-    
-      <category term="Git" scheme="http://blog.helkay.me/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Linux工具与命令</title>
     <link href="http://blog.helkay.me/menu/Linux%E5%B7%A5%E5%85%B7%E4%B8%8E%E5%91%BD%E4%BB%A4/"/>
     <id>http://blog.helkay.me/menu/Linux工具与命令/</id>
@@ -1335,6 +1316,40 @@ git config --unset --global user.email
     
       <category term="Menu" scheme="http://blog.helkay.me/categories/Menu/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Git命令</title>
+    <link href="http://blog.helkay.me/2017/05/Git%E5%91%BD%E4%BB%A4/"/>
+    <id>http://blog.helkay.me/2017/05/Git命令/</id>
+    <published>2017-05-11T16:00:00.000Z</published>
+    <updated>2017-05-12T10:40:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Git-user-name-uesremail设置"><a href="#Git-user-name-uesremail设置" class="headerlink" title="Git user.name uesremail设置"></a>Git user.name uesremail设置</h2><pre><code class="bash">#全局
+git config --global user.name  &quot;your_name&quot;
+git config --global user.emial &quot;your_email&quot;
+
+#局部
+git config user.name  &quot;your_name&quot;
+git config user.emial &quot;your_email&quot;
+
+#取消
+git config --unset --global user.name
+git config --unset --global user.email
+</code></pre>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Git-user-name-uesremail设置&quot;&gt;&lt;a href=&quot;#Git-user-name-uesremail设置&quot; class=&quot;headerlink&quot; title=&quot;Git user.name uesremail设置&quot;&gt;&lt;/a&gt;Git user.na
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://blog.helkay.me/categories/Blog/"/>
+    
+    
+      <category term="Git" scheme="http://blog.helkay.me/tags/Git/"/>
     
   </entry>
   
